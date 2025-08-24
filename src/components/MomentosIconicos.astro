@@ -1,0 +1,520 @@
+---
+import { Image } from 'astro:assets';
+// Importar imágenes de momentos icónicos
+import PibeIntro from '../assets/momentos/pibe-intro.webp';
+import PibeDay from '../assets/momentos/pibe-day.jpg';
+import Colombia5Argentina from '../assets/momentos/colombia-argentina.jpg';
+import BeckhamPide from '../assets/momentos/beckham-camiseta.jpg';
+import GolAlemania from '../assets/momentos/gol-alemania.jpg';
+---
+
+<section id="momentos-iconicos" class="relative h-screen overflow-hidden bg-gradient-to-b from-black to-gray-900">
+  
+  <!-- Vertical timeline track container -->
+  <div class="timeline-track">
+    
+    <!-- Panel 1: Intro -->
+    <article class="timeline-panel intro-panel grid place-items-center bg-gradient-to-br from-black via-gray-900 to-colombian-blue/20">
+      <div class="absolute inset-0 bg-black/40 z-10"></div>
+      <div class="absolute inset-0 z-0">
+        <Image 
+          src={PibeIntro} 
+          alt="El Pibe Valderrama" 
+          class="block w-full h-full object-contain opacity-60 will-transform timeline-image"
+          width={1920}
+          height={1080}
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/60"></div>
+      </div>
+      
+      <div class="relative z-20 text-center px-8 max-w-6xl will-transform timeline-text">
+        <h1 class="text-6xl md:text-8xl font-display font-bold text-white mb-8">
+          Momentos
+        </h1>
+        <h2 class="text-4xl md:text-6xl font-display font-bold text-pibe-gold mb-12">
+          Icónicos
+        </h2>
+        
+        <div class="intro-content">
+          <p class="text-xl md:text-2xl text-white/90 leading-relaxed mb-8 max-w-4xl mx-auto">
+            El Pibe no necesita presentación. Pero sí merece ser recordado. 
+            Estas imágenes y frases son parte de la historia del fútbol y de Colombia.
+          </p>
+          
+          <div class="frases-iconicas space-y-6">
+            <blockquote class="text-3xl md:text-4xl font-script text-pibe-gold italic">
+              "El que juega bien, no necesita correr."
+            </blockquote>
+            <blockquote class="text-3xl md:text-4xl font-script text-pibe-gold italic">
+              "Así es que se juega papá."
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Panel 2: Pibe Day (MLS) -->
+    <article class="timeline-panel grid place-items-center bg-gradient-to-br from-colombian-blue/20 to-purple-900/30">
+      <div class="absolute inset-0 bg-black/60 z-0"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-black/60 to-colombian-blue/30"></div>
+      <div class="relative z-10 w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="flex justify-center order-1 md:order-1">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <Image 
+              src={PibeDay} 
+              alt="Pibe Day en la MLS" 
+              class="block w-[78vw] md:w-[40vw] h-[56vh] object-cover will-transform timeline-image"
+              width={600}
+              height={400}
+              loading="lazy"
+            />
+            <div class="year-badge absolute -top-6 -left-6 bg-purple-600 text-white px-6 py-3 rounded-full font-bold text-2xl shadow-lg">
+              1990s
+            </div>
+          </div>
+        </div>
+        <div class="order-2 md:order-2 px-2 md:px-8 will-transform timeline-text">
+          <h3 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+            Pibe Day
+          </h3>
+          <p class="text-gray-200 text-lg leading-relaxed mb-4">
+            El recordado <strong class="text-pibe-gold">Valderrama Day</strong> en la MLS, 
+            cuando jugadores usaron pelucas para homenajearlo. Un homenaje único 
+            al estilo inconfundible del genio colombiano.
+          </p>
+          <div class="video-link-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg mb-4">
+            <h4 class="font-bold text-pibe-gold mb-2">Momento Histórico</h4>
+            <p class="text-sm text-gray-300 mb-3">Un día especial en la historia de la MLS</p>
+            <a href="https://x.com/NoContext90sMls/status/1355565075030040577" 
+               target="_blank" 
+               class="inline-flex items-center bg-pibe-gold text-black px-4 py-2 rounded-full font-bold text-sm hover:bg-white transition-all duration-300">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              Ver video
+            </a>
+          </div>
+          <blockquote class="text-lg font-script text-pibe-gold italic border-l-4 border-purple-600 pl-3">
+            "Un homenaje único al estilo inconfundible"
+          </blockquote>
+        </div>
+      </div>
+    </article>
+
+    <!-- Panel 3: Colombia 5-0 Argentina -->
+    <article class="timeline-panel grid place-items-center bg-gradient-to-br from-colombian-yellow/30 to-colombian-red/30">
+      <div class="absolute inset-0 bg-black/50 z-0"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-colombian-yellow/20 via-black/70 to-colombian-red/25"></div>
+      <div class="relative z-10 w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="order-2 md:order-1 px-2 md:px-8 will-transform timeline-text">
+          <h3 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+            Colombia 5-0 Argentina
+          </h3>
+          <p class="text-gray-200 text-lg leading-relaxed mb-4">
+            En el <strong class="text-pibe-gold">Monumental de Buenos Aires</strong>, Colombia goleó 5-0 a Argentina. 
+            Valderrama fue el conductor de una orquesta perfecta. Esa victoria clasificó 
+            a Colombia al <strong class="text-pibe-gold">Mundial 94</strong> y quedó en la historia del fútbol mundial.
+          </p>
+          <div class="match-stats grid grid-cols-2 gap-4 mb-4">
+            <div class="stat-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg border-l-4 border-colombian-yellow">
+              <div class="text-2xl font-bold text-colombian-yellow">5-0</div>
+              <div class="text-sm text-gray-300">Resultado final</div>
+            </div>
+            <div class="stat-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg border-l-4 border-colombian-red">
+              <div class="text-2xl font-bold text-colombian-red">Mundial 94</div>
+              <div class="text-sm text-gray-300">Clasificación</div>
+            </div>
+          </div>
+          <div class="video-link-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg mb-4">
+            <a href="https://www.youtube.com/watch?v=m4X7QIPM9hQ" 
+               target="_blank" 
+               class="inline-flex items-center bg-white text-black px-4 py-2 rounded-full font-bold text-sm hover:bg-colombian-yellow transition-all duration-300">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              Ver goleada histórica
+            </a>
+          </div>
+          <blockquote class="text-lg font-script text-pibe-gold italic border-l-4 border-colombian-yellow pl-3">
+            "Una orquesta perfecta dirigida por el Pibe"
+          </blockquote>
+        </div>
+        <div class="flex justify-center order-1 md:order-2">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <Image 
+              src={Colombia5Argentina} 
+              alt="Colombia 5-0 Argentina 1993" 
+              class="block w-[78vw] md:w-[40vw] h-[56vh] object-cover will-transform timeline-image"
+              width={600}
+              height={400}
+              loading="lazy"
+            />
+            <div class="year-badge absolute -top-6 -right-6 bg-gradient-to-r from-colombian-yellow to-colombian-red text-white px-6 py-3 rounded-full font-bold text-2xl shadow-lg">
+              1993
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Panel 4: Beckham pide la camiseta -->
+    <article class="timeline-panel grid place-items-center bg-gradient-to-br from-green-900/30 to-blue-900/30">
+      <div class="absolute inset-0 bg-black/55 z-0"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-green-900/30 via-black/60 to-blue-900/35"></div>
+      <div class="relative z-10 w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="flex justify-center order-1 md:order-1">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <Image 
+              src={BeckhamPide} 
+              alt="Beckham pide camiseta a Valderrama" 
+              class="block w-[78vw] md:w-[40vw] h-[56vh] object-cover will-transform timeline-image"
+              width={600}
+              height={400}
+              loading="lazy"
+            />
+            <div class="year-badge absolute -top-6 -left-6 bg-green-600 text-white px-6 py-3 rounded-full font-bold text-2xl shadow-lg">
+              Francia 98
+            </div>
+          </div>
+        </div>
+        <div class="order-2 md:order-2 px-2 md:px-8 will-transform timeline-text">
+          <h3 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+            Beckham pide la camiseta
+          </h3>
+          <p class="text-gray-200 text-lg leading-relaxed mb-4">
+            Tras el partido entre <strong class="text-pibe-gold">Colombia e Inglaterra</strong> en Francia 98, 
+            David Beckham le pidió la camiseta a Valderrama. Un gesto de respeto y admiración 
+            del futuro galáctico hacia la leyenda colombiana.
+          </p>
+          <div class="respect-moment bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg mb-4">
+            <h4 class="font-bold text-pibe-gold mb-2 flex items-center">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Respeto Mutuo
+            </h4>
+            <p class="text-sm text-gray-300 mb-3">El galáctico reconoce al genio colombiano</p>
+            <a href="https://www.tiktok.com/@deportesrcn/video/7384983294833609990" 
+               target="_blank" 
+               class="inline-flex items-center bg-pibe-gold text-black px-4 py-2 rounded-full font-bold text-sm hover:bg-white transition-all duration-300">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              Ver momento histórico
+            </a>
+          </div>
+          <blockquote class="text-lg font-script text-pibe-gold italic border-l-4 border-green-600 pl-3">
+            "Un gesto de respeto hacia la leyenda"
+          </blockquote>
+        </div>
+      </div>
+    </article>
+
+    <!-- Panel 5: Gol contra Alemania (Italia 90) -->
+    <article class="timeline-panel grid place-items-center bg-gradient-to-br from-red-900/30 to-yellow-600/30">
+      <div class="absolute inset-0 bg-black/50 z-0"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-red-900/35 via-black/65 to-yellow-600/30"></div>
+      <div class="relative z-10 w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="order-2 md:order-1 px-2 md:px-8 will-transform timeline-text">
+          <h3 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+            La asistencia histórica
+          </h3>
+          <p class="text-gray-200 text-lg leading-relaxed mb-4">
+            En el <strong class="text-pibe-gold">minuto 88</strong>, Valderrama asistió a Freddy Rincón 
+            para el histórico empate <strong class="text-pibe-gold">1-1 contra Alemania</strong>, clasificando a Colombia 
+            a octavos de final por primera vez en su historia.
+          </p>
+          <div class="historic-stats grid grid-cols-2 gap-4 mb-4">
+            <div class="stat-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg border-l-4 border-red-600 text-center">
+              <div class="text-3xl font-bold text-pibe-gold">1-1</div>
+              <div class="text-sm text-gray-300">Resultado final</div>
+            </div>
+            <div class="stat-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg border-l-4 border-yellow-600 text-center">
+              <div class="text-3xl font-bold text-pibe-gold">1er</div>
+              <div class="text-sm text-gray-300">Octavos en Mundial</div>
+            </div>
+          </div>
+          <div class="video-link-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg mb-4">
+            <p class="text-sm text-gray-300 mb-3">Minuto 88 - La magia del Pibe</p>
+            <a href="https://www.youtube.com/watch?v=m4X7QIPM9hQ" 
+               target="_blank" 
+               class="inline-flex items-center bg-pibe-gold text-black px-4 py-2 rounded-full font-bold text-sm hover:bg-white transition-all duration-300">
+              <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              Ver la asistencia mágica
+            </a>
+          </div>
+          <blockquote class="text-lg font-script text-pibe-gold italic border-l-4 border-red-600 pl-3">
+            "El pase que hizo historia en Italia 90"
+          </blockquote>
+        </div>
+        <div class="flex justify-center order-1 md:order-2">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <Image 
+              src={GolAlemania} 
+              alt="Asistencia a Rincón vs Alemania" 
+              class="block w-[78vw] md:w-[40vw] h-[56vh] object-cover will-transform timeline-image"
+              width={600}
+              height={400}
+              loading="lazy"
+            />
+            <div class="year-badge absolute -top-6 -right-6 bg-gradient-to-r from-red-600 to-yellow-600 text-white px-6 py-3 rounded-full font-bold text-2xl shadow-lg">
+              Italia 90
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Panel Final: Closing -->
+    <article class="timeline-panel closing-panel grid place-items-center bg-gradient-to-br from-black/80 via-colombian-blue/30 to-pibe-gold/30">
+      <div class="absolute inset-0 bg-black/40 z-0"></div>
+      <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-colombian-blue/20 to-pibe-gold/25"></div>
+      <div class="relative z-10 text-center px-8 max-w-4xl will-transform timeline-text">
+        <h2 class="text-5xl md:text-7xl font-display font-bold text-white mb-8">
+          Eterno <span class="text-pibe-gold">Pibe</span>
+        </h2>
+        
+        <div class="closing-content">
+          <p class="text-xl md:text-2xl text-white/90 leading-relaxed mb-8">
+            Estos momentos son solo una pequeña muestra de la magia que Carlos Valderrama 
+            regaló al mundo del fútbol. Su legado trasciende los títulos y las estadísticas.
+          </p>
+          
+          <div class="legacy-card bg-white/10 backdrop-blur-sm p-6 rounded-xl shadow-lg mb-8">
+            <h4 class="font-bold text-pibe-gold mb-3 text-lg">Su Legado Eterno</h4>
+            <div class="grid grid-cols-2 gap-4 text-center mb-4">
+              <div>
+                <div class="text-2xl font-bold text-white">5</div>
+                <div class="text-xs text-gray-300">Momentos icónicos</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-white">∞</div>
+                <div class="text-xs text-gray-300">Inspiración eterna</div>
+              </div>
+            </div>
+          </div>
+          
+          <blockquote class="text-3xl md:text-4xl font-script text-pibe-gold italic">
+            "El fútbol es un arte, y el Pibe fue su Picasso."
+          </blockquote>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Vertical Progress Bar -->
+  <div class="timeline-progress-bar fixed right-6 top-1/2 transform -translate-y-1/2 w-2 h-80 z-50 opacity-0 transition-opacity duration-500">
+    <!-- Background track -->
+    <div class="progress-background h-full w-full relative overflow-hidden rounded-full">
+      <!-- Flag colors background (50% yellow, 25% blue, 25% red) -->
+      <div class="flag-divisions absolute inset-0 flex flex-col">
+        <div class="bg-colombian-yellow/20" style="height: 50%;"></div>
+        <div class="bg-colombian-blue/20" style="height: 25%;"></div>
+        <div class="bg-colombian-red/20" style="height: 25%;"></div>
+      </div>
+      
+      <!-- Active progress -->
+      <div class="progress-active h-full w-full relative overflow-hidden">
+        <div class="progress-fill-container absolute bottom-0 left-0 w-full flex flex-col transition-all duration-400 ease-out" style="height: 0%;">
+          <!-- Colors from bottom to top with their proportions -->
+          <div class="progress-fill-red w-full bg-colombian-red" style="height: 25%;"></div>
+          <div class="progress-fill-blue w-full bg-colombian-blue" style="height: 25%;"></div>
+          <div class="progress-fill-yellow w-full bg-colombian-yellow" style="height: 50%;"></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Panel indicators -->
+    <div class="progress-indicators absolute -left-8 top-0 h-full flex flex-col justify-between text-xs font-bold text-gray-700">
+      <span class="timeline-indicator bg-white/90 px-2 py-1 rounded shadow-sm">Inicio</span>
+      <span class="timeline-indicator bg-white/90 px-2 py-1 rounded shadow-sm">Pibe Day</span>
+      <span class="timeline-indicator bg-white/90 px-2 py-1 rounded shadow-sm">5-0</span>
+      <span class="timeline-indicator bg-white/90 px-2 py-1 rounded shadow-sm">Beckham</span>
+      <span class="timeline-indicator bg-white/90 px-2 py-1 rounded shadow-sm">Italia 90</span>
+      <span class="timeline-indicator bg-white/90 px-2 py-1 rounded shadow-sm">Eterno</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Configuración del timeline vertical */
+  html, body { overflow-x: hidden; }
+  .will-transform { will-change: transform, opacity; }
+  
+  #momentos-iconicos .timeline-track { 
+    display: flex; 
+    flex-direction: column;
+    height: auto;
+  }
+  
+  #momentos-iconicos .timeline-panel { 
+    width: 100vw; 
+    height: 100vh; 
+    flex: 0 0 100vh; 
+  }
+
+  /* Estados iniciales para elementos del timeline */
+  .timeline-image {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+
+  .timeline-text {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .year-badge {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+
+  /* Year badge animations */
+  .year-badge {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+  }
+
+  /* Progress bar styles para vertical */
+  .timeline-progress-bar {
+    backdrop-filter: blur(10px);
+    background: linear-gradient(to right, rgba(255,255,255,0.1), transparent);
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .progress-background {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .flag-divisions {
+    border-left: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .progress-fill-yellow,
+  .progress-fill-blue,
+  .progress-fill-red {
+    transition: height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  }
+
+  .timeline-indicator {
+    font-size: 10px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+
+  .timeline-indicator:hover {
+    transform: scale(1.05);
+    background: white;
+  }
+
+  /* Animación de aparición */
+  .timeline-progress-bar.show {
+    opacity: 1;
+  }
+
+  /* Efectos de colores más vibrantes */
+  .progress-fill-yellow {
+    background: linear-gradient(180deg, #FCDD09, #FFE55C);
+  }
+
+  .progress-fill-blue {
+    background: linear-gradient(180deg, #003087, #1E4F8C);
+  }
+
+  .progress-fill-red {
+    background: linear-gradient(180deg, #C8102E, #E53E3E);
+  }
+
+  .progress-indicators span {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2px 6px;
+    border-radius: 4px;
+    backdrop-filter: blur(5px);
+    font-size: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+  }
+
+  /* Card styles mejorados */
+  .video-link-card,
+  .respect-moment,
+  .legacy-card,
+  .historic-stats,
+  .match-stats {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .stat-card {
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Efectos de hover mejorados */
+  .video-link-card a:hover,
+  .respect-moment a:hover {
+    transform: translateY(-1px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    #momentos-iconicos .timeline-panel {
+      padding: 1rem 0;
+    }
+    
+    .w-11\/12 {
+      width: 95%;
+    }
+    
+    .year-badge {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+    
+    .match-stats,
+    .historic-stats {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+
+    .timeline-progress-bar {
+      right: 1rem;
+      width: 1.5rem;
+      height: 60vh;
+    }
+
+    .progress-indicators {
+      display: none;
+    }
+  }
+
+  /* Mejoras de performance */
+  .timeline-panel * {
+    backface-visibility: hidden;
+    perspective: 1000px;
+  }
+
+  /* Smooth transitions */
+  .timeline-panel {
+    transition: opacity 0.3s ease;
+  }
+</style>
+
+<script src="../scripts/momentosIconicos-optimized.js"></script>

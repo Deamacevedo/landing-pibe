@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --color-colombian-yellow: #FCDD09;
+  --color-colombian-blue: #003087;
+  --color-colombian-red: #C8102E;
+  --color-caribbean-orange: #FF8C42;
+  --color-sea-green: #43AA8B;
+  --color-pibe-gold: #DAA520;
+
+  --font-family-primary: Inter, system-ui, sans-serif;
+  --font-family-display: Oswald, system-ui, sans-serif;
+  --font-family-script: "Dancing Script", cursive;
+
+  --animate-fade-in: fadeIn 1s ease-in-out;
+  --animate-slide-up: slideUp 0.8s ease-out;
+  --animate-float: float 3s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Global Styles for Pibe Valderrama Portfolio */
+
+/* Custom CSS Variables */
+:root {
+  --colombian-yellow: #FCDD09;
+  --colombian-blue: #003087;
+  --colombian-red: #C8102E;
+  --caribbean-orange: #FF8C42;
+  --sea-green: #43AA8B;
+  --pibe-gold: #DAA520;
+  
+  --font-primary: 'Inter', system-ui, sans-serif;
+  --font-display: 'Oswald', system-ui, sans-serif;
+  --font-script: 'Dancing Script', cursive;
+  
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Reset and Base Styles */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Account for fixed navbar */
+}
+
+body {
+  font-family: var(--font-primary);
+  line-height: 1.6;
+  color: #1f2937;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Prevent FOUC */
+body.loading {
+  visibility: hidden;
+}
+
+/* Custom scrollbar */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: var(--pibe-gold) #f1f1f1;
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--pibe-gold);
+  border-radius: 3px;
+}

@@ -1,0 +1,621 @@
+---
+import { Image } from 'astro:assets';
+import Childhood from '../assets/timeline/pibe-childhood.jpg';
+import Young from '../assets/timeline/pibe-young.jpg';
+import Family from '../assets/timeline/pibe-family.jpg';
+import Junior from '../assets/timeline/pibe-junior.jpg';
+import Seleccion from '../assets/timeline/pibe-seleccion.jpg';
+import Retiro from '../assets/timeline/pibe-retiro.jpg';
+---
+
+<section id="quien-es" class="relative h-screen overflow-hidden bg-gradient-to-b from-white to-gray-100">
+  <!-- Indicador de progreso elegante -->
+  <div class="timeline-progress-bar fixed top-0 left-0 w-full z-50 opacity-0 transition-opacity duration-500">
+    <!-- Barra de progreso principal -->
+    <div class="progress-background h-2 w-full relative overflow-hidden bg-gray-900/10 backdrop-blur-sm">
+      <!-- Barra de progreso activa con gradiente colombiano -->
+      <div class="progress-fill h-full w-0 relative overflow-hidden bg-gradient-to-r from-colombian-yellow via-colombian-blue to-colombian-red shadow-lg transition-all duration-400 ease-out">
+        <!-- Efecto de brillo animado -->
+        <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transform -skew-x-12 animate-pulse"></div>
+      </div>
+    </div>
+    
+    <!-- Panel actual indicator -->
+    <div class="current-panel-info absolute top-3 left-4 text-xs font-bold text-gray-700 bg-white/90 px-3 py-1 rounded-full backdrop-blur-sm shadow-sm">
+      Panel <span class="current-panel-number">1</span> de <span class="total-panels">9</span>
+    </div>
+  </div>
+
+  <!-- Título de la sección -->
+  <div class="section-header text-center py-8 relative z-10">
+    <h2 class="section-title text-4xl md:text-5xl font-display font-bold text-colombian-blue mb-4 opacity-0">
+      Quién es el Pibe
+    </h2>
+    <p class="section-subtitle text-lg md:text-xl font-script text-pibe-gold italic opacity-0">
+      El Pibe no pasa de moda. Se vuelve leyenda.
+    </p>
+    <div class="decorative-line w-24 h-1 bg-gradient-to-r from-colombian-yellow via-colombian-blue to-colombian-red mx-auto mt-4 opacity-0 scale-x-0"></div>
+  </div>
+
+  <!-- Track horizontal container -->
+  <div class="track">
+    
+    <!-- Panel 1: 1961 - Nace una leyenda -->
+    <article class="panel grid place-items-center bg-gradient-to-br from-colombian-yellow/10 to-white">
+      <div class="w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div class="flex justify-center order-1 md:order-1">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <Image 
+              src={Childhood} 
+              alt="El Pibe de niño en Santa Marta"
+              class="block w-[75vw] md:w-[35vw] h-[50vh] object-cover will-transform timeline-image"
+              width={500}
+              height={600}
+              loading="lazy"
+            />
+            <div class="year-badge absolute -top-6 -left-6 bg-colombian-yellow text-colombian-blue px-4 py-2 rounded-full font-bold text-lg shadow-lg">
+              1961
+            </div>
+          </div>
+        </div>
+        <div class="order-2 md:order-2 px-2 md:px-6 will-transform timeline-text">
+          <h3 class="text-2xl md:text-3xl font-display font-bold text-colombian-blue mb-4">
+            Nace una leyenda
+          </h3>
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
+            El 2 de diciembre de 1961 nace en Pescaíto, Santa Marta, Carlos Alberto Valderrama Palacio. 
+            Desde niño jugaba en canchas barriales y playas, mostrando la alegría y talento único 
+            que lo harían una leyenda mundial.
+          </p>
+          <div class="birth-details bg-white p-4 rounded-xl shadow-lg border-l-4 border-colombian-yellow">
+            <div class="flex items-center mb-2">
+              <svg class="w-5 h-5 mr-2 text-colombian-blue" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 2L3 7v11h4v-6h6v6h4V7l-7-5z"/>
+              </svg>
+              <span class="font-semibold text-colombian-blue">Pescaíto, Santa Marta</span>
+            </div>
+            <p class="text-sm text-gray-600">Barrio humilde donde creció el futuro genio del fútbol</p>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Panel 2: 1970s - Formación y "El Pibe" -->
+    <article class="panel grid place-items-center bg-gradient-to-br from-colombian-blue/10 to-white">
+      <div class="w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div class="order-2 md:order-1 px-2 md:px-6 will-transform timeline-text">
+          <h3 class="text-2xl md:text-3xl font-display font-bold text-colombian-blue mb-4">
+            Nace "El Pibe"
+          </h3>
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
+            Participó en el Torneo Pony Fútbol y ligas locales, siempre guiado por su padre. 
+            Aquí recibió el apodo de "El Pibe", que lo acompañaría para siempre. 
+            Ingresó a las divisiones menores de Unión Magdalena.
+          </p>
+          <div class="formation-timeline bg-gradient-to-r from-colombian-blue/10 to-transparent p-4 rounded-xl mb-4">
+            <h4 class="font-bold text-colombian-blue mb-3">Su Formación</h4>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-colombian-blue rounded-full mr-2"></span>
+                Torneo Pony Fútbol - Primeros pasos
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-colombian-blue rounded-full mr-2"></span>
+                Ligas barriales de Santa Marta
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-colombian-blue rounded-full mr-2"></span>
+                Divisiones menores Unión Magdalena
+              </li>
+            </ul>
+          </div>
+          <blockquote class="text-base md:text-lg font-script text-pibe-gold italic border-l-4 border-colombian-yellow pl-3">
+            "Mi papá siempre me decía: juega con alegría"
+          </blockquote>
+        </div>
+        <div class="flex justify-center order-1 md:order-2">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <Image 
+              src={Young} 
+              alt="El Pibe joven en sus inicios"
+              class="block w-[75vw] md:w-[35vw] h-[50vh] object-cover will-transform timeline-image"
+              width={500}
+              height={600}
+              loading="lazy"
+            />
+            <div class="year-badge absolute -top-6 -right-6 bg-colombian-blue text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg">
+              1970s
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Panel 3: 1978 - Debut profesional -->
+    <article class="panel grid place-items-center bg-gradient-to-br from-green-500/10 to-white">
+      <div class="w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div class="flex justify-center order-1 md:order-1">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <Image 
+              src={Family} 
+              alt="El Pibe en su debut con Unión Magdalena"
+              class="block w-[75vw] md:w-[35vw] h-[50vh] object-cover will-transform timeline-image"
+              width={500}
+              height={600}
+              loading="lazy"
+            />
+            <div class="year-badge absolute -top-6 -left-6 bg-green-600 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg">
+              1978
+            </div>
+          </div>
+        </div>
+        <div class="order-2 md:order-2 px-2 md:px-6 will-transform timeline-text">
+          <h3 class="text-2xl md:text-3xl font-display font-bold text-colombian-blue mb-4">
+            Debut profesional
+          </h3>
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
+            A los 17 años debutó con Unión Magdalena, mostrando ya su visión de juego y 
+            precisión en los pases que lo convertirían en leyenda. Su talento natural 
+            brillaba desde el primer momento.
+          </p>
+          <div class="debut-stats grid grid-cols-2 gap-4">
+            <div class="stat-card bg-white p-4 rounded-xl shadow-lg border-l-4 border-green-600">
+              <div class="text-2xl font-bold text-green-600">17</div>
+              <div class="text-sm text-gray-600 font-medium">Años en debut</div>
+            </div>
+            <div class="stat-card bg-white p-4 rounded-xl shadow-lg border-l-4 border-colombian-blue">
+              <div class="text-2xl font-bold text-colombian-blue">1978</div>
+              <div class="text-sm text-gray-600 font-medium">Debut histórico</div>
+            </div>
+          </div>
+          <blockquote class="text-base md:text-lg font-script text-pibe-gold italic border-l-4 border-green-600 pl-3 mt-4">
+            "Desde el primer partido se vio que era especial"
+          </blockquote>
+        </div>
+      </div>
+    </article>
+
+    <!-- Panel 4: 1981-1985 - Consolidación nacional -->
+    <article class="panel grid place-items-center bg-gradient-to-br from-colombian-red/10 to-white">
+      <div class="w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div class="order-2 md:order-1 px-2 md:px-6 will-transform timeline-text">
+          <h3 class="text-2xl md:text-3xl font-display font-bold text-colombian-blue mb-4">
+            Consolidación nacional
+          </h3>
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
+            Tras su paso breve por Millonarios, brilló en Deportivo Cali, donde consolidó su nombre 
+            y llegó a la Selección Colombia. Durante estos años también formó su familia, 
+            casándose y teniendo sus hijos.
+          </p>
+          <div class="clubs-timeline bg-white p-4 rounded-xl shadow-lg mb-4">
+            <h4 class="font-bold text-colombian-blue mb-3">Trayectoria Nacional</h4>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                1981 - Millonarios (paso breve)
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
+                1981-1985 - Deportivo Cali (consolidación)
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-colombian-yellow rounded-full mr-2"></span>
+                1985 - Debut en Selección Colombia
+              </li>
+            </ul>
+          </div>
+          <div class="family-info bg-gradient-to-r from-colombian-red/10 to-transparent p-4 rounded-xl">
+            <h4 class="font-bold text-colombian-blue mb-2 flex items-center">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+              Vida Personal
+            </h4>
+            <p class="text-sm text-gray-600">Se casó y nacieron sus hijos. Más adelante, junto a Elvira Pacheco, consolidó una familia que siempre fue su mayor apoyo.</p>
+          </div>
+        </div>
+        <div class="flex justify-center order-1 md:order-2">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <Image 
+              src={Family} 
+              alt="El Pibe con su familia"
+              class="block w-[75vw] md:w-[35vw] h-[50vh] object-cover will-transform timeline-image"
+              width={500}
+              height={600}
+              loading="lazy"
+            />
+            <div class="year-badge absolute -top-6 -right-6 bg-colombian-red text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg">
+              1981-85
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Panel 5: 1988-1992 - Conquista Europa -->
+    <article class="panel grid place-items-center bg-gradient-to-br from-purple-500/10 to-white">
+      <div class="w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div class="flex justify-center order-1 md:order-1">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <Image 
+              src={Junior} 
+              alt="El Pibe en Europa - Montpellier"
+              class="block w-[75vw] md:w-[35vw] h-[50vh] object-cover will-transform timeline-image"
+              width={500}
+              height={600}
+              loading="lazy"
+            />
+            <div class="year-badge absolute -top-6 -left-6 bg-purple-600 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg">
+              1988-92
+            </div>
+          </div>
+        </div>
+        <div class="order-2 md:order-2 px-2 md:px-6 will-transform timeline-text">
+          <h3 class="text-2xl md:text-3xl font-display font-bold text-colombian-blue mb-4">
+            Conquista Europa
+          </h3>
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
+            En Europa dejó huella con Montpellier, ganando la Copa de Francia en 1990 y 
+            compartiendo cancha con figuras como Cantona y Blanc. Luego jugó en LaLiga 
+            con el Real Valladolid, llevando el estilo colombiano al fútbol español.
+          </p>
+          <div class="europe-achievements bg-white p-4 rounded-xl shadow-lg mb-4">
+            <h4 class="font-bold text-purple-600 mb-3 flex items-center">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              Etapa Europea
+            </h4>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                1988-91: Montpellier (Francia)
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                1990: Copa de Francia con Montpellier
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-red-500 rounded-full mr-2"></span>
+                1991-92: Real Valladolid (España)
+              </li>
+            </ul>
+          </div>
+          <blockquote class="text-base md:text-lg font-script text-pibe-gold italic border-l-4 border-purple-600 pl-3">
+            "Llevé la magia colombiana a Europa"
+          </blockquote>
+        </div>
+      </div>
+    </article>
+
+    <!-- Panel 6: 1993-1995 - Ídolo del Junior -->
+    <article class="panel grid place-items-center bg-gradient-to-br from-red-600/10 to-white">
+      <div class="w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div class="order-2 md:order-1 px-2 md:px-6 will-transform timeline-text">
+          <h3 class="text-2xl md:text-3xl font-display font-bold text-colombian-blue mb-4">
+            Ídolo eterno del Junior
+          </h3>
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
+            Con Junior de Barranquilla conquistó la Liga en 1993 y 1995, convirtiéndose en 
+            símbolo de la Costa. Fue elegido Mejor Futbolista de América en 1987 y 1993. 
+            Su conexión con la hinchada fue inquebrantable.
+          </p>
+          <div class="achievements bg-white p-4 rounded-xl shadow-lg mb-4">
+            <h4 class="font-bold text-red-600 mb-3 flex items-center">
+              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+              Logros con Junior
+            </h4>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-red-600 rounded-full mr-2"></span>
+                Liga Colombiana 1993
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-red-600 rounded-full mr-2"></span>
+                Liga Colombiana 1995
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
+                Mejor de América 1987 y 1993
+              </li>
+            </ul>
+          </div>
+          <blockquote class="text-base md:text-lg font-script text-pibe-gold italic border-l-4 border-red-600 pl-3">
+            "Junior es mi casa, mi corazón"
+          </blockquote>
+        </div>
+        <div class="flex justify-center order-1 md:order-2">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <Image 
+              src={Junior} 
+              alt="El Pibe con la camiseta del Junior"
+              class="block w-[75vw] md:w-[35vw] h-[50vh] object-cover will-transform timeline-image"
+              width={500}
+              height={600}
+              loading="lazy"
+            />
+            <div class="year-badge absolute -top-6 -right-6 bg-red-600 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg">
+              1993-95
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Panel 7: 1985-1998 - Selección Colombia -->
+    <article class="panel grid place-items-center bg-gradient-to-br from-colombian-yellow/20 to-white">
+      <div class="w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div class="flex justify-center order-1 md:order-1">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <Image 
+              src={Seleccion} 
+              alt="El Pibe capitán de la Selección Colombia"
+              class="block w-[75vw] md:w-[35vw] h-[50vh] object-cover will-transform timeline-image"
+              width={500}
+              height={600}
+              loading="lazy"
+            />
+            <div class="year-badge absolute -top-6 -left-6 bg-gradient-to-r from-colombian-yellow to-pibe-gold text-colombian-blue px-4 py-2 rounded-full font-bold text-lg shadow-lg">
+              1985-98
+            </div>
+          </div>
+        </div>
+        <div class="order-2 md:order-2 px-2 md:px-6 will-transform timeline-text">
+          <h3 class="text-2xl md:text-3xl font-display font-bold text-colombian-blue mb-4">
+            Capitán eterno de Colombia
+          </h3>
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
+            Disputó 111 partidos con la Selección (1985-1998). Estuvo en tres Copas del Mundo: 
+            Italia 90, USA 94 y Francia 98. Momentos históricos: asistencia a Rincón ante Alemania 
+            en Italia 90 y la goleada 5-0 contra Argentina en eliminatorias.
+          </p>
+          <div class="world-cups grid grid-cols-3 gap-3 mb-4">
+            <div class="world-cup bg-gradient-to-b from-green-400 to-green-600 text-white p-3 rounded-lg text-center shadow-lg">
+              <div class="font-bold text-sm">Italia</div>
+              <div class="text-xs opacity-90">1990</div>
+            </div>
+            <div class="world-cup bg-gradient-to-b from-blue-400 to-blue-600 text-white p-3 rounded-lg text-center shadow-lg">
+              <div class="font-bold text-sm">USA</div>
+              <div class="text-xs opacity-90">1994</div>
+            </div>
+            <div class="world-cup bg-gradient-to-b from-purple-400 to-purple-600 text-white p-3 rounded-lg text-center shadow-lg">
+              <div class="font-bold text-sm">Francia</div>
+              <div class="text-xs opacity-90">1998</div>
+            </div>
+          </div>
+          <blockquote class="text-base md:text-lg font-script text-pibe-gold italic border-l-4 border-colombian-yellow pl-3">
+            "Fue el símbolo del fútbol alegre, ofensivo y lleno de creatividad"
+          </blockquote>
+        </div>
+      </div>
+    </article>
+
+    <!-- Panel 8: 1995-2001 - Pionero en América -->
+    <article class="panel grid place-items-center bg-gradient-to-br from-orange-500/10 to-white">
+      <div class="w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div class="flex justify-center order-1 md:order-1">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <Image 
+              src={Retiro} 
+              alt="El Pibe en MLS y Sudamerica"
+              class="block w-[75vw] md:w-[35vw] h-[50vh] object-cover will-transform timeline-image"
+              width={500}
+              height={600}
+              loading="lazy"
+            />
+            <div class="year-badge absolute -top-6 -left-6 bg-orange-600 text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg">
+              1995-01
+            </div>
+          </div>
+        </div>
+        <div class="order-2 md:order-2 px-2 md:px-6 will-transform timeline-text">
+          <h3 class="text-2xl md:text-3xl font-display font-bold text-colombian-blue mb-4">
+            Pionero en América
+          </h3>
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
+            Jugó en Brasil con Atlético Mineiro y fue pionero internacional en la MLS, 
+            vistiendo las camisetas de Tampa Bay Mutiny y Miami Fusion. Se convirtió en 
+            figura y embajador del fútbol latino en Estados Unidos.
+          </p>
+          <div class="american-journey bg-white p-4 rounded-xl shadow-lg mb-4">
+            <h4 class="font-bold text-orange-600 mb-3">Etapa Americana</h4>
+            <ul class="space-y-2 text-sm">
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-green-600 rounded-full mr-2"></span>
+                1995-96: Atlético Mineiro (Brasil)
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
+                1996-98: Tampa Bay Mutiny (MLS)
+              </li>
+              <li class="flex items-center">
+                <span class="w-2 h-2 bg-orange-500 rounded-full mr-2"></span>
+                1998-01: Miami Fusion (MLS)
+              </li>
+            </ul>
+          </div>
+          <blockquote class="text-base md:text-lg font-script text-pibe-gold italic border-l-4 border-orange-600 pl-3">
+            "Fui embajador del fútbol alegre en toda América"
+          </blockquote>
+        </div>
+      </div>
+    </article>
+
+    <!-- Panel 9: 2001 - Retiro y legado eterno -->
+    <article class="panel grid place-items-center bg-gradient-to-br from-pibe-gold/10 to-white">
+      <div class="w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+        <div class="order-2 md:order-1 px-2 md:px-6 will-transform timeline-text">
+          <h3 class="text-2xl md:text-3xl font-display font-bold text-colombian-blue mb-4">
+            Retiro y legado eterno
+          </h3>
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-4">
+            Se despidió del fútbol profesional vistiendo la camiseta de Junior de Barranquilla 
+            tras más de 600 partidos profesionales. En 2004 fue incluido por FIFA y Pelé 
+            en la lista de los 100 mejores jugadores vivos.
+          </p>
+          <div class="legacy-stats bg-gradient-to-r from-colombian-blue to-pibe-gold text-white p-4 rounded-xl shadow-xl mb-4">
+            <h4 class="font-bold mb-3 text-sm">Su Legado Inmortal</h4>
+            <div class="grid grid-cols-2 gap-4 text-center">
+              <div>
+                <div class="text-2xl font-bold">600+</div>
+                <div class="text-xs opacity-90">Partidos profesionales</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold">111</div>
+                <div class="text-xs opacity-90">Partidos con Colombia</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold">2004</div>
+                <div class="text-xs opacity-90">FIFA Top 100</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold">∞</div>
+                <div class="text-xs opacity-90">Leyenda eterna</div>
+              </div>
+            </div>
+          </div>
+          <blockquote class="text-base md:text-lg font-script text-pibe-gold italic border-l-4 border-pibe-gold pl-3">
+            "Hoy sigue siendo embajador del fútbol colombiano y símbolo cultural con su inconfundible cabello dorado"
+          </blockquote>
+        </div>
+        <div class="flex justify-center order-1 md:order-2">
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+            <Image 
+              src={Retiro} 
+              alt="El retiro del Pibe en Junior"
+              class="block w-[75vw] md:w-[35vw] h-[50vh] object-cover will-transform timeline-image"
+              width={500}
+              height={600}
+              loading="lazy"
+            />
+            <div class="year-badge absolute -top-6 -right-6 bg-pibe-gold text-white px-4 py-2 rounded-full font-bold text-lg shadow-lg">
+              2001
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<style>
+  /* Configuración del timeline horizontal */
+  html, body { overflow-x: hidden; }
+  .will-transform { will-change: transform, opacity; }
+  
+  #quien-es .track { 
+    display: flex; 
+    height: 100vh; 
+  }
+  
+  #quien-es .panel { 
+    width: 100vw; 
+    height: 100vh; 
+    flex: 0 0 100vw; 
+  }
+
+  /* Estados iniciales para elementos del timeline */
+  .timeline-image {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+  }
+
+  .timeline-text {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  .year-badge {
+    opacity: 0;
+    transform: scale(0) rotate(-180deg);
+  }
+
+  .section-title,
+  .section-subtitle,
+  .decorative-line {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  /* Year badge animations */
+  .year-badge {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+  }
+
+  /* Progress bar styles */
+  .timeline-progress-bar {
+    backdrop-filter: blur(10px);
+    background: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .progress-background {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  }
+
+  .progress-fill {
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    #quien-es .panel {
+      padding: 1rem 0;
+    }
+    
+    .timeline-panel-mobile {
+      width: 95%;
+    }
+
+    .section-title {
+      font-size: 2rem;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+    }
+    
+    .year-badge {
+      font-size: 0.9rem;
+      padding: 0.5rem 0.8rem;
+    }
+    
+    .debut-stats {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+    
+    .world-cups {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+    
+    .legacy-stats .grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+
+    .timeline-image {
+      width: 85vw !important;
+      height: 45vh !important;
+    }
+
+    h3 {
+      font-size: 1.5rem !important;
+    }
+
+    p {
+      font-size: 0.9rem !important;
+    }
+  }
+</style>
+
+<script src="../scripts/quienEs-optimized.js"></script>

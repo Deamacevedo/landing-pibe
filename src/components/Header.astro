@@ -1,0 +1,247 @@
+---
+// src/components/Header.astro
+---
+
+<header id="header" class="fixed top-0 right-0 z-50">
+  <!-- Menu Toggle Button -->
+  <button id="menu-toggle" class="fixed top-6 right-6 w-16 h-16 bg-white rounded-full shadow-lg border-2 border-transparent flex items-center justify-center transition-all duration-500 hover:scale-110 hover:shadow-xl z-50" aria-label="Abrir menú de navegación" aria-expanded="false">
+    <!-- Colombian Flag as hamburger icon -->
+    <div class="flag-container w-8 h-6 relative overflow-hidden rounded-sm">
+      <!-- Amarillo (50% - proporción 2) -->
+      <div class="flag-yellow absolute top-0 left-0 w-full h-3 bg-yellow-400 transition-all duration-500 ease-out"></div>
+      <!-- Azul (25% - proporción 1) -->
+      <div class="flag-blue absolute top-3 left-0 w-full h-1.5 bg-blue-800 transition-all duration-500 ease-out"></div>
+      <!-- Rojo (25% - proporción 1) -->
+      <div class="flag-red absolute bottom-0 left-0 w-full h-1.5 bg-red-600 transition-all duration-500 ease-out"></div>
+    </div>
+  </button>
+
+  <!-- Full Screen Menu Overlay -->
+  <nav id="menu-overlay" class="fixed inset-0 bg-gradient-to-br from-blue-800 via-blue-900 to-gray-900 transform translate-x-full transition-transform duration-500 ease-in-out z-40" role="navigation" aria-label="Navegación principal">
+    <div class="h-full flex flex-col justify-center items-center relative overflow-hidden">
+      
+      <!-- Decorative elements -->
+      <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-20 left-20 w-32 h-32 border-4 border-yellow-400 rounded-full animate-pulse"></div>
+        <div class="absolute bottom-20 right-20 w-24 h-24 border-4 border-red-600 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-10 w-16 h-16 border-4 border-yellow-400 rotate-45 animate-pulse" style="animation-delay: 2s;"></div>
+      </div>
+
+      <!-- Logo en el menú con mejor tipografía -->
+      <div class="absolute top-8 left-8">
+        <div class="flex items-center space-x-3">
+          <!-- Mini bandera como logo -->
+          <div class="w-12 h-8 relative overflow-hidden rounded-sm shadow-md">
+            <div class="absolute top-0 left-0 w-full h-4 bg-yellow-400"></div>
+            <div class="absolute top-4 left-0 w-full h-2 bg-blue-800"></div>
+            <div class="absolute bottom-0 left-0 w-full h-2 bg-red-600"></div>
+          </div>
+          <h1 class="text-2xl font-bold text-yellow-400 font-oswald tracking-wider">EL PIBE</h1>
+        </div>
+      </div>
+
+      <!-- Menu Items -->
+      <ul class="flex flex-col items-center space-y-8 text-center">
+        <li class="menu-item opacity-0">
+          <a href="#hero" class="nav-link text-4xl md:text-6xl font-bold text-white hover:text-yellow-400 transition-all duration-300 font-oswald tracking-wide">
+            INICIO
+          </a>
+        </li>
+        <li class="menu-item opacity-0">
+          <a href="#quien-es" class="nav-link text-4xl md:text-6xl font-bold text-white hover:text-yellow-400 transition-all duration-300 font-oswald tracking-wide">
+            QUIÉN ES EL PIBE
+          </a>
+        </li>
+        <li class="menu-item opacity-0">
+          <a href="#momentos-iconicos" class="nav-link text-4xl md:text-6xl font-bold text-white hover:text-yellow-400 transition-all duration-300 font-oswald tracking-wide">
+            MOMENTOS ICÓNICOS
+          </a>
+        </li>
+        <li class="menu-item opacity-0">
+          <a href="#marcas" class="nav-link text-4xl md:text-6xl font-bold text-white hover:text-yellow-400 transition-all duration-300 font-oswald tracking-wide">
+            MARCAS
+          </a>
+        </li>
+        <li class="menu-item opacity-0">
+          <a href="#proyectos" class="nav-link text-4xl md:text-6xl font-bold text-white hover:text-yellow-400 transition-all duration-300 font-oswald tracking-wide">
+            PROYECTOS
+          </a>
+        </li>
+        <li class="menu-item opacity-0">
+          <a href="#contacto" class="nav-link text-4xl md:text-6xl font-bold text-yellow-400 hover:text-white transition-all duration-300 font-oswald tracking-wide border-b-4 border-yellow-400 hover:border-white pb-2">
+            CONTACTO
+          </a>
+        </li>
+      </ul>
+
+      <!-- Social Links con mejores iconos -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-8 opacity-0" id="social-links">
+        <a href="https://www.instagram.com/pibevalderrama10/" class="social-link group" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </div>
+        </a>
+        <a href="https://www.youtube.com/@PibeValderrama" class="social-link group" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+          <div class="w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </div>
+        </a>
+        <a href="https://www.facebook.com/PibeValderramaOficial" class="social-link group" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </div>
+        </a>
+        <a href="https://www.tiktok.com/@pibevalderrama" class="social-link group" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-6">
+            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      <!-- Colombian Flag Detail mejorada -->
+      <div class="absolute bottom-4 right-4">
+        <div class="w-16 h-10 relative overflow-hidden rounded-md shadow-lg border border-white/20">
+          <div class="absolute top-0 left-0 w-full h-5 bg-yellow-400"></div>
+          <div class="absolute top-5 left-0 w-full h-2.5 bg-blue-800"></div>
+          <div class="absolute bottom-0 left-0 w-full h-2.5 bg-red-600"></div>
+        </div>
+        <p class="text-white/60 text-xs mt-1 text-center font-medium">COLOMBIA</p>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  /* Fuentes personalizadas */
+  .font-oswald {
+    font-family: 'Oswald', sans-serif;
+  }
+
+  /* Flag button animation - smooth transformation */
+  .menu-open .flag-yellow {
+    transform: rotate(45deg) scale(0.8);
+    border-radius: 2px;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    margin-left: -16px;
+    margin-top: -1.5px;
+    width: 32px;
+    height: 3px;
+  }
+
+  .menu-open .flag-blue {
+    opacity: 0;
+    transform: scale(0) rotate(180deg);
+  }
+
+  .menu-open .flag-red {
+    transform: rotate(-45deg) scale(0.8);
+    border-radius: 2px;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: center;
+    margin-left: -16px;
+    margin-bottom: -1.5px;
+    width: 32px;
+    height: 3px;
+  }
+
+  /* Menu button enhanced hover effect */
+  #menu-toggle:hover {
+    border-color: #fbbf24;
+    box-shadow: 0 0 30px rgba(251, 191, 36, 0.4);
+    background: linear-gradient(135deg, #ffffff 0%, #fef9e7 100%);
+  }
+
+  #menu-toggle:hover .flag-container {
+    transform: scale(1.1);
+  }
+
+  /* Social links enhanced styling */
+  .social-link:hover {
+    transform: translateY(-4px);
+  }
+
+  .social-link div {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .social-link:hover div {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Navigation links hover effects */
+  .nav-link {
+    position: relative;
+    display: inline-block;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 4px;
+    bottom: -8px;
+    left: 50%;
+    background: linear-gradient(90deg, #fbbf24, #dc2626);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+
+  /* Menu items animation */
+  .menu-item {
+    transform: translateY(50px);
+    transition: all 0.5s ease;
+  }
+
+  .menu-item.animate {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  /* Colombian colors */
+  .text-colombian-yellow { color: #FCDD09; }
+  .text-colombian-blue { color: #003087; }
+  .text-colombian-red { color: #CE1126; }
+  .bg-colombian-yellow { background-color: #FCDD09; }
+  .bg-colombian-blue { background-color: #003087; }
+  .bg-colombian-red { background-color: #CE1126; }
+
+  /* Custom animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  /* Responsive text sizing */
+  @media (max-width: 768px) {
+    .nav-link {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .nav-link {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+<script src="../scripts/header.js"></script>
