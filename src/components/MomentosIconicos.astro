@@ -10,25 +10,25 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
 
 <section id="momentos-iconicos" class="relative h-screen overflow-hidden bg-gradient-to-b from-black to-gray-900">
   
-  <!-- Vertical timeline track container -->
+  <!-- Horizontal timeline track container -->
   <div class="timeline-track">
     
     <!-- Panel 1: Intro -->
     <article class="timeline-panel intro-panel grid place-items-center bg-gradient-to-br from-black via-gray-900 to-colombian-blue/20">
-      <div class="absolute inset-0 bg-black/40 z-10"></div>
+      <div class="absolute inset-0 bg-black/30 z-10"></div>
       <div class="absolute inset-0 z-0">
         <Image 
           src={PibeIntro} 
           alt="El Pibe Valderrama" 
-          class="block w-full h-full object-contain opacity-60 will-transform timeline-image"
+          class="block w-full h-full object-cover opacity-80 will-transform timeline-image"
           width={1920}
           height={1080}
-          loading="lazy"
+          loading="eager"
         />
-        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/60"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/50"></div>
       </div>
       
-      <div class="relative z-20 text-center px-8 max-w-6xl will-transform timeline-text">
+      <div class="relative z-20 text-center px-6 md:px-8 lg:px-12 max-w-6xl will-transform timeline-text">
         <h1 class="text-6xl md:text-8xl font-display font-bold text-white mb-8">
           Momentos
         </h1>
@@ -42,7 +42,7 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
             Estas imágenes y frases son parte de la historia del fútbol y de Colombia.
           </p>
           
-          <div class="frases-iconicas space-y-6">
+          <div class="frases-iconicas space-y-6 md:space-y-8 mt-8 md:mt-12">
             <blockquote class="text-3xl md:text-4xl font-script text-pibe-gold italic">
               "El que juega bien, no necesita correr."
             </blockquote>
@@ -58,15 +58,15 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
     <article class="timeline-panel grid place-items-center bg-gradient-to-br from-colombian-blue/20 to-purple-900/30">
       <div class="absolute inset-0 bg-black/60 z-0"></div>
       <div class="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-black/60 to-colombian-blue/30"></div>
-      <div class="relative z-10 w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="relative z-10 w-11/12 md:w-4/5 xl:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center min-h-[70vh]">
         <div class="flex justify-center order-1 md:order-1">
           <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
             <Image 
               src={PibeDay} 
               alt="Pibe Day en la MLS" 
-              class="block w-[78vw] md:w-[40vw] h-[56vh] object-cover will-transform timeline-image"
-              width={600}
-              height={400}
+              class="block w-[85vw] md:w-[42vw] h-[50vh] md:h-[60vh] object-cover will-transform timeline-image"
+              width={800}
+              height={600}
               loading="lazy"
             />
             <div class="year-badge absolute -top-6 -left-6 bg-purple-600 text-white px-6 py-3 rounded-full font-bold text-2xl shadow-lg">
@@ -74,7 +74,7 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
             </div>
           </div>
         </div>
-        <div class="order-2 md:order-2 px-2 md:px-8 will-transform timeline-text">
+        <div class="order-2 md:order-2 px-4 md:px-6 lg:px-8 will-transform timeline-text space-y-4 md:space-y-6">
           <h3 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">
             Pibe Day
           </h3>
@@ -106,8 +106,8 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
     <article class="timeline-panel grid place-items-center bg-gradient-to-br from-colombian-yellow/30 to-colombian-red/30">
       <div class="absolute inset-0 bg-black/50 z-0"></div>
       <div class="absolute inset-0 bg-gradient-to-br from-colombian-yellow/20 via-black/70 to-colombian-red/25"></div>
-      <div class="relative z-10 w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div class="order-2 md:order-1 px-2 md:px-8 will-transform timeline-text">
+      <div class="relative z-10 w-11/12 md:w-4/5 xl:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center min-h-[70vh]">
+        <div class="order-2 md:order-1 px-4 md:px-6 lg:px-8 will-transform timeline-text space-y-4 md:space-y-6">
           <h3 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">
             Colombia 5-0 Argentina
           </h3>
@@ -116,7 +116,7 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
             Valderrama fue el conductor de una orquesta perfecta. Esa victoria clasificó 
             a Colombia al <strong class="text-pibe-gold">Mundial 94</strong> y quedó en la historia del fútbol mundial.
           </p>
-          <div class="match-stats grid grid-cols-2 gap-4 mb-4">
+          <div class="match-stats grid grid-cols-2 gap-3 md:gap-4 mb-4 md:mb-6">
             <div class="stat-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg border-l-4 border-colombian-yellow">
               <div class="text-2xl font-bold text-colombian-yellow">5-0</div>
               <div class="text-sm text-gray-300">Resultado final</div>
@@ -145,9 +145,9 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
             <Image 
               src={Colombia5Argentina} 
               alt="Colombia 5-0 Argentina 1993" 
-              class="block w-[78vw] md:w-[40vw] h-[56vh] object-cover will-transform timeline-image"
-              width={600}
-              height={400}
+              class="block w-[85vw] md:w-[42vw] h-[50vh] md:h-[60vh] object-cover will-transform timeline-image"
+              width={800}
+              height={600}
               loading="lazy"
             />
             <div class="year-badge absolute -top-6 -right-6 bg-gradient-to-r from-colombian-yellow to-colombian-red text-white px-6 py-3 rounded-full font-bold text-2xl shadow-lg">
@@ -162,15 +162,15 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
     <article class="timeline-panel grid place-items-center bg-gradient-to-br from-green-900/30 to-blue-900/30">
       <div class="absolute inset-0 bg-black/55 z-0"></div>
       <div class="absolute inset-0 bg-gradient-to-br from-green-900/30 via-black/60 to-blue-900/35"></div>
-      <div class="relative z-10 w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      <div class="relative z-10 w-11/12 md:w-4/5 xl:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center min-h-[70vh]">
         <div class="flex justify-center order-1 md:order-1">
           <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
             <Image 
               src={BeckhamPide} 
               alt="Beckham pide camiseta a Valderrama" 
-              class="block w-[78vw] md:w-[40vw] h-[56vh] object-cover will-transform timeline-image"
-              width={600}
-              height={400}
+              class="block w-[85vw] md:w-[42vw] h-[50vh] md:h-[60vh] object-cover will-transform timeline-image"
+              width={800}
+              height={600}
               loading="lazy"
             />
             <div class="year-badge absolute -top-6 -left-6 bg-green-600 text-white px-6 py-3 rounded-full font-bold text-2xl shadow-lg">
@@ -178,7 +178,7 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
             </div>
           </div>
         </div>
-        <div class="order-2 md:order-2 px-2 md:px-8 will-transform timeline-text">
+        <div class="order-2 md:order-2 px-4 md:px-6 lg:px-8 will-transform timeline-text space-y-4 md:space-y-6">
           <h3 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">
             Beckham pide la camiseta
           </h3>
@@ -215,8 +215,8 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
     <article class="timeline-panel grid place-items-center bg-gradient-to-br from-red-900/30 to-yellow-600/30">
       <div class="absolute inset-0 bg-black/50 z-0"></div>
       <div class="absolute inset-0 bg-gradient-to-br from-red-900/35 via-black/65 to-yellow-600/30"></div>
-      <div class="relative z-10 w-11/12 md:w-4/5 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-        <div class="order-2 md:order-1 px-2 md:px-8 will-transform timeline-text">
+      <div class="relative z-10 w-11/12 md:w-4/5 xl:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center min-h-[70vh]">
+        <div class="order-2 md:order-1 px-4 md:px-6 lg:px-8 will-transform timeline-text space-y-4 md:space-y-6">
           <h3 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">
             La asistencia histórica
           </h3>
@@ -225,7 +225,7 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
             para el histórico empate <strong class="text-pibe-gold">1-1 contra Alemania</strong>, clasificando a Colombia 
             a octavos de final por primera vez en su historia.
           </p>
-          <div class="historic-stats grid grid-cols-2 gap-4 mb-4">
+          <div class="historic-stats grid grid-cols-2 gap-3 md:gap-4 mb-4 md:mb-6">
             <div class="stat-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg border-l-4 border-red-600 text-center">
               <div class="text-3xl font-bold text-pibe-gold">1-1</div>
               <div class="text-sm text-gray-300">Resultado final</div>
@@ -255,9 +255,9 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
             <Image 
               src={GolAlemania} 
               alt="Asistencia a Rincón vs Alemania" 
-              class="block w-[78vw] md:w-[40vw] h-[56vh] object-cover will-transform timeline-image"
-              width={600}
-              height={400}
+              class="block w-[85vw] md:w-[42vw] h-[50vh] md:h-[60vh] object-cover will-transform timeline-image"
+              width={800}
+              height={600}
               loading="lazy"
             />
             <div class="year-badge absolute -top-6 -right-6 bg-gradient-to-r from-red-600 to-yellow-600 text-white px-6 py-3 rounded-full font-bold text-2xl shadow-lg">
@@ -272,7 +272,7 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
     <article class="timeline-panel closing-panel grid place-items-center bg-gradient-to-br from-black/80 via-colombian-blue/30 to-pibe-gold/30">
       <div class="absolute inset-0 bg-black/40 z-0"></div>
       <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-colombian-blue/20 to-pibe-gold/25"></div>
-      <div class="relative z-10 text-center px-8 max-w-4xl will-transform timeline-text">
+      <div class="relative z-10 text-center px-6 md:px-8 lg:px-12 max-w-4xl will-transform timeline-text">
         <h2 class="text-5xl md:text-7xl font-display font-bold text-white mb-8">
           Eterno <span class="text-pibe-gold">Pibe</span>
         </h2>
@@ -306,114 +306,137 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
 
   </div>
 
-  <!-- Vertical Progress Bar -->
-  <div class="timeline-progress-bar fixed right-6 top-1/2 transform -translate-y-1/2 w-2 h-80 z-50 opacity-0 transition-opacity duration-500">
+  <!-- Horizontal Progress Bar -->
+  <div class="timeline-progress-bar fixed top-0 left-0 w-full z-50 opacity-0 transition-opacity duration-500">
     <!-- Background track -->
-    <div class="progress-background h-full w-full relative overflow-hidden rounded-full">
+    <div class="progress-background h-2 w-full relative overflow-hidden">
       <!-- Flag colors background (50% yellow, 25% blue, 25% red) -->
-      <div class="flag-divisions absolute inset-0 flex flex-col">
-        <div class="bg-colombian-yellow/20" style="height: 50%;"></div>
-        <div class="bg-colombian-blue/20" style="height: 25%;"></div>
-        <div class="bg-colombian-red/20" style="height: 25%;"></div>
+      <div class="flag-divisions absolute inset-0 flex">
+        <div class="bg-colombian-yellow/20" style="width: 50%;"></div>
+        <div class="bg-colombian-blue/20" style="width: 25%;"></div>
+        <div class="bg-colombian-red/20" style="width: 25%;"></div>
       </div>
       
       <!-- Active progress -->
-      <div class="progress-active h-full w-full relative overflow-hidden">
-        <div class="progress-fill-container absolute bottom-0 left-0 w-full flex flex-col transition-all duration-400 ease-out" style="height: 0%;">
-          <!-- Colors from bottom to top with their proportions -->
-          <div class="progress-fill-red w-full bg-colombian-red" style="height: 25%;"></div>
-          <div class="progress-fill-blue w-full bg-colombian-blue" style="height: 25%;"></div>
-          <div class="progress-fill-yellow w-full bg-colombian-yellow" style="height: 50%;"></div>
+      <div class="progress-active h-full relative overflow-hidden">
+        <div class="progress-fill-container absolute top-0 left-0 h-full flex transition-all duration-400 ease-out" style="width: 0%;">
+          <!-- Colors from left to right with their proportions -->
+          <div class="progress-fill-yellow h-full bg-colombian-yellow" style="width: 50%;"></div>
+          <div class="progress-fill-blue h-full bg-colombian-blue" style="width: 25%;"></div>
+          <div class="progress-fill-red h-full bg-colombian-red" style="width: 25%;"></div>
         </div>
       </div>
     </div>
     
     <!-- Panel indicators -->
-    <div class="progress-indicators absolute -left-8 top-0 h-full flex flex-col justify-between text-xs font-bold text-gray-700">
-      <span class="timeline-indicator bg-white/90 px-2 py-1 rounded shadow-sm">Inicio</span>
-      <span class="timeline-indicator bg-white/90 px-2 py-1 rounded shadow-sm">Pibe Day</span>
-      <span class="timeline-indicator bg-white/90 px-2 py-1 rounded shadow-sm">5-0</span>
-      <span class="timeline-indicator bg-white/90 px-2 py-1 rounded shadow-sm">Beckham</span>
-      <span class="timeline-indicator bg-white/90 px-2 py-1 rounded shadow-sm">Italia 90</span>
-      <span class="timeline-indicator bg-white/90 px-2 py-1 rounded shadow-sm">Eterno</span>
+    <div class="progress-labels absolute top-3 left-0 w-full px-4">
+      <div class="flex justify-between text-xs font-bold text-gray-700">
+        <span class="timeline-label bg-white/90 px-2 py-1 rounded shadow-sm">Intro</span>
+        <span class="timeline-label bg-white/90 px-2 py-1 rounded shadow-sm">Pibe Day</span>
+        <span class="timeline-label bg-white/90 px-2 py-1 rounded shadow-sm">5-0</span>
+        <span class="timeline-label bg-white/90 px-2 py-1 rounded shadow-sm">Beckham</span>
+        <span class="timeline-label bg-white/90 px-2 py-1 rounded shadow-sm">Italia 90</span>
+        <span class="timeline-label bg-white/90 px-2 py-1 rounded shadow-sm">Eterno</span>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
-  /* Configuración del timeline vertical */
+  /* Configuración del timeline horizontal */
   html, body { overflow-x: hidden; }
   .will-transform { will-change: transform, opacity; }
   
   #momentos-iconicos .timeline-track { 
     display: flex; 
-    flex-direction: column;
-    height: auto;
+    height: 100vh;
   }
   
   #momentos-iconicos .timeline-panel { 
     width: 100vw; 
     height: 100vh; 
-    flex: 0 0 100vh; 
+    flex: 0 0 100vw;
+    position: relative;
+    overflow: hidden;
   }
 
   /* Estados iniciales para elementos del timeline */
   .timeline-image {
     opacity: 0;
-    transform: translateY(30px) scale(0.9);
+    transform: translateY(20px) scale(0.98);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    filter: brightness(0.9);
+  }
+  
+  /* Panel intro específico */
+  .intro-panel .timeline-image {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+    filter: brightness(1) contrast(1.1);
   }
 
   .timeline-text {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   .year-badge {
     opacity: 0;
-    transform: scale(0) rotate(-180deg);
+    transform: scale(0.8) rotate(-45deg);
+    transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 
   /* Year badge animations */
   .year-badge {
-    animation: float 3s ease-in-out infinite;
+    animation: float 4s ease-in-out infinite;
   }
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-5px); }
+    0%, 100% { 
+      transform: translateY(0px) scale(1) rotate(0deg); 
+    }
+    25% { 
+      transform: translateY(-3px) scale(1.02) rotate(1deg); 
+    }
+    50% { 
+      transform: translateY(-6px) scale(1.05) rotate(0deg); 
+    }
+    75% { 
+      transform: translateY(-3px) scale(1.02) rotate(-1deg); 
+    }
   }
 
-  /* Progress bar styles para vertical */
+  /* Progress bar styles para horizontal */
   .timeline-progress-bar {
     backdrop-filter: blur(10px);
-    background: linear-gradient(to right, rgba(255,255,255,0.1), transparent);
-    border-left: 1px solid rgba(255,255,255,0.1);
+    background: linear-gradient(to bottom, rgba(255,255,255,0.1), transparent);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
 
   .progress-background {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
   }
 
   .flag-divisions {
-    border-left: 1px solid rgba(255,255,255,0.2);
+    border-bottom: 1px solid rgba(255,255,255,0.2);
   }
 
   .progress-fill-yellow,
   .progress-fill-blue,
   .progress-fill-red {
-    transition: height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     box-shadow: 0 0 10px rgba(255,255,255,0.3);
   }
 
-  .timeline-indicator {
+  .timeline-label {
     font-size: 10px;
     backdrop-filter: blur(5px);
     border: 1px solid rgba(0,0,0,0.1);
     transition: all 0.3s ease;
   }
 
-  .timeline-indicator:hover {
+  .timeline-label:hover {
     transform: scale(1.05);
     background: white;
   }
@@ -425,18 +448,18 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
 
   /* Efectos de colores más vibrantes */
   .progress-fill-yellow {
-    background: linear-gradient(180deg, #FCDD09, #FFE55C);
+    background: linear-gradient(90deg, #FCDD09, #FFE55C);
   }
 
   .progress-fill-blue {
-    background: linear-gradient(180deg, #003087, #1E4F8C);
+    background: linear-gradient(90deg, #003087, #1E4F8C);
   }
 
   .progress-fill-red {
-    background: linear-gradient(180deg, #C8102E, #E53E3E);
+    background: linear-gradient(90deg, #C8102E, #E53E3E);
   }
 
-  .progress-indicators span {
+  .progress-labels span {
     background: rgba(255, 255, 255, 0.9);
     padding: 2px 6px;
     border-radius: 4px;
@@ -476,7 +499,7 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
   /* Responsive adjustments */
   @media (max-width: 768px) {
     #momentos-iconicos .timeline-panel {
-      padding: 1rem 0;
+      padding: 2rem 0;
     }
     
     .w-11\/12 {
@@ -484,24 +507,52 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
     }
     
     .year-badge {
-      font-size: 1rem;
+      font-size: 0.9rem;
       padding: 0.5rem 1rem;
+      top: -1rem !important;
+      left: -1rem !important;
+      right: -1rem !important;
     }
     
     .match-stats,
     .historic-stats {
       grid-template-columns: 1fr;
-      gap: 0.5rem;
+      gap: 0.75rem;
     }
 
+    .progress-labels {
+      font-size: 8px;
+      margin-top: 0.25rem;
+    }
+    
+    .timeline-label {
+      padding: 1px 4px !important;
+      font-size: 8px !important;
+    }
+    
+    .min-h-\[70vh\] {
+      min-height: 80vh;
+    }
+    
+    .space-y-4 > * + * {
+      margin-top: 1.5rem;
+    }
+    
     .timeline-progress-bar {
-      right: 1rem;
-      width: 1.5rem;
-      height: 60vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
     }
-
-    .progress-indicators {
-      display: none;
+  }
+  
+  @media (min-width: 1024px) {
+    .gap-6 {
+      gap: 3rem;
+    }
+    
+    .lg\:gap-12 {
+      gap: 4rem;
     }
   }
 
@@ -513,7 +564,73 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
 
   /* Smooth transitions */
   .timeline-panel {
-    transition: opacity 0.3s ease;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .timeline-panel.active {
+    filter: brightness(1.1);
+  }
+  
+  .timeline-panel:not(.active) {
+    filter: brightness(0.8) contrast(0.9);
+  }
+  
+  /* Elementos animados mejorados */
+  .stat-card,
+  .video-link-card,
+  .respect-moment,
+  .legacy-card {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  
+  .stat-card:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  }
+  
+  /* Efectos de parallax suave en imágenes */
+  .timeline-panel:nth-child(even) .timeline-image {
+    transform-origin: right center;
+  }
+  
+  .timeline-panel:nth-child(odd) .timeline-image {
+    transform-origin: left center;
+  }
+  
+  /* Mejoras de performance adicionales */
+  .timeline-panel,
+  .timeline-image,
+  .timeline-text,
+  .year-badge {
+    will-change: transform, opacity;
+  }
+  
+  /* Estados de hover para cards interactivos */
+  .video-link-card:hover,
+  .respect-moment:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Animación de entrada para blockquotes */
+  blockquote {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  blockquote::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.8s ease;
+  }
+  
+  blockquote:hover::before {
+    left: 100%;
   }
 </style>
 

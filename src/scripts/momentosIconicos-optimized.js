@@ -1,10 +1,10 @@
-// ===== TIMELINE VERTICAL MOMENTOS ICÓNICOS OPTIMIZADO =====
+// ===== TIMELINE HORIZONTAL MOMENTOS ICÓNICOS OPTIMIZADO =====
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import scrollOptimizer from './scroll-optimizer.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('🚀 TIMELINE VERTICAL OPTIMIZADO');
+  console.log('🚀 TIMELINE HORIZONTAL MOMENTOS ICÓNICOS');
 
   // ===== ELEMENTOS =====
   const wrapper = document.querySelector("#momentos-iconicos");
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const progressContainer = document.querySelector('.progress-fill-container');
 
   if (!wrapper || !track || panels.length === 0) {
-    console.log('❌ No se encontraron elementos del timeline vertical');
+    console.log('❌ No se encontraron elementos del timeline horizontal');
     return;
   }
 
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     start: "top top",
     end: () => "+=" + (window.innerHeight * panels.length * 1.5),
     onUpdate: (self) => {
-      updateVerticalTimeline(self.progress);
+      updateHorizontalTimeline(self.progress);
     },
     onEnter: () => {
       wrapper.classList.add('pinned');
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollOptimizer.optimizedTo(progressBar, { opacity: 0, duration: 0.2 });
         progressBar.classList.remove('show');
       }
-      scrollOptimizer.optimizedSet(track, { yPercent: -100 * (panels.length - 1) });
+      scrollOptimizer.optimizedSet(track, { xPercent: -100 * (panels.length - 1) });
     },
     onLeaveBack: () => {
       wrapper.classList.add('pinned');
@@ -51,17 +51,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ===== FUNCIÓN PRINCIPAL DE ACTUALIZACIÓN OPTIMIZADA =====
-  function updateVerticalTimeline(globalProgress) {
+  function updateHorizontalTimeline(globalProgress) {
     const totalPanels = panels.length;
     const panelIndex = Math.min(Math.floor(globalProgress * totalPanels), totalPanels - 1);
     const localProgress = (globalProgress * totalPanels) % 1;
 
-    updateVerticalProgressBar(globalProgress);
+    updateHorizontalProgressBar(globalProgress);
 
     if (panelIndex === totalPanels - 1) {
       handleFinalPanel(localProgress);
     } else {
-      updatePanelsWithVerticalLogic(panelIndex, localProgress);
+      updatePanelsWithHorizontalLogic(panelIndex, localProgress);
     }
   }
 
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const lastPanelIndex = panels.length - 1;
     const lastPanel = panels[lastPanelIndex];
     
-    scrollOptimizer.optimizedSet(track, { yPercent: -100 * lastPanelIndex });
+    scrollOptimizer.optimizedSet(track, { xPercent: -100 * lastPanelIndex });
     
     const elements = getElementsFromPanel(lastPanel);
 
@@ -101,8 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ===== ACTUALIZAR PANELES CON LÓGICA VERTICAL OPTIMIZADA =====
-  function updatePanelsWithVerticalLogic(currentPanel, localProgress) {
+  // ===== ACTUALIZAR PANELES CON LÓGICA HORIZONTAL OPTIMIZADA =====
+  function updatePanelsWithHorizontalLogic(currentPanel, localProgress) {
     panels.forEach((panel, index) => {
       const elements = getElementsFromPanel(panel);
 
@@ -111,8 +111,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (localProgress > 0.9) {
           const moveProgress = (localProgress - 0.9) / 0.1;
-          const targetY = -100 * index - (moveProgress * 100);
-          scrollOptimizer.optimizedSet(track, { yPercent: targetY });
+          const targetX = -100 * index - (moveProgress * 100);
+          scrollOptimizer.optimizedSet(track, { xPercent: targetX });
           
           const allElements = Object.values(elements).flat().filter(Boolean);
           allElements.forEach(el => {
@@ -124,7 +124,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
           });
         } else {
-          scrollOptimizer.optimizedSet(track, { yPercent: -100 * index });
+          scrollOptimizer.optimizedSet(track, { xPercent: -100 * index });
         }
 
         if (localProgress <= 0.85) {
@@ -257,17 +257,33 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ===== BARRA DE PROGRESO VERTICAL OPTIMIZADA =====
-  function updateVerticalProgressBar(progress) {
-    const containerHeight = progress * 100;
+  // ===== BARRA DE PROGRESO HORIZONTAL OPTIMIZADA =====
+  function updateHorizontalProgressBar(progress) {
+    const containerWidth = progress * 100;
 
     if (progressContainer) {
       scrollOptimizer.optimizedTo(progressContainer, {
-        height: `${containerHeight}%`,
+        width: `${containerWidth}%`,
         duration: 0.2
       });
     }
+
+    // Actualizar indicadores de panel activo
+    const currentPanelIndex = Math.floor(progress * panels.length);
+    const labels = document.querySelectorAll('.timeline-label');
+    
+    labels.forEach((label, index) => {
+      if (index === currentPanelIndex) {
+        label.style.background = 'rgba(252, 221, 9, 0.9)';
+        label.style.color = 'black';
+        label.style.fontWeight = 'bold';
+      } else {
+        label.style.background = 'rgba(255, 255, 255, 0.9)';
+        label.style.color = 'rgb(55, 65, 81)';
+        label.style.fontWeight = 'normal';
+      }
+    });
   }
 
-  console.log('✅ Timeline vertical optimizado inicializado');
+  console.log('✅ Timeline horizontal de Momentos Icónicos inicializado');
 });
