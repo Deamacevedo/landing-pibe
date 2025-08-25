@@ -2,15 +2,15 @@
 // Proyectos destacados del Pibe Valderrama
 ---
 
-<section id="proyectos" class="relative py-20 bg-gradient-to-br from-gray-900 via-black to-gray-800 overflow-hidden">
+<section id="proyectos" class="relative min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 overflow-hidden flex flex-col">
   
   <!-- Título de la sección -->
-  <div class="container mx-auto px-4 mb-12">
-    <div class="text-center">
-      <h2 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6">
+  <div class="container mx-auto px-4 py-16 md:py-20">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-8">
         Sus <span class="text-pibe-gold">Proyectos</span>
       </h2>
-      <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+      <p class="text-lg md:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
         Más allá del fútbol, el Pibe ha explorado diferentes facetas del entretenimiento 
         y la comunicación, llevando su carisma a nuevos escenarios.
       </p>
@@ -18,8 +18,8 @@
   </div>
 
   <!-- Contenedor de scroll horizontal -->
-  <div class="proyectos-container relative">
-    <div class="proyectos-scroll flex gap-8 px-4 md:px-8 pb-4" id="proyectos-scroll">
+  <div class="proyectos-container relative flex-grow flex items-center">
+    <div class="proyectos-scroll flex gap-8 px-4 md:px-8 py-8" id="proyectos-scroll">
       
       <!-- Proyecto 1: Cine -->
       <article class="proyecto-card flex-shrink-0 group">
@@ -34,8 +34,8 @@
           </div>
 
           <!-- Contenido -->
-          <div class="proyecto-content">
-            <div class="proyecto-category text-red-400 text-sm font-semibold uppercase tracking-wide mb-2">
+          <div class="proyecto-content text-center">
+            <div class="proyecto-category text-red-400 text-sm font-semibold uppercase tracking-wide mb-3">
               Cine
             </div>
             
@@ -43,24 +43,26 @@
               Por un puñado de pelos
             </h3>
             
-            <div class="proyecto-year text-pibe-gold font-bold text-lg mb-4">
+            <div class="proyecto-year text-pibe-gold font-bold text-xl mb-6">
               2014
             </div>
             
-            <p class="proyecto-description text-gray-300 leading-relaxed mb-8 flex-grow">
+            <p class="proyecto-description text-gray-300 leading-relaxed mb-8 flex-grow text-center">
               El Pibe incursionó en el cine interpretándose a sí mismo en esta comedia venezolana 
               dirigida por Andrés Duque. Una experiencia única que llevó su carisma a la pantalla grande.
             </p>
             
-            <a href="https://www.youtube.com/watch?v=FXW1Jg3OJ9c" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="proyecto-btn inline-flex items-center bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-full font-semibold hover:from-red-600 hover:to-red-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-              Ver más
-            </a>
+            <div class="flex justify-center">
+              <a href="https://www.youtube.com/watch?v=FXW1Jg3OJ9c" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="proyecto-btn inline-flex items-center bg-gradient-to-r from-red-500 to-red-600 text-white px-6 py-3 rounded-full font-semibold hover:from-red-600 hover:to-red-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+                Ver más
+              </a>
+            </div>
           </div>
         </div>
       </article>
@@ -78,8 +80,8 @@
           </div>
 
           <!-- Contenido -->
-          <div class="proyecto-content">
-            <div class="proyecto-category text-blue-400 text-sm font-semibold uppercase tracking-wide mb-2">
+          <div class="proyecto-content text-center">
+            <div class="proyecto-category text-blue-400 text-sm font-semibold uppercase tracking-wide mb-3">
               Televisión Internacional
             </div>
             
@@ -87,24 +89,26 @@
               RT en Español - Mundial Rusia
             </h3>
             
-            <div class="proyecto-year text-pibe-gold font-bold text-lg mb-4">
+            <div class="proyecto-year text-pibe-gold font-bold text-xl mb-6">
               2018
             </div>
             
-            <p class="proyecto-description text-gray-300 leading-relaxed mb-8 flex-grow">
+            <p class="proyecto-description text-gray-300 leading-relaxed mb-8 flex-grow text-center">
               Fue comentarista estrella durante el Mundial de Rusia, conectando con millones de 
               espectadores con su estilo auténtico y análisis únicos del fútbol mundial.
             </p>
             
-            <a href="https://actualidad.rt.com/actualidad/279238-valderrama-rusia-poder-llegar-lejos-mundial" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="proyecto-btn inline-flex items-center bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:from-blue-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
-              </svg>
-              Ver más
-            </a>
+            <div class="flex justify-center">
+              <a href="https://actualidad.rt.com/actualidad/279238-valderrama-rusia-poder-llegar-lejos-mundial" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="proyecto-btn inline-flex items-center bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:from-blue-600 hover:to-blue-700 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                </svg>
+                Ver más
+              </a>
+            </div>
           </div>
         </div>
       </article>
@@ -122,8 +126,8 @@
           </div>
 
           <!-- Contenido -->
-          <div class="proyecto-content">
-            <div class="proyecto-category text-red-400 text-sm font-semibold uppercase tracking-wide mb-2">
+          <div class="proyecto-content text-center">
+            <div class="proyecto-category text-red-400 text-sm font-semibold uppercase tracking-wide mb-3">
               Contenido Digital
             </div>
             
@@ -131,24 +135,26 @@
               Canal de YouTube
             </h3>
             
-            <div class="proyecto-year text-pibe-gold font-bold text-lg mb-4">
+            <div class="proyecto-year text-pibe-gold font-bold text-xl mb-6">
               Presente
             </div>
             
-            <p class="proyecto-description text-gray-300 leading-relaxed mb-8 flex-grow">
+            <p class="proyecto-description text-gray-300 leading-relaxed mb-8 flex-grow text-center">
               Canal propio donde mezcla entrevistas, análisis de partidos y recuerdos de su carrera. 
               Un espacio íntimo para conectar directamente con los fanáticos del fútbol.
             </p>
             
-            <a href="https://www.youtube.com/@pibevalderramap" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               class="proyecto-btn inline-flex items-center bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 rounded-full font-semibold hover:from-red-700 hover:to-red-800 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
-              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M8 5v14l11-7z"/>
-              </svg>
-              Ver canal
-            </a>
+            <div class="flex justify-center">
+              <a href="https://www.youtube.com/@pibevalderramap" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="proyecto-btn inline-flex items-center bg-gradient-to-r from-red-600 to-red-700 text-white px-6 py-3 rounded-full font-semibold hover:from-red-700 hover:to-red-800 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+                Ver canal
+              </a>
+            </div>
           </div>
         </div>
       </article>
@@ -156,7 +162,7 @@
     </div>
 
     <!-- Indicador de scroll (opcional) -->
-    <div class="scroll-indicator flex justify-center mt-8">
+    <div class="scroll-indicator flex justify-center py-8">
       <div class="flex items-center text-gray-400 text-sm">
         <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 24 24">
           <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>

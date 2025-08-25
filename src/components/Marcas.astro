@@ -3,28 +3,28 @@ import { Image } from 'astro:assets';
 // Importar logos de marcas (placeholder - reemplazar con logos reales)
 ---
 
-<section id="marcas" class="relative min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100 py-20 overflow-hidden">
+<section id="marcas" class="relative min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100 overflow-hidden flex flex-col justify-center">
   
   <!-- Título y subtítulo -->
-  <div class="container mx-auto px-4 text-center mb-16">
-    <h2 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 mb-6">
+  <div class="container mx-auto px-4 text-center py-12 md:py-16">
+    <h2 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 mb-8">
       Marcas que han <span class="text-pibe-gold">confiado</span> en él
     </h2>
-    <p class="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto">
+    <p class="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto mb-12">
       Grandes marcas han confiado en el Pibe como embajador por su autenticidad, 
       conexión con el público y credibilidad nacional e internacional.
     </p>
   </div>
 
   <!-- Carrusel infinito de marcas -->
-  <div class="carousel-container relative">
+  <div class="carousel-container relative flex-grow flex items-center py-8">
     <div class="carousel-track flex items-center" id="carousel-track">
       
       <!-- Primera serie de logos -->
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-8 lg:p-12 hover-brand">
+        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
           <!-- Logo Coca-Cola (placeholder) -->
-          <div class="logo-placeholder h-16 lg:h-20 flex items-center justify-center">
+          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
             <svg class="h-full w-auto text-red-600" viewBox="0 0 200 60" fill="currentColor">
               <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">Coca-Cola</text>
             </svg>
@@ -33,9 +33,9 @@ import { Image } from 'astro:assets';
       </div>
 
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-8 lg:p-12 hover-brand">
+        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
           <!-- Logo Adidas (placeholder) -->
-          <div class="logo-placeholder h-16 lg:h-20 flex items-center justify-center">
+          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
             <svg class="h-full w-auto text-black" viewBox="0 0 200 60" fill="currentColor">
               <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">adidas</text>
             </svg>
@@ -44,9 +44,9 @@ import { Image } from 'astro:assets';
       </div>
 
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-8 lg:p-12 hover-brand">
+        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
           <!-- Logo Pepsi (placeholder) -->
-          <div class="logo-placeholder h-16 lg:h-20 flex items-center justify-center">
+          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
             <svg class="h-full w-auto text-blue-600" viewBox="0 0 200 60" fill="currentColor">
               <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">PEPSI</text>
             </svg>
@@ -55,9 +55,9 @@ import { Image } from 'astro:assets';
       </div>
 
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-8 lg:p-12 hover-brand">
+        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
           <!-- Logo Mastercard (placeholder) -->
-          <div class="logo-placeholder h-16 lg:h-20 flex items-center justify-center">
+          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
             <svg class="h-full w-auto text-orange-500" viewBox="0 0 200 60" fill="currentColor">
               <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">Mastercard</text>
             </svg>
@@ -67,8 +67,8 @@ import { Image } from 'astro:assets';
 
       <!-- Segunda serie (duplicado para loop infinito) -->
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-8 lg:p-12 hover-brand">
-          <div class="logo-placeholder h-16 lg:h-20 flex items-center justify-center">
+        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
+          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
             <svg class="h-full w-auto text-red-600" viewBox="0 0 200 60" fill="currentColor">
               <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">Coca-Cola</text>
             </svg>
@@ -77,8 +77,8 @@ import { Image } from 'astro:assets';
       </div>
 
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-8 lg:p-12 hover-brand">
-          <div class="logo-placeholder h-16 lg:h-20 flex items-center justify-center">
+        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
+          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
             <svg class="h-full w-auto text-black" viewBox="0 0 200 60" fill="currentColor">
               <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">adidas</text>
             </svg>
@@ -87,8 +87,8 @@ import { Image } from 'astro:assets';
       </div>
 
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-8 lg:p-12 hover-brand">
-          <div class="logo-placeholder h-16 lg:h-20 flex items-center justify-center">
+        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
+          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
             <svg class="h-full w-auto text-blue-600" viewBox="0 0 200 60" fill="currentColor">
               <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">PEPSI</text>
             </svg>
@@ -97,8 +97,8 @@ import { Image } from 'astro:assets';
       </div>
 
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-8 lg:p-12 hover-brand">
-          <div class="logo-placeholder h-16 lg:h-20 flex items-center justify-center">
+        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
+          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
             <svg class="h-full w-auto text-orange-500" viewBox="0 0 200 60" fill="currentColor">
               <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">Mastercard</text>
             </svg>
@@ -108,8 +108,8 @@ import { Image } from 'astro:assets';
 
       <!-- Tercera serie (para asegurar loop perfecto) -->
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-8 lg:p-12 hover-brand">
-          <div class="logo-placeholder h-16 lg:h-20 flex items-center justify-center">
+        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
+          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
             <svg class="h-full w-auto text-red-600" viewBox="0 0 200 60" fill="currentColor">
               <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">Coca-Cola</text>
             </svg>
@@ -118,8 +118,8 @@ import { Image } from 'astro:assets';
       </div>
 
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-8 lg:p-12 hover-brand">
-          <div class="logo-placeholder h-16 lg:h-20 flex items-center justify-center">
+        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
+          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
             <svg class="h-full w-auto text-black" viewBox="0 0 200 60" fill="currentColor">
               <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">adidas</text>
             </svg>
@@ -128,8 +128,8 @@ import { Image } from 'astro:assets';
       </div>
 
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-8 lg:p-12 hover-brand">
-          <div class="logo-placeholder h-16 lg:h-20 flex items-center justify-center">
+        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
+          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
             <svg class="h-full w-auto text-blue-600" viewBox="0 0 200 60" fill="currentColor">
               <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">PEPSI</text>
             </svg>
@@ -138,8 +138,8 @@ import { Image } from 'astro:assets';
       </div>
 
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-8 lg:p-12 hover-brand">
-          <div class="logo-placeholder h-16 lg:h-20 flex items-center justify-center">
+        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
+          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
             <svg class="h-full w-auto text-orange-500" viewBox="0 0 200 60" fill="currentColor">
               <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">Mastercard</text>
             </svg>

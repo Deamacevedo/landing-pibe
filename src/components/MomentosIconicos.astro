@@ -14,7 +14,7 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
   <div class="timeline-track">
     
     <!-- Panel 1: Intro -->
-    <article class="timeline-panel intro-panel grid place-items-center bg-gradient-to-br from-black via-gray-900 to-colombian-blue/20">
+    <article class="timeline-panel intro-panel grid place-items-center bg-gradient-to-br from-black via-gray-900 to-colombian-blue/20 px-4 md:px-8 py-8 md:py-12">
       <div class="absolute inset-0 bg-black/30 z-10"></div>
       <div class="absolute inset-0 z-0">
         <Image 
@@ -28,7 +28,11 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
         <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/50"></div>
       </div>
       
-      <div class="relative z-20 text-center px-6 md:px-8 lg:px-12 max-w-6xl will-transform timeline-text">
+      <div class="relative z-20 text-center px-6 md:px-8 lg:px-12 max-w-6xl will-transform timeline-text space-y-8">
+        <!-- Título del momento en el área de contenido -->
+        <div class="moment-title bg-gradient-to-br from-pibe-gold to-yellow-400 text-black px-4 py-2 rounded-xl font-bold text-lg md:text-xl shadow-lg mb-6 inline-block">
+          Momentos Icónicos
+        </div>
         <h1 class="text-6xl md:text-8xl font-display font-bold text-white mb-8">
           Momentos
         </h1>
@@ -55,12 +59,12 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
     </article>
 
     <!-- Panel 2: Pibe Day (MLS) -->
-    <article class="timeline-panel grid place-items-center bg-gradient-to-br from-colombian-blue/20 to-purple-900/30">
+    <article class="timeline-panel grid place-items-center bg-gradient-to-br from-colombian-blue/20 to-purple-900/30 px-4 md:px-8 py-8 md:py-12">
       <div class="absolute inset-0 bg-black/60 z-0"></div>
       <div class="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-black/60 to-colombian-blue/30"></div>
-      <div class="relative z-10 w-11/12 md:w-4/5 xl:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center min-h-[70vh]">
-        <div class="flex justify-center order-1 md:order-1">
-          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20">
+      <div class="relative z-10 w-11/12 md:w-4/5 xl:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center min-h-[70vh]">
+        <div class="flex justify-center order-1 md:order-1 mb-8 md:mb-0">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 bg-white/10 backdrop-blur-sm">
             <Image 
               src={PibeDay} 
               alt="Pibe Day en la MLS" 
@@ -69,16 +73,17 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
               height={600}
               loading="lazy"
             />
-            <div class="year-badge absolute -top-6 -left-6 bg-purple-600 text-white px-6 py-3 rounded-full font-bold text-2xl shadow-lg">
-              1990s
-            </div>
           </div>
         </div>
-        <div class="order-2 md:order-2 px-4 md:px-6 lg:px-8 will-transform timeline-text space-y-4 md:space-y-6">
-          <h3 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">
+        <div class="order-2 md:order-2 px-4 md:px-6 lg:px-8 will-transform timeline-text space-y-6 md:space-y-8">
+          <!-- Título del momento en el área de contenido -->
+          <div class="moment-title bg-gradient-to-br from-purple-600 to-purple-700 text-white px-4 py-2 rounded-xl font-bold text-lg md:text-xl shadow-lg mb-4 inline-block">
+            Pibe Day - MLS
+          </div>
+          <h3 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6">
             Pibe Day
           </h3>
-          <p class="text-gray-200 text-lg leading-relaxed mb-4">
+          <p class="text-gray-200 text-lg md:text-xl leading-relaxed mb-8">
             El recordado <strong class="text-pibe-gold">Valderrama Day</strong> en la MLS, 
             cuando jugadores usaron pelucas para homenajearlo. Un homenaje único 
             al estilo inconfundible del genio colombiano.
@@ -103,11 +108,15 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
     </article>
 
     <!-- Panel 3: Colombia 5-0 Argentina -->
-    <article class="timeline-panel grid place-items-center bg-gradient-to-br from-colombian-yellow/30 to-colombian-red/30">
+    <article class="timeline-panel grid place-items-center bg-gradient-to-br from-colombian-yellow/30 to-colombian-red/30 px-4 md:px-8 py-8 md:py-12">
       <div class="absolute inset-0 bg-black/50 z-0"></div>
       <div class="absolute inset-0 bg-gradient-to-br from-colombian-yellow/20 via-black/70 to-colombian-red/25"></div>
       <div class="relative z-10 w-11/12 md:w-4/5 xl:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center min-h-[70vh]">
         <div class="order-2 md:order-1 px-4 md:px-6 lg:px-8 will-transform timeline-text space-y-4 md:space-y-6">
+          <!-- Título del momento en el área de contenido -->
+          <div class="moment-title bg-gradient-to-br from-colombian-yellow to-colombian-red text-white px-4 py-2 rounded-xl font-bold text-lg md:text-xl shadow-lg mb-4 inline-block">
+            5-0 vs Argentina
+          </div>
           <h3 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">
             Colombia 5-0 Argentina
           </h3>
@@ -150,16 +159,13 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
               height={600}
               loading="lazy"
             />
-            <div class="year-badge absolute -top-6 -right-6 bg-gradient-to-r from-colombian-yellow to-colombian-red text-white px-6 py-3 rounded-full font-bold text-2xl shadow-lg">
-              1993
-            </div>
           </div>
         </div>
       </div>
     </article>
 
     <!-- Panel 4: Beckham pide la camiseta -->
-    <article class="timeline-panel grid place-items-center bg-gradient-to-br from-green-900/30 to-blue-900/30">
+    <article class="timeline-panel grid place-items-center bg-gradient-to-br from-green-900/30 to-blue-900/30 px-4 md:px-8 py-8 md:py-12">
       <div class="absolute inset-0 bg-black/55 z-0"></div>
       <div class="absolute inset-0 bg-gradient-to-br from-green-900/30 via-black/60 to-blue-900/35"></div>
       <div class="relative z-10 w-11/12 md:w-4/5 xl:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center min-h-[70vh]">
@@ -173,12 +179,13 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
               height={600}
               loading="lazy"
             />
-            <div class="year-badge absolute -top-6 -left-6 bg-green-600 text-white px-6 py-3 rounded-full font-bold text-2xl shadow-lg">
-              Francia 98
-            </div>
           </div>
         </div>
         <div class="order-2 md:order-2 px-4 md:px-6 lg:px-8 will-transform timeline-text space-y-4 md:space-y-6">
+          <!-- Título del momento en el área de contenido -->
+          <div class="moment-title bg-gradient-to-br from-green-600 to-blue-600 text-white px-4 py-2 rounded-xl font-bold text-lg md:text-xl shadow-lg mb-4 inline-block">
+            Beckham & El Pibe
+          </div>
           <h3 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">
             Beckham pide la camiseta
           </h3>
@@ -212,11 +219,15 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
     </article>
 
     <!-- Panel 5: Gol contra Alemania (Italia 90) -->
-    <article class="timeline-panel grid place-items-center bg-gradient-to-br from-red-900/30 to-yellow-600/30">
+    <article class="timeline-panel grid place-items-center bg-gradient-to-br from-red-900/30 to-yellow-600/30 px-4 md:px-8 py-8 md:py-12">
       <div class="absolute inset-0 bg-black/50 z-0"></div>
       <div class="absolute inset-0 bg-gradient-to-br from-red-900/35 via-black/65 to-yellow-600/30"></div>
       <div class="relative z-10 w-11/12 md:w-4/5 xl:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center min-h-[70vh]">
         <div class="order-2 md:order-1 px-4 md:px-6 lg:px-8 will-transform timeline-text space-y-4 md:space-y-6">
+          <!-- Título del momento en el área de contenido -->
+          <div class="moment-title bg-gradient-to-br from-red-600 to-yellow-500 text-white px-4 py-2 rounded-xl font-bold text-lg md:text-xl shadow-lg mb-4 inline-block">
+            Italia 90
+          </div>
           <h3 class="text-3xl md:text-4xl font-display font-bold text-white mb-4">
             La asistencia histórica
           </h3>
@@ -260,19 +271,20 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
               height={600}
               loading="lazy"
             />
-            <div class="year-badge absolute -top-6 -right-6 bg-gradient-to-r from-red-600 to-yellow-600 text-white px-6 py-3 rounded-full font-bold text-2xl shadow-lg">
-              Italia 90
-            </div>
           </div>
         </div>
       </div>
     </article>
 
     <!-- Panel Final: Closing -->
-    <article class="timeline-panel closing-panel grid place-items-center bg-gradient-to-br from-black/80 via-colombian-blue/30 to-pibe-gold/30">
+    <article class="timeline-panel closing-panel grid place-items-center bg-gradient-to-br from-black/80 via-colombian-blue/30 to-pibe-gold/30 px-4 md:px-8 py-8 md:py-12">
       <div class="absolute inset-0 bg-black/40 z-0"></div>
       <div class="absolute inset-0 bg-gradient-to-br from-black/70 via-colombian-blue/20 to-pibe-gold/25"></div>
       <div class="relative z-10 text-center px-6 md:px-8 lg:px-12 max-w-4xl will-transform timeline-text">
+        <!-- Título del momento en el área de contenido -->
+        <div class="moment-title bg-gradient-to-br from-pibe-gold to-yellow-400 text-black px-4 py-2 rounded-xl font-bold text-lg md:text-xl shadow-lg mb-6 inline-block">
+          Legado Eterno
+        </div>
         <h2 class="text-5xl md:text-7xl font-display font-bold text-white mb-8">
           Eterno <span class="text-pibe-gold">Pibe</span>
         </h2>
@@ -381,29 +393,24 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
     transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
-  .year-badge {
+  .moment-title {
     opacity: 0;
-    transform: scale(0.8) rotate(-45deg);
-    transition: all 1s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: translateY(-20px) scale(0.9);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  /* Year badge animations */
-  .year-badge {
-    animation: float 4s ease-in-out infinite;
+  /* Moment title animations */
+  .moment-title {
+    animation: titleFloat 3s ease-in-out infinite;
   }
 
-  @keyframes float {
+  @keyframes titleFloat {
     0%, 100% { 
-      transform: translateY(0px) scale(1) rotate(0deg); 
-    }
-    25% { 
-      transform: translateY(-3px) scale(1.02) rotate(1deg); 
+      transform: translateY(0px) scale(1); 
     }
     50% { 
-      transform: translateY(-6px) scale(1.05) rotate(0deg); 
-    }
-    75% { 
-      transform: translateY(-3px) scale(1.02) rotate(-1deg); 
+      transform: translateY(-2px) scale(1.02); 
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     }
   }
 
@@ -506,12 +513,11 @@ import GolAlemania from '../assets/momentos/gol-alemania.jpg';
       width: 95%;
     }
     
-    .year-badge {
+    .moment-title {
       font-size: 0.9rem;
       padding: 0.5rem 1rem;
-      top: -1rem !important;
-      left: -1rem !important;
-      right: -1rem !important;
+      top: 0.5rem !important;
+      left: 0.5rem !important;
     }
     
     .match-stats,
