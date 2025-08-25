@@ -1,0 +1,522 @@
+---
+// Sección final de contacto empresarial con El Pibe Valderrama
+---
+
+<section id="contacto" class="relative min-h-screen bg-gradient-to-br from-colombian-yellow via-colombian-blue to-colombian-red overflow-hidden flex items-center">
+  
+  <!-- Fondo animado con partículas -->
+  <div class="absolute inset-0 overflow-hidden">
+    <!-- Gradiente base dinámico -->
+    <div class="absolute inset-0 bg-gradient-to-br from-colombian-yellow/90 via-colombian-blue/90 to-colombian-red/90 animate-gradient"></div>
+    
+    <!-- Círculos decorativos flotantes -->
+    <div class="floating-shapes">
+      <div class="floating-shape shape-1 bg-pibe-gold/20"></div>
+      <div class="floating-shape shape-2 bg-white/10"></div>
+      <div class="floating-shape shape-3 bg-pibe-gold/15"></div>
+      <div class="floating-shape shape-4 bg-white/20"></div>
+      <div class="floating-shape shape-5 bg-pibe-gold/25"></div>
+    </div>
+    
+    <!-- Patrón de balones de fútbol sutil -->
+    <div class="football-pattern absolute inset-0 opacity-5">
+      <div class="football-icon football-1">⚽</div>
+      <div class="football-icon football-2">⚽</div>
+      <div class="football-icon football-3">⚽</div>
+      <div class="football-icon football-4">⚽</div>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="relative z-20 w-full">
+    <div class="container mx-auto px-4 py-20">
+      <div class="max-w-5xl mx-auto text-center">
+        
+        <!-- Título principal -->
+        <div class="title-container mb-8">
+          <h1 class="main-title text-4xl md:text-6xl lg:text-8xl font-display font-black text-white leading-tight mb-4">
+            ¿Quieres tener al
+            <span class="pibe-highlight relative inline-block">
+              <span class="text-pibe-gold drop-shadow-2xl">Pibe</span>
+              <div class="golden-shine absolute inset-0"></div>
+            </span>
+            <br class="hidden sm:block">
+            en tu <span class="text-colombian-blue drop-shadow-lg">equipo</span>?
+          </h1>
+          
+          <!-- Decoración de corona dorada -->
+          <div class="crown-decoration absolute -top-8 left-1/2 transform -translate-x-1/2">
+            <svg class="w-16 h-16 text-pibe-gold opacity-80" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M5 4l3 6 4-6 4 6 3-6v16H5V4z"/>
+            </svg>
+          </div>
+        </div>
+        
+        <!-- Subtítulo persuasivo -->
+        <div class="subtitle-container mb-12">
+          <p class="subtitle text-xl md:text-3xl lg:text-4xl text-white/95 leading-relaxed max-w-4xl mx-auto font-light">
+            Conecta tu marca con <span class="font-bold text-pibe-gold">millones</span> a través de la voz 
+            y la imagen de un <span class="font-bold text-white">ídolo inolvidable</span>
+          </p>
+          
+          <!-- Línea decorativa -->
+          <div class="decorative-line w-32 h-1 bg-gradient-to-r from-transparent via-pibe-gold to-transparent mx-auto mt-8 rounded-full"></div>
+        </div>
+        
+        <!-- Call-to-action de email -->
+        <div class="email-cta-container">
+          <div class="email-card bg-white/15 backdrop-blur-xl rounded-3xl p-8 md:p-12 border border-white/20 shadow-2xl max-w-2xl mx-auto relative overflow-hidden">
+            
+            <!-- Brillo animado de fondo -->
+            <div class="email-glow absolute inset-0 bg-gradient-to-r from-pibe-gold/20 via-transparent to-pibe-gold/20 animate-shimmer"></div>
+            
+            <!-- Contenido del email -->
+            <div class="relative z-10">
+              <div class="email-icon mb-6">
+                <div class="w-20 h-20 bg-gradient-to-br from-pibe-gold to-yellow-400 rounded-full flex items-center justify-center mx-auto shadow-2xl">
+                  <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                  </svg>
+                </div>
+              </div>
+              
+              <h3 class="email-label text-2xl md:text-3xl font-display font-bold text-white mb-4">
+                Escríbenos ahora
+              </h3>
+              
+              <div class="email-contact-wrapper">
+                <a href="mailto:negocios@pibevalderrama.com" 
+                   class="email-address text-2xl md:text-4xl lg:text-5xl font-bold text-pibe-gold hover:text-yellow-300 transition-all duration-300 block mb-6 tracking-wide">
+                  negocios@pibevalderrama.com
+                </a>
+                
+                <!-- Botón de copiar email -->
+                <button id="copy-email-btn" 
+                        class="copy-btn bg-gradient-to-r from-pibe-gold to-yellow-400 text-black px-8 py-4 rounded-full font-bold text-lg hover:from-yellow-400 hover:to-pibe-gold transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-3xl flex items-center mx-auto">
+                  <svg class="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                  </svg>
+                  <span class="copy-text">Copiar email</span>
+                </button>
+                
+                <!-- Mensaje de confirmación -->
+                <div id="copy-success" class="copy-success text-green-300 font-semibold mt-4 opacity-0 transform translate-y-4 transition-all duration-300">
+                  ¡Email copiado al portapapeles! ✨
+                </div>
+              </div>
+            </div>
+            
+            <!-- Partículas doradas flotantes -->
+            <div class="golden-particles absolute inset-0 pointer-events-none">
+              <div class="particle particle-1">✨</div>
+              <div class="particle particle-2">⭐</div>
+              <div class="particle particle-3">✨</div>
+              <div class="particle particle-4">⭐</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Mensaje final motivacional -->
+        <div class="final-message mt-12">
+          <p class="text-lg md:text-xl text-white/80 font-light italic max-w-3xl mx-auto">
+            "El fútbol conecta corazones, las marcas conectan sueños. 
+            <br class="hidden md:block">
+            Hagamos magia juntos."
+          </p>
+          
+          <!-- Firma del Pibe -->
+          <div class="signature mt-6 flex items-center justify-center">
+            <div class="signature-line w-16 h-0.5 bg-pibe-gold/60 mr-4"></div>
+            <span class="text-pibe-gold font-script text-2xl">El Pibe</span>
+            <div class="signature-line w-16 h-0.5 bg-pibe-gold/60 ml-4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Silueta decorativa del Pibe (marca de agua) -->
+  <div class="pibe-silhouette absolute bottom-0 right-0 opacity-5 pointer-events-none">
+    <svg class="w-96 h-96 text-white transform rotate-12" viewBox="0 0 100 100" fill="currentColor">
+      <!-- Silueta estilizada del Pibe con su cabello característico -->
+      <circle cx="50" cy="20" r="12" opacity="0.6"/>
+      <!-- Cabello distintivo -->
+      <path d="M35 15 Q45 5 55 8 Q65 5 75 15 Q70 25 65 20 Q55 25 50 20 Q45 25 35 20 Q30 25 35 15" opacity="0.8"/>
+      <!-- Cuerpo -->
+      <rect x="45" y="30" width="10" height="30" rx="2" opacity="0.4"/>
+      <!-- Brazos -->
+      <rect x="35" y="35" width="8" height="15" rx="2" opacity="0.4"/>
+      <rect x="57" y="35" width="8" height="15" rx="2" opacity="0.4"/>
+      <!-- Piernas -->
+      <rect x="42" y="60" width="6" height="20" rx="2" opacity="0.4"/>
+      <rect x="52" y="60" width="6" height="20" rx="2" opacity="0.4"/>
+      <!-- Balón -->
+      <circle cx="70" cy="45" r="4" opacity="0.6"/>
+    </svg>
+  </div>
+</section>
+
+<style>
+  /* Animaciones de gradiente de fondo */
+  @keyframes gradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  .animate-gradient {
+    background: linear-gradient(-45deg, #FCDD09, #003087, #C8102E, #FCDD09);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  /* Formas flotantes */
+  .floating-shapes {
+    position: absolute;
+    inset: 0;
+  }
+
+  .floating-shape {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .shape-1 {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    left: 10%;
+    animation-delay: -1s;
+  }
+
+  .shape-2 {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    right: 15%;
+    animation-delay: -3s;
+  }
+
+  .shape-3 {
+    width: 150px;
+    height: 150px;
+    bottom: 20%;
+    left: 15%;
+    animation-delay: -2s;
+  }
+
+  .shape-4 {
+    width: 60px;
+    height: 60px;
+    top: 60%;
+    right: 25%;
+    animation-delay: -4s;
+  }
+
+  .shape-5 {
+    width: 100px;
+    height: 100px;
+    bottom: 10%;
+    right: 10%;
+    animation-delay: -0.5s;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-20px) rotate(120deg);
+    }
+    66% {
+      transform: translateY(10px) rotate(240deg);
+    }
+  }
+
+  /* Patrón de balones */
+  .football-icon {
+    position: absolute;
+    font-size: 3rem;
+    animation: footballFloat 20s linear infinite;
+  }
+
+  .football-1 {
+    top: 10%;
+    left: 5%;
+    animation-delay: -5s;
+  }
+
+  .football-2 {
+    top: 30%;
+    right: 10%;
+    animation-delay: -10s;
+  }
+
+  .football-3 {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: -15s;
+  }
+
+  .football-4 {
+    bottom: 10%;
+    right: 5%;
+    animation-delay: -2s;
+  }
+
+  @keyframes footballFloat {
+    0% {
+      transform: translateY(0px) rotate(0deg);
+      opacity: 0.3;
+    }
+    50% {
+      opacity: 0.1;
+    }
+    100% {
+      transform: translateY(-100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  /* Efectos del título */
+  .title-container {
+    position: relative;
+  }
+
+  .crown-decoration {
+    animation: crownFloat 3s ease-in-out infinite;
+  }
+
+  @keyframes crownFloat {
+    0%, 100% { transform: translate(-50%, 0px) rotate(0deg); }
+    50% { transform: translate(-50%, -10px) rotate(5deg); }
+  }
+
+  .pibe-highlight {
+    position: relative;
+    display: inline-block;
+  }
+
+  .golden-shine {
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.5) 50%, transparent 70%);
+    animation: shine 3s ease-in-out infinite;
+  }
+
+  @keyframes shine {
+    0%, 100% { transform: translateX(-100%); opacity: 0; }
+    50% { transform: translateX(100%); opacity: 1; }
+  }
+
+  /* Línea decorativa animada */
+  .decorative-line {
+    animation: lineGlow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes lineGlow {
+    0% {
+      box-shadow: 0 0 10px rgba(252, 221, 9, 0.5);
+      transform: scaleX(1);
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(252, 221, 9, 0.8);
+      transform: scaleX(1.1);
+    }
+  }
+
+  /* Card de email con efectos */
+  .email-card {
+    position: relative;
+    transform: perspective(1000px) rotateX(5deg);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .email-card:hover {
+    transform: perspective(1000px) rotateX(0deg) translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .email-glow {
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  @keyframes shimmer {
+    0%, 100% { transform: translateX(-100%); }
+    50% { transform: translateX(100%); }
+  }
+
+  /* Efectos del email */
+  .email-icon {
+    animation: iconPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes iconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  .email-address {
+    text-shadow: 0 0 20px rgba(252, 221, 9, 0.5);
+    position: relative;
+  }
+
+  .email-address::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, transparent, #FCDD09, transparent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .email-address:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Botón de copiar */
+  .copy-btn {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .copy-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .copy-btn:hover::before {
+    left: 100%;
+  }
+
+  .copy-success.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Partículas doradas */
+  .golden-particles {
+    pointer-events: none;
+  }
+
+  .particle {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: particleFloat 4s ease-in-out infinite;
+  }
+
+  .particle-1 {
+    top: 10%;
+    left: 10%;
+    animation-delay: -1s;
+  }
+
+  .particle-2 {
+    top: 20%;
+    right: 15%;
+    animation-delay: -2s;
+  }
+
+  .particle-3 {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: -3s;
+  }
+
+  .particle-4 {
+    bottom: 15%;
+    right: 10%;
+    animation-delay: -0.5s;
+  }
+
+  @keyframes particleFloat {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(-15px) scale(1.2);
+      opacity: 1;
+    }
+  }
+
+  /* Estados iniciales para animaciones */
+  .main-title {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+
+  .subtitle {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  .email-card {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+
+  .final-message {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  /* Clases de animación */
+  .animate-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .main-title {
+      font-size: 2.5rem;
+      line-height: 1.1;
+    }
+    
+    .subtitle {
+      font-size: 1.25rem;
+    }
+    
+    .email-address {
+      font-size: 1.5rem;
+    }
+    
+    .email-card {
+      padding: 2rem;
+      transform: none;
+    }
+    
+    .email-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .floating-shape {
+      opacity: 0.3;
+    }
+    
+    .pibe-silhouette {
+      display: none;
+    }
+  }
+
+  /* Mejoras de performance */
+  .floating-shape,
+  .particle,
+  .football-icon,
+  .golden-shine,
+  .email-glow {
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+</style>
+
+<script src="../scripts/contacto.js"></script>
