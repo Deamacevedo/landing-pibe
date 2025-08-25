@@ -517,6 +517,92 @@
     will-change: transform;
     backface-visibility: hidden;
   }
+
+  /* FORZAR CLASES DE TAILWIND SOBRE GSAP - CONTACTO */
+  
+  /* Padding classes */
+  .px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
+  .py-20 { padding-top: 5rem !important; padding-bottom: 5rem !important; }
+  .py-4 { padding-top: 1rem !important; padding-bottom: 1rem !important; }
+  .px-8 { padding-left: 2rem !important; padding-right: 2rem !important; }
+  .p-8 { padding: 2rem !important; }
+  .p-12 { padding: 3rem !important; }
+  
+  /* Margin classes */
+  .mb-8 { margin-bottom: 2rem !important; }
+  .mb-4 { margin-bottom: 1rem !important; }
+  .mb-12 { margin-bottom: 3rem !important; }
+  .mb-6 { margin-bottom: 1.5rem !important; }
+  .mt-8 { margin-top: 2rem !important; }
+  .mt-4 { margin-top: 1rem !important; }
+  .mt-6 { margin-top: 1.5rem !important; }
+  .mt-12 { margin-top: 3rem !important; }
+  .mr-3 { margin-right: 0.75rem !important; }
+  .mr-4 { margin-right: 1rem !important; }
+  .ml-4 { margin-left: 1rem !important; }
+  
+  /* Text sizes */
+  .text-xl { font-size: 1.25rem !important; line-height: 1.75rem !important; }
+  .text-lg { font-size: 1.125rem !important; line-height: 1.75rem !important; }
+  .text-2xl { font-size: 1.5rem !important; line-height: 2rem !important; }
+  .text-3xl { font-size: 1.875rem !important; line-height: 2.25rem !important; }
+  .text-4xl { font-size: 2.25rem !important; line-height: 2.5rem !important; }
+  .text-5xl { font-size: 3rem !important; line-height: 1 !important; }
+  .text-6xl { font-size: 3.75rem !important; line-height: 1 !important; }
+  .text-8xl { font-size: 6rem !important; line-height: 1 !important; }
+
+  /* Border radius */
+  .rounded-3xl { border-radius: 1.5rem !important; }
+  .rounded-full { border-radius: 9999px !important; }
+
+  /* Width and height */
+  .w-16 { width: 4rem !important; }
+  .h-16 { height: 4rem !important; }
+  .w-20 { width: 5rem !important; }
+  .h-20 { height: 5rem !important; }
+  .w-6 { width: 1.5rem !important; }
+  .h-6 { height: 1.5rem !important; }
+  .w-10 { width: 2.5rem !important; }
+  .h-10 { height: 2.5rem !important; }
+  .w-32 { width: 8rem !important; }
+  .h-1 { height: 0.25rem !important; }
+  .h-0\.5 { height: 0.125rem !important; }
+
+  /* Display classes */
+  .flex { display: flex !important; }
+  .items-center { align-items: center !important; }
+  .justify-center { justify-content: center !important; }
+  .block { display: block !important; }
+  .inline-block { display: inline-block !important; }
+
+  /* Typography */
+  .font-bold { font-weight: 700 !important; }
+  .font-black { font-weight: 900 !important; }
+  .font-light { font-weight: 300 !important; }
+  .font-semibold { font-weight: 600 !important; }
+  .italic { font-style: italic !important; }
+  .leading-tight { line-height: 1.25 !important; }
+  .leading-relaxed { line-height: 1.625 !important; }
+  .text-center { text-align: center !important; }
+  .tracking-wide { letter-spacing: 0.025em !important; }
+
+  /* Flex properties */
+  .mx-auto { margin-left: auto !important; margin-right: auto !important; }
+
+  /* Responsive Tailwind classes con !important - CONTACTO */
+  @media (min-width: 768px) {
+    .md\\:text-3xl { font-size: 1.875rem !important; line-height: 2.25rem !important; }
+    .md\\:text-4xl { font-size: 2.25rem !important; line-height: 2.5rem !important; }
+    .md\\:text-6xl { font-size: 3.75rem !important; line-height: 1 !important; }
+    .md\\:text-xl { font-size: 1.25rem !important; line-height: 1.75rem !important; }
+    .md\\:p-12 { padding: 3rem !important; }
+  }
+
+  @media (min-width: 1024px) {
+    .lg\\:text-4xl { font-size: 2.25rem !important; line-height: 2.5rem !important; }
+    .lg\\:text-5xl { font-size: 3rem !important; line-height: 1 !important; }
+    .lg\\:text-8xl { font-size: 6rem !important; line-height: 1 !important; }
+  }
 </style>
 
 <script src="../scripts/contacto.js"></script>
