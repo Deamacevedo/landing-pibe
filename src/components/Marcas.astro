@@ -7,10 +7,10 @@ import { Image } from 'astro:assets';
   
   <!-- Título y subtítulo -->
   <div class="container mx-auto px-4 text-center py-12 md:py-16">
-    <h2 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-gray-900 mb-8">
+    <h2 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-gray-900 mb-10 text-center">
       Marcas que han <span class="text-pibe-gold">confiado</span> en él
     </h2>
-    <p class="text-lg md:text-xl lg:text-2xl text-gray-600 leading-relaxed max-w-4xl mx-auto mb-12">
+    <p class="text-xl md:text-2xl lg:text-3xl text-gray-600 leading-relaxed max-w-5xl mx-auto mb-16 text-center">
       Grandes marcas han confiado en el Pibe como embajador por su autenticidad, 
       conexión con el público y credibilidad nacional e internacional.
     </p>
@@ -20,13 +20,13 @@ import { Image } from 'astro:assets';
   <div class="carousel-container relative flex-grow flex items-center py-8">
     <div class="carousel-track flex items-center" id="carousel-track">
       
-      <!-- Primera serie de logos -->
+      <!-- Marcas reales del Pibe -->
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
         <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <!-- Logo Coca-Cola (placeholder) -->
+          <!-- Logo Codere -->
           <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-red-600" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">Coca-Cola</text>
+            <svg class="h-full w-auto text-green-700" viewBox="0 0 200 60" fill="currentColor">
+              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">CODERE</text>
             </svg>
           </div>
         </div>
@@ -34,10 +34,21 @@ import { Image } from 'astro:assets';
 
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
         <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <!-- Logo Adidas (placeholder) -->
+          <!-- Logo Frutiño -->
+          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
+            <svg class="h-full w-auto text-orange-600" viewBox="0 0 200 60" fill="currentColor">
+              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">Frutiño</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
+        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
+          <!-- Logo Uber -->
           <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
             <svg class="h-full w-auto text-black" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">adidas</text>
+              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">Uber</text>
             </svg>
           </div>
         </div>
@@ -45,21 +56,10 @@ import { Image } from 'astro:assets';
 
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
         <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <!-- Logo Pepsi (placeholder) -->
+          <!-- Logo Margarita -->
           <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-blue-600" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">PEPSI</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <!-- Logo Mastercard (placeholder) -->
-          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-orange-500" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">Mastercard</text>
+            <svg class="h-full w-auto text-red-700" viewBox="0 0 200 60" fill="currentColor">
+              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">MARGARITA</text>
             </svg>
           </div>
         </div>
@@ -69,8 +69,18 @@ import { Image } from 'astro:assets';
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
         <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
           <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-red-600" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">Coca-Cola</text>
+            <svg class="h-full w-auto text-green-700" viewBox="0 0 200 60" fill="currentColor">
+              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">CODERE</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
+        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
+          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
+            <svg class="h-full w-auto text-orange-600" viewBox="0 0 200 60" fill="currentColor">
+              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">Frutiño</text>
             </svg>
           </div>
         </div>
@@ -80,7 +90,7 @@ import { Image } from 'astro:assets';
         <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
           <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
             <svg class="h-full w-auto text-black" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">adidas</text>
+              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">Uber</text>
             </svg>
           </div>
         </div>
@@ -89,18 +99,8 @@ import { Image } from 'astro:assets';
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
         <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
           <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-blue-600" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">PEPSI</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-orange-500" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">Mastercard</text>
+            <svg class="h-full w-auto text-red-700" viewBox="0 0 200 60" fill="currentColor">
+              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">MARGARITA</text>
             </svg>
           </div>
         </div>
@@ -110,8 +110,18 @@ import { Image } from 'astro:assets';
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
         <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
           <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-red-600" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">Coca-Cola</text>
+            <svg class="h-full w-auto text-green-700" viewBox="0 0 200 60" fill="currentColor">
+              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">CODERE</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
+        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
+          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
+            <svg class="h-full w-auto text-orange-600" viewBox="0 0 200 60" fill="currentColor">
+              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">Frutiño</text>
             </svg>
           </div>
         </div>
@@ -121,7 +131,7 @@ import { Image } from 'astro:assets';
         <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
           <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
             <svg class="h-full w-auto text-black" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">adidas</text>
+              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">Uber</text>
             </svg>
           </div>
         </div>
@@ -130,18 +140,8 @@ import { Image } from 'astro:assets';
       <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
         <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
           <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-blue-600" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">PEPSI</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-orange-500" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">Mastercard</text>
+            <svg class="h-full w-auto text-red-700" viewBox="0 0 200 60" fill="currentColor">
+              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">MARGARITA</text>
             </svg>
           </div>
         </div>
@@ -305,15 +305,21 @@ import { Image } from 'astro:assets';
   
   /* Margin classes */
   .mb-8 { margin-bottom: 2rem !important; }
+  .mb-10 { margin-bottom: 2.5rem !important; }
   .mb-12 { margin-bottom: 3rem !important; }
+  .mb-16 { margin-bottom: 4rem !important; }
   .mx-8 { margin-left: 2rem !important; margin-right: 2rem !important; }
 
   /* Text sizes */
   .text-lg { font-size: 1.125rem !important; line-height: 1.75rem !important; }
   .text-xl { font-size: 1.25rem !important; line-height: 1.75rem !important; }
+  .text-2xl { font-size: 1.5rem !important; line-height: 2rem !important; }
+  .text-3xl { font-size: 1.875rem !important; line-height: 2.25rem !important; }
   .text-4xl { font-size: 2.25rem !important; line-height: 2.5rem !important; }
+  .text-5xl { font-size: 3rem !important; line-height: 1 !important; }
   .text-6xl { font-size: 3.75rem !important; line-height: 1 !important; }
   .text-7xl { font-size: 4.5rem !important; line-height: 1 !important; }
+  .text-8xl { font-size: 6rem !important; line-height: 1 !important; }
 
   /* Border radius */
   .rounded-2xl { border-radius: 1rem !important; }
@@ -330,12 +336,20 @@ import { Image } from 'astro:assets';
   .justify-center { justify-content: center !important; }
   .flex-col { flex-direction: column !important; }
   .flex-grow { flex-grow: 1 !important; }
+  .text-center { text-align: center !important; }
+  
+  /* Max width classes */
+  .max-w-4xl { max-width: 56rem !important; }
+  .max-w-5xl { max-width: 64rem !important; }
+  .mx-auto { margin-left: auto !important; margin-right: auto !important; }
 
   /* Responsive Tailwind classes con !important - MARCAS */
   @media (min-width: 768px) {
     .md\\:px-16 { padding-left: 4rem !important; padding-right: 4rem !important; }
     .md\\:text-xl { font-size: 1.25rem !important; line-height: 1.75rem !important; }
+    .md\\:text-2xl { font-size: 1.5rem !important; line-height: 2rem !important; }
     .md\\:text-6xl { font-size: 3.75rem !important; line-height: 1 !important; }
+    .md\\:text-7xl { font-size: 4.5rem !important; line-height: 1 !important; }
     .lg\\:p-14 { padding: 3.5rem !important; }
     .lg\\:mx-12 { margin-left: 3rem !important; margin-right: 3rem !important; }
     .lg\\:h-24 { height: 6rem !important; }
@@ -343,7 +357,9 @@ import { Image } from 'astro:assets';
 
   @media (min-width: 1024px) {
     .lg\\:text-2xl { font-size: 1.5rem !important; line-height: 2rem !important; }
+    .lg\\:text-3xl { font-size: 1.875rem !important; line-height: 2.25rem !important; }
     .lg\\:text-7xl { font-size: 4.5rem !important; line-height: 1 !important; }
+    .lg\\:text-8xl { font-size: 6rem !important; line-height: 1 !important; }
   }
 </style>
 

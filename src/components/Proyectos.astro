@@ -7,10 +7,10 @@
   <!-- Título de la sección -->
   <div class="container mx-auto px-4 py-16 md:py-20">
     <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-8">
+      <h2 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-10 text-center">
         Sus <span class="text-pibe-gold">Proyectos</span>
       </h2>
-      <p class="text-lg md:text-xl lg:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+      <p class="text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-5xl mx-auto leading-relaxed text-center">
         Más allá del fútbol, el Pibe ha explorado diferentes facetas del entretenimiento 
         y la comunicación, llevando su carisma a nuevos escenarios.
       </p>
@@ -390,6 +390,12 @@
   .flex { display: flex !important; }
   .inline-flex { display: inline-flex !important; }
   .justify-center { justify-content: center !important; }
+  .text-center { text-align: center !important; }
+  
+  /* Max width classes */
+  .max-w-4xl { max-width: 56rem !important; }
+  .max-w-5xl { max-width: 64rem !important; }
+  .mx-auto { margin-left: auto !important; margin-right: auto !important; }
 
   /* Efectos adicionales */
   .proyecto-btn {
@@ -417,13 +423,19 @@
     .md\\:px-8 { padding-left: 2rem !important; padding-right: 2rem !important; }
     .md\\:py-20 { padding-top: 5rem !important; padding-bottom: 5rem !important; }
     .md\\:text-xl { font-size: 1.25rem !important; line-height: 1.75rem !important; }
+    .md\\:text-2xl { font-size: 1.5rem !important; line-height: 2rem !important; }
     .md\\:text-3xl { font-size: 1.875rem !important; line-height: 2.25rem !important; }
     .md\\:text-6xl { font-size: 3.75rem !important; line-height: 1 !important; }
+    .md\\:text-7xl { font-size: 4.5rem !important; line-height: 1 !important; }
+    .md\\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
   }
 
   @media (min-width: 1024px) {
     .lg\\:text-2xl { font-size: 1.5rem !important; line-height: 2rem !important; }
+    .lg\\:text-3xl { font-size: 1.875rem !important; line-height: 2.25rem !important; }
     .lg\\:text-7xl { font-size: 4.5rem !important; line-height: 1 !important; }
+    .lg\\:text-8xl { font-size: 6rem !important; line-height: 1 !important; }
+    .lg\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
   }
 </style>
 

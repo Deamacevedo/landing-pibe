@@ -129,19 +129,34 @@ import { gsap } from 'gsap';
         const targetId = link.getAttribute('href');
         const targetElement = document.querySelector(targetId);
         
+        console.log('Navigating to:', targetId, 'Element found:', !!targetElement);
+        if (targetElement) {
+          console.log('Element position:', targetElement.getBoundingClientRect());
+          console.log('Current scroll position:', window.pageYOffset);
+        }
+        
         if (targetElement) {
           // Close menu first
           closeMenu();
+          menuOpen = false;
           
-          // Then scroll to target after menu closes
+          // Alternative approach - use URL hash navigation for better compatibility
           setTimeout(() => {
-            const targetPosition = targetElement.offsetTop;
+            // Set the hash first
+            window.location.hash = targetId;
             
-            window.scrollTo({
-              top: targetPosition,
-              behavior: 'smooth'
-            });
-          }, 700);
+            // Then scroll to ensure it's visible
+            setTimeout(() => {
+              targetElement.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start',
+                inline: 'nearest'
+              });
+            }, 100);
+            
+          }, 900); // Wait for menu to close completely
+        } else {
+          console.error('Target element not found:', targetId);
         }
       });
     });

@@ -20,10 +20,10 @@
     
     <!-- Patrón de balones de fútbol sutil -->
     <div class="football-pattern absolute inset-0 opacity-5">
-      <div class="football-icon football-1">⚽</div>
-      <div class="football-icon football-2">⚽</div>
-      <div class="football-icon football-3">⚽</div>
-      <div class="football-icon football-4">⚽</div>
+      <div class="football-icon football-1">F</div>
+      <div class="football-icon football-2">F</div>
+      <div class="football-icon football-3">F</div>
+      <div class="football-icon football-4">F</div>
     </div>
   </div>
 
@@ -101,33 +101,33 @@
                 
                 <!-- Mensaje de confirmación -->
                 <div id="copy-success" class="copy-success text-green-300 font-semibold mt-4 opacity-0 transform translate-y-4 transition-all duration-300">
-                  ¡Email copiado al portapapeles! ✨
+                  Email copiado al portapapeles correctamente
                 </div>
               </div>
             </div>
             
-            <!-- Partículas doradas flotantes -->
-            <div class="golden-particles absolute inset-0 pointer-events-none">
-              <div class="particle particle-1">✨</div>
-              <div class="particle particle-2">⭐</div>
-              <div class="particle particle-3">✨</div>
-              <div class="particle particle-4">⭐</div>
+            <!-- Efectos visuales sutiles -->
+            <div class="visual-effects absolute inset-0 pointer-events-none">
+              <div class="effect-dot effect-1"></div>
+              <div class="effect-dot effect-2"></div>
+              <div class="effect-dot effect-3"></div>
+              <div class="effect-dot effect-4"></div>
             </div>
           </div>
         </div>
         
         <!-- Mensaje final motivacional -->
         <div class="final-message mt-12">
-          <p class="text-lg md:text-xl text-white/80 font-light italic max-w-3xl mx-auto">
+          <p class="text-lg md:text-xl text-white/90 font-light italic max-w-3xl mx-auto">
             "El fútbol conecta corazones, las marcas conectan sueños. 
             <br class="hidden md:block">
-            Hagamos magia juntos."
+            Creemos algo extraordinario juntos."
           </p>
           
           <!-- Firma del Pibe -->
           <div class="signature mt-6 flex items-center justify-center">
             <div class="signature-line w-16 h-0.5 bg-pibe-gold/60 mr-4"></div>
-            <span class="text-pibe-gold font-script text-2xl">El Pibe</span>
+            <span class="text-pibe-gold font-script text-2xl tracking-wide">El Pibe Valderrama</span>
             <div class="signature-line w-16 h-0.5 bg-pibe-gold/60 ml-4"></div>
           </div>
         </div>
@@ -401,49 +401,52 @@
     transform: translateY(0);
   }
 
-  /* Partículas doradas */
-  .golden-particles {
+  /* Efectos visuales sutiles */
+  .visual-effects {
     pointer-events: none;
   }
 
-  .particle {
+  .effect-dot {
     position: absolute;
-    font-size: 1.5rem;
-    animation: particleFloat 4s ease-in-out infinite;
+    width: 6px;
+    height: 6px;
+    background: rgba(252, 221, 9, 0.6);
+    border-radius: 50%;
+    animation: dotFloat 4s ease-in-out infinite;
   }
 
-  .particle-1 {
+  .effect-1 {
     top: 10%;
     left: 10%;
     animation-delay: -1s;
   }
 
-  .particle-2 {
+  .effect-2 {
     top: 20%;
     right: 15%;
     animation-delay: -2s;
   }
 
-  .particle-3 {
+  .effect-3 {
     bottom: 20%;
     left: 20%;
     animation-delay: -3s;
   }
 
-  .particle-4 {
+  .effect-4 {
     bottom: 15%;
     right: 10%;
     animation-delay: -0.5s;
   }
 
-  @keyframes particleFloat {
+  @keyframes dotFloat {
     0%, 100% {
       transform: translateY(0px) scale(1);
-      opacity: 0.6;
+      opacity: 0.4;
     }
     50% {
-      transform: translateY(-15px) scale(1.2);
-      opacity: 1;
+      transform: translateY(-10px) scale(1.3);
+      opacity: 0.8;
     }
   }
 
@@ -510,7 +513,7 @@
 
   /* Mejoras de performance */
   .floating-shape,
-  .particle,
+  .effect-dot,
   .football-icon,
   .golden-shine,
   .email-glow {
