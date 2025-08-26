@@ -145,10 +145,13 @@ document.addEventListener('DOMContentLoaded', () => {
       text: panel.querySelector('.timeline-text'),
       yearBadge: panel.querySelector('.year-badge'),
       title: panel.querySelector('h1, h2, h3'),
-      paragraphs: panel.querySelectorAll('p'),
+      // FIX: convertimos NodeList a Array para evitar warning en GSAP
+      paragraphs: Array.from(panel.querySelectorAll('p')),
       blockquote: panel.querySelector('blockquote'),
-      statCards: panel.querySelectorAll('.stat-card'),
-      worldCups: panel.querySelectorAll('.world-cup'),
+      // FIX: convertimos NodeList a Array para evitar warning en GSAP
+      statCards: Array.from(panel.querySelectorAll('.stat-card')),
+      // FIX: convertimos NodeList a Array para evitar warning en GSAP
+      worldCups: Array.from(panel.querySelectorAll('.world-cup')),
       achievements: panel.querySelector('.achievements'),
       legacyStats: panel.querySelector('.legacy-stats'),
       familyInfo: panel.querySelector('.family-info')

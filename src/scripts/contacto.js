@@ -301,7 +301,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== ANIMACIONES DE ELEMENTOS DE FONDO =====
   function setupBackgroundAnimations() {
     // Animación de formas flotantes más dinámica
-    const shapes = document.querySelectorAll('.floating-shape');
+    // FIX: convertimos NodeList a Array para evitar warning en GSAP
+    const shapes = Array.from(document.querySelectorAll('.floating-shape'));
     shapes.forEach((shape, index) => {
       gsap.set(shape, {
         rotation: Math.random() * 360
@@ -325,7 +326,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Animación de balones más realista
-    const footballs = document.querySelectorAll('.football-icon');
+    // FIX: convertimos NodeList a Array para evitar warning en GSAP
+    const footballs = Array.from(document.querySelectorAll('.football-icon'));
     footballs.forEach((ball, index) => {
       gsap.fromTo(ball, {
         y: window.innerHeight + 100,
@@ -442,7 +444,8 @@ document.addEventListener('DOMContentLoaded', () => {
     ScrollTrigger.getAll().forEach(st => st.kill());
     
     // Limpiar partículas si existen
-    document.querySelectorAll('[style*="position: fixed"]').forEach(el => {
+    // FIX: convertimos NodeList a Array para evitar warning en GSAP
+    Array.from(document.querySelectorAll('[style*="position: fixed"]')).forEach(el => {
       if (el.style.borderRadius === '50%' && el.style.width === '8px') {
         el.remove();
       }

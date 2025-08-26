@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== ELEMENTOS =====
   const section = document.querySelector('#marcas');
   const carousel = document.querySelector('#carousel-track');
-  const brandItems = document.querySelectorAll('.brand-item');
+  // FIX: convertimos NodeList a Array para evitar warning en GSAP
+  const brandItems = Array.from(document.querySelectorAll('.brand-item'));
 
   if (!section || !carousel || brandItems.length === 0) {
     console.log('❌ No se encontraron elementos del carrusel');

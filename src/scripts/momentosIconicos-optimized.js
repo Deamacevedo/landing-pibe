@@ -145,11 +145,15 @@ document.addEventListener('DOMContentLoaded', () => {
       text: panel.querySelector('.timeline-text'),
       yearBadge: panel.querySelector('.year-badge'),
       title: panel.querySelector('h1, h2, h3'),
-      paragraphs: panel.querySelectorAll('p'),
+      // FIX: convertimos NodeList a Array para evitar warning en GSAP
+      paragraphs: Array.from(panel.querySelectorAll('p')),
       blockquote: panel.querySelector('blockquote'),
-      statCards: panel.querySelectorAll('.stat-card'),
-      videoCards: panel.querySelectorAll('.video-link-card'),
-      specialCards: panel.querySelectorAll('.respect-moment, .legacy-card, .match-stats, .historic-stats')
+      // FIX: convertimos NodeList a Array para evitar warning en GSAP
+      statCards: Array.from(panel.querySelectorAll('.stat-card')),
+      // FIX: convertimos NodeList a Array para evitar warning en GSAP
+      videoCards: Array.from(panel.querySelectorAll('.video-link-card')),
+      // FIX: convertimos NodeList a Array para evitar warning en GSAP
+      specialCards: Array.from(panel.querySelectorAll('.respect-moment, .legacy-card, .match-stats, .historic-stats'))
     };
   }
 
@@ -270,7 +274,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Actualizar indicadores de panel activo
     const currentPanelIndex = Math.floor(progress * panels.length);
-    const labels = document.querySelectorAll('.timeline-label');
+    // FIX: convertimos NodeList a Array para evitar warning en GSAP
+    const labels = Array.from(document.querySelectorAll('.timeline-label'));
     
     labels.forEach((label, index) => {
       if (index === currentPanelIndex) {

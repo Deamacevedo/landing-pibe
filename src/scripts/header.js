@@ -3,9 +3,11 @@ import { gsap } from 'gsap';
   document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menu-toggle');
     const menuOverlay = document.getElementById('menu-overlay');
-    const menuItems = document.querySelectorAll('.menu-item');
+    // FIX: convertimos NodeList a Array para evitar warning en GSAP
+    const menuItems = Array.from(document.querySelectorAll('.menu-item'));
     const socialLinks = document.getElementById('social-links');
-    const navLinks = document.querySelectorAll('.nav-link');
+    // FIX: convertimos NodeList a Array para evitar warning en GSAP
+    const navLinks = Array.from(document.querySelectorAll('.nav-link'));
     
     let menuOpen = false;
 

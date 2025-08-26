@@ -5,7 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 document.addEventListener('DOMContentLoaded', () => {
   gsap.registerPlugin(ScrollTrigger);
 
-  const proyectoCards = document.querySelectorAll('.proyecto-card');
+  // FIX: convertimos NodeList a Array para evitar warning en GSAP
+  const proyectoCards = Array.from(document.querySelectorAll('.proyecto-card'));
   
   if (proyectoCards.length === 0) return;
 
