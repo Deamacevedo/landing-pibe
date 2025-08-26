@@ -77,6 +77,21 @@ class ScrollOptimizer {
 
   // Animaciones GSAP optimizadas
   optimizedTo(target, vars) {
+    // FIX: validamos existencia del target antes de animar para evitar warning de GSAP
+    if (!target) {
+      console.warn('scrollOptimizer.optimizedTo: target is null/undefined');
+      return null;
+    }
+
+    // Si es string, verificar que el elemento existe
+    if (typeof target === 'string') {
+      const elements = document.querySelectorAll(target);
+      if (elements.length === 0) {
+        console.warn(`scrollOptimizer.optimizedTo: No elements found for selector "${target}"`);
+        return null;
+      }
+    }
+
     const defaultVars = {
       duration: 0.1,        // Más rápido
       ease: "none",
@@ -87,6 +102,21 @@ class ScrollOptimizer {
   }
 
   optimizedSet(target, vars) {
+    // FIX: validamos existencia del target antes de animar para evitar warning de GSAP
+    if (!target) {
+      console.warn('scrollOptimizer.optimizedSet: target is null/undefined');
+      return null;
+    }
+
+    // Si es string, verificar que el elemento existe
+    if (typeof target === 'string') {
+      const elements = document.querySelectorAll(target);
+      if (elements.length === 0) {
+        console.warn(`scrollOptimizer.optimizedSet: No elements found for selector "${target}"`);
+        return null;
+      }
+    }
+
     return gsap.set(target, { 
       ...vars,
       force3D: true,       // Hardware acceleration

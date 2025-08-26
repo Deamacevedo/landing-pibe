@@ -9,93 +9,117 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroTl = gsap.timeline({ delay: 0.5 });
 
     // Animate background image
-    heroTl.fromTo('.hero-bg img',
-        {
-            scale: 1.2,
-            rotation: 2
-        },
-        {
-            scale: 1,
-            rotation: 0,
-            duration: 2,
-            ease: "power2.out"
-        }
-    );
+    // FIX: validamos existencia de .hero-bg img antes de animar para evitar warning de GSAP
+    const heroBgImg = document.querySelector('.hero-bg img');
+    if (heroBgImg) {
+        heroTl.fromTo('.hero-bg img',
+            {
+                scale: 1.2,
+                rotation: 2
+            },
+            {
+                scale: 1,
+                rotation: 0,
+                duration: 2,
+                ease: "power2.out"
+            }
+        );
+    }
 
     // Animate pre-title
-    heroTl.fromTo('.hero-pretitle p',
-        {
-            y: 100,
-            opacity: 0
-        },
-        {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power3.out"
-        }, "-=1.5"
-    );
+    // FIX: validamos existencia de .hero-pretitle p antes de animar para evitar warning de GSAP
+    const heroPretitleP = document.querySelector('.hero-pretitle p');
+    if (heroPretitleP) {
+        heroTl.fromTo('.hero-pretitle p',
+            {
+                y: 100,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power3.out"
+            }, "-=1.5"
+        );
+    }
 
     // Animate main title
-    heroTl.fromTo('.hero-title h1 span',
-        {
-            y: 150,
-            opacity: 0,
-            rotationX: 90
-        },
-        {
-            y: 0,
-            opacity: 1,
-            rotationX: 0,
-            duration: 1.2,
-            stagger: 0.2,
-            ease: "power3.out"
-        }, "-=0.8"
-    );
+    // FIX: validamos existencia de .hero-title h1 span antes de animar para evitar warning de GSAP
+    const heroTitleSpans = document.querySelectorAll('.hero-title h1 span');
+    if (heroTitleSpans.length > 0) {
+        heroTl.fromTo('.hero-title h1 span',
+            {
+                y: 150,
+                opacity: 0,
+                rotationX: 90
+            },
+            {
+                y: 0,
+                opacity: 1,
+                rotationX: 0,
+                duration: 1.2,
+                stagger: 0.2,
+                ease: "power3.out"
+            }, "-=0.8"
+        );
+    }
 
     // Animate quote
-    heroTl.fromTo('.hero-quote blockquote',
-        {
-            y: 50,
-            opacity: 0
-        },
-        {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power2.out"
-        }, "-=0.5"
-    );
+    // FIX: validamos existencia de .hero-quote blockquote antes de animar para evitar warning de GSAP
+    const heroQuoteBlockquote = document.querySelector('.hero-quote blockquote');
+    if (heroQuoteBlockquote) {
+        heroTl.fromTo('.hero-quote blockquote',
+            {
+                y: 50,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                ease: "power2.out"
+            }, "-=0.5"
+        );
+    }
 
     // Animate CTA button
-    heroTl.fromTo('.hero-cta a',
-        {
-            y: 30,
-            opacity: 0,
-            scale: 0.9
-        },
-        {
-            y: 0,
-            opacity: 1,
-            scale: 1,
-            duration: 0.8,
-            ease: "back.out(1.7)"
-        }, "-=0.3"
-    );
+    // FIX: validamos existencia de .cta-button antes de animar para evitar warning de GSAP
+    const ctaButtons = document.querySelectorAll('.cta-button');
+    if (ctaButtons.length > 0) {
+        heroTl.fromTo('.cta-button',
+            {
+                y: 30,
+                opacity: 0,
+                scale: 0.9
+            },
+            {
+                y: 0,
+                opacity: 1,
+                scale: 1,
+                duration: 0.8,
+                ease: "back.out(1.7)"
+            }, "-=0.3"
+        );
+    }
 
     // Animate scroll indicator
-    heroTl.fromTo('.scroll-indicator',
-        {
-            y: 30,
-            opacity: 0
-        },
-        {
-            y: 0,
-            opacity: 1,
-            duration: 0.8,
-            ease: "power2.out"
-        }, "-=0.5"
-    );
+    // FIX: validamos existencia de .scroll-indicator antes de animar para evitar warning de GSAP
+    const scrollIndicatorEl = document.querySelector('.scroll-indicator');
+    if (scrollIndicatorEl) {
+        heroTl.fromTo('.scroll-indicator',
+            {
+                y: 30,
+                opacity: 0
+            },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power2.out"
+            }, "-=0.5"
+        );
+    }
 
     // Parallax effect for background
     gsap.to('.hero-bg', {

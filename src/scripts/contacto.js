@@ -74,13 +74,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       // Efecto de brillo en el texto "Pibe"
-      tl.to('.golden-shine', {
-        opacity: 1,
-        duration: 0.5,
-        ease: "power2.inOut",
-        repeat: 2,
-        yoyo: true
-      }, "-=0.8");
+      // FIX: validamos existencia de .golden-shine antes de animar para evitar warning de GSAP
+      const goldenShine = document.querySelector('.golden-shine');
+      if (goldenShine) {
+        tl.to('.golden-shine', {
+          opacity: 1,
+          duration: 0.5,
+          ease: "power2.inOut",
+          repeat: 2,
+          yoyo: true
+        }, "-=0.8");
+      }
     }
 
     // Subtítulo con retraso elegante
@@ -279,19 +283,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hover en la card de email
     if (emailCard) {
       emailCard.addEventListener('mouseenter', () => {
-        gsap.to('.golden-particles .particle', {
-          scale: 1.5,
-          duration: 0.3,
-          stagger: 0.1
-        });
+        // FIX: validamos existencia de .golden-particles .particle antes de animar para evitar warning de GSAP
+        const goldenParticles = document.querySelectorAll('.golden-particles .particle');
+        if (goldenParticles.length > 0) {
+          gsap.to(goldenParticles, {
+            scale: 1.5,
+            duration: 0.3,
+            stagger: 0.1
+          });
+        }
       });
 
       emailCard.addEventListener('mouseleave', () => {
-        gsap.to('.golden-particles .particle', {
-          scale: 1,
-          duration: 0.3,
-          stagger: 0.05
-        });
+        // FIX: validamos existencia de .golden-particles .particle antes de animar para evitar warning de GSAP
+        const goldenParticles = document.querySelectorAll('.golden-particles .particle');
+        if (goldenParticles.length > 0) {
+          gsap.to(goldenParticles, {
+            scale: 1,
+            duration: 0.3,
+            stagger: 0.05
+          });
+        }
       });
     }
 
