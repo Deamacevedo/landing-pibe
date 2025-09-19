@@ -1,144 +1,45 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// Importar componentes comerciales reorganizados
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import QuienEs from '../components/QuienEs.astro';
-import MomentosIconicos from '../components/MomentosIconicos.astro';
-import Marcas from '../components/Marcas.astro';
-import Proyectos from '../components/Proyectos.astro';
+import DescripcionComercial from '../components/DescripcionComercial.astro';
 import Contacto from '../components/Contacto.astro';
+import Marcas from '../components/Marcas.astro';
+import RedesSociales from '../components/RedesSociales.astro';
+import EstadisticasAudiencia from '../components/EstadisticasAudiencia.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <Layout 
-  title="El Pibe Valderrama - Leyenda del Fútbol Colombiano | Sitio Oficial"
-  description="Sitio oficial del Pibe Valderrama, ícono del fútbol colombiano, leyenda viva del deporte y embajador de marca con autenticidad y estilo propio. Contrata al Pibe para eventos, campañas publicitarias y proyectos especiales."
-  keywords="Pibe Valderrama, Carlos Valderrama, fútbol colombiano, leyenda del fútbol, selección colombia, mundial italia 90, mundial usa 94, mundial francia 98, embajador de marca, eventos deportivos, MLS, Junior de Barranquilla, capitán colombia, Santa Marta, Magdalena"
+  title="Pibe Valderrama - Embajador de Marca & Influencer"
+  description="Contrata al Pibe Valderrama para tu marca. Leyenda del fútbol colombiano con millones de seguidores."
+  keywords="Pibe Valderrama, Carlos Valderrama, fútbol colombiano, embajador de marca, influencer marketing"
 >
+  <!-- HEADER -->
+  <Header />
 
-  <!-- Header Section -->
-	<Header />
-
-  <!-- Hero Section -->
+  <!-- HERO SECTION - PROPUESTA DE VALOR COMERCIAL -->
   <Hero />
-  
 
- 
-  <!-- Quién es el Pibe -->
-  <QuienEs />
+  <!-- DESCRIPCIÓN PIBE VALDERRAMA - CREDIBILIDAD COMERCIAL -->
+  <DescripcionComercial />
 
-  <!-- Momentos Icónicos -->
-  <MomentosIconicos />
-  
-  <!-- Marcas -->
-  <Marcas />
-  
-  <!-- Proyectos -->
-  <Proyectos />
-  
-  <!-- Contacto -->
+  <!-- CONTACTO PARA NEGOCIOS - PROMINENTE -->
   <Contacto />
+
+  <!-- MARCAS QUE HAN CONFIADO - CASOS DE ÉXITO -->
+  <Marcas />
+
+  <!-- REDES SOCIALES - FEEDS EMBEBIDOS -->
+  <RedesSociales />
+
+  <!-- PÚBLICO DEL PIBE - CONTADOR TOTAL -->
+  <!-- DEMOGRAFÍA - PORCENTAJES POR GÉNERO, EDAD, CIUDADES -->
+  <EstadisticasAudiencia />
+
+  <!-- FOOTER PROFESIONAL -->
+  <Footer />
+
 </Layout>
-
-<style>
-  /* Custom styles for smooth scrolling */
-  html {
-    scroll-behavior: smooth;
-  }
-
-  /* Hide scrollbar but keep functionality */
-  body {
-    scrollbar-width: thin;
-    scrollbar-color: #DAA520 #f1f1f1;
-  }
-
-  body::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  body::-webkit-scrollbar-track {
-    background: #f1f1f1;
-  }
-
-  body::-webkit-scrollbar-thumb {
-    background: #DAA520;
-    border-radius: 3px;
-  }
-
-  body::-webkit-scrollbar-thumb:hover {
-    background: #B8860B;
-  }
-
-  /* Loading animation */
-  .loading {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  /* Cursor effects for interactive elements */
-  .magnetic-btn {
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .magnetic-btn::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: rgba(252, 221, 9, 0.1);
-    transition: width 0.6s, height 0.6s;
-    transform: translate(-50%, -50%);
-    z-index: -1;
-  }
-
-  .magnetic-btn:hover::before {
-    width: 300px;
-    height: 300px;
-  }
-
-  /* Timeline connector styles */
-  .timeline-connector {
-    position: relative;
-  }
-
-  .timeline-connector::before {
-    content: '';
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: linear-gradient(
-      to bottom,
-      #FCDD09,
-      #003087,
-      #C8102E
-    );
-    transform: translateX(-50%);
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .timeline-connector::before {
-      left: 20px;
-    }
-  }
-
-  /* Background patterns */
-  .pattern-dots {
-    background-image: radial-gradient(circle, #FCDD09 1px, transparent 1px);
-    background-size: 20px 20px;
-    opacity: 0.1;
-  }
-
-  .pattern-grid {
-    background-image: 
-      linear-gradient(rgba(252, 221, 9, 0.1) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(252, 221, 9, 0.1) 1px, transparent 1px);
-    background-size: 50px 50px;
-  }
-</style>

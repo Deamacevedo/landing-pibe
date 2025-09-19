@@ -1,365 +1,379 @@
 ---
-import { Image } from 'astro:assets';
-// Importar logos de marcas (placeholder - reemplazar con logos reales)
+// Marcas component - Carrusel de marcas que han confiado en el Pibe
+import { Image } from "astro:assets";
+// Aquí puedes agregar las imágenes de las marcas cuando las tengas
+import LogoCodiere from "../assets/marcas/codere.png";
+import LogoFrutino from "../assets/marcas/frutino.png";
+import LogoUber from "../assets/marcas/uber.png";
+import LogoMargarita from "../assets/marcas/margarita.png";
 ---
 
-<section id="marcas" class="relative min-h-screen bg-gradient-to-br from-white via-gray-50 to-gray-100 overflow-hidden flex flex-col justify-center">
-  
-  <!-- Título y subtítulo -->
-  <div class="container mx-auto px-4 text-center py-12 md:py-16">
-    <h2 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-gray-900 mb-10 text-center">
-      Marcas que han <span class="text-pibe-gold">confiado</span> en él
-    </h2>
-    <p class="text-xl md:text-2xl lg:text-3xl text-gray-600 leading-relaxed max-w-5xl mx-auto mb-16 text-center">
-      Grandes marcas han confiado en el Pibe como embajador por su autenticidad, 
-      conexión con el público y credibilidad nacional e internacional.
-    </p>
+<section id="marcas" class="py-12 md:py-14 lg:py-20 bg-gradient-to-br from-gray-50 via-white to-slate-100 relative overflow-hidden">
+  <!-- Elementos decorativos de fondo -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-32 left-20 w-64 h-64 bg-pibe-gold rounded-full blur-3xl"></div>
+    <div class="absolute bottom-32 right-20 w-80 h-80 bg-colombian-blue rounded-full blur-3xl"></div>
   </div>
 
-  <!-- Carrusel infinito de marcas -->
-  <div class="carousel-container relative flex-grow flex items-center py-8">
-    <div class="carousel-track flex items-center" id="carousel-track">
-      
-      <!-- Marcas reales del Pibe -->
-      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <!-- Logo Codere -->
-          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-green-700" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">CODERE</text>
-            </svg>
+  <div class="container mx-auto px-4 md:px-6 relative z-10">
+    <div class="text-center mb-8 md:mb-12">
+      <h2 class="font-display text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
+        <span class="text-pibe-gold">Casos de éxito</span> comprobados
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 md:px-0">
+        Marcas que han multiplicado su alcance y engagement trabajando con el Pibe Valderrama. 
+        <strong>Resultados reales, impacto medible.</strong>
+      </p>
+    </div>
+
+    <!-- Carrusel de marcas infinito -->
+    <div class="relative mb-6 overflow-hidden">
+      <div class="flex animate-scroll gap-10 pb-8 " id="marcas-carousel">
+      <!-- Card Codere -->
+      <div class="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl min-w-[280px] md:min-w-[320px] shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 group">
+        <div class="p-6 md:p-8 lg:p-10 w-[450px] md:w-[500px]">
+          <!-- Espacio para logo -->
+          <div class="w-full h-24 md:h-32 bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl mb-6 md:mb-8 flex items-center justify-center relative overflow-hidden">
+            <Image src={LogoCodiere} alt="Codere" class="w-40 h-24 object-contain" />
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-pibe-gold rounded-full"></div>
+              <span class="text-sm font-semibold text-pibe-gold uppercase tracking-wider">Embajador Oficial</span>
+            </div>
+
+            <h3 class="font-bold text-xl md:text-2xl text-gray-900">Codere</h3>
+            <p class="text-gray-600 leading-relaxed text-base md:text-lg">
+              +2.5M impresiones generadas, 85% aumento en engagement deportivo. Campaña más exitosa del sector gaming.
+            </p>
+
+            <div class="bg-pibe-gold/10 px-6 py-4 rounded-xl">
+              <div class="text-center">
+                <span class="text-pibe-gold font-bold text-xl">ROI: 340%</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <!-- Logo Frutiño -->
-          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-orange-600" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">Frutiño</text>
-            </svg>
+      <!-- Card Frutiño -->
+      <div class="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl min-w-[280px] md:min-w-[320px] shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 group">
+        <div class="p-6 md:p-8 lg:p-10 w-[450px] md:w-[500px]">
+          <!-- Espacio para logo -->
+          <div class="w-full h-24 md:h-32 bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl mb-6 md:mb-8 flex items-center justify-center relative overflow-hidden">
+            <Image src={LogoFrutino} alt="Frutiño" class="w-40 h-24 object-contain" />
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-pibe-gold rounded-full"></div>
+              <span class="text-sm font-semibold text-pibe-gold uppercase tracking-wider">Campaña Familiar</span>
+            </div>
+
+            <h3 class="font-bold text-xl md:text-2xl text-gray-900">Frutiño</h3>
+            <p class="text-gray-600 leading-relaxed text-base md:text-lg">
+              45% aumento en ventas regionales, alcance de 1.8M familias. Posicionamiento líder en el segmento.
+            </p>
+
+            <div class="bg-pibe-gold/10 px-6 py-4 rounded-xl">
+              <div class="text-center">
+                <span class="text-pibe-gold font-bold text-xl">ROI: 280%</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <!-- Logo Uber -->
-          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-black" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">Uber</text>
-            </svg>
+      <!-- Card Uber -->
+      <div class="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl min-w-[280px] md:min-w-[320px] shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 group">
+        <div class="p-6 md:p-8 lg:p-10 w-[450px] md:w-[500px]">
+          <!-- Espacio para logo -->
+          <div class="w-full h-24 md:h-32 bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl mb-6 md:mb-8 flex items-center justify-center relative overflow-hidden">
+            <Image src={LogoUber} alt="Uber" class="w-40 h-24 object-contain" />
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-pibe-gold rounded-full"></div>
+              <span class="text-sm font-semibold text-pibe-gold uppercase tracking-wider">Movilidad Deportiva</span>
+            </div>
+
+            <h3 class="font-bold text-xl md:text-2xl text-gray-900">Uber</h3>
+            <p class="text-gray-600 leading-relaxed text-base md:text-lg">
+              60% más descargas de app, campaña más viral del año. Conexión perfecta deporte-movilidad.
+            </p>
+
+            <div class="bg-pibe-gold/10 px-6 py-4 rounded-xl">
+              <div class="text-center">
+                <span class="text-pibe-gold font-bold text-xl">ROI: 425%</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <!-- Logo Margarita -->
-          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-red-700" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">MARGARITA</text>
-            </svg>
+      <!-- Card Margarita -->
+      <div class="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl min-w-[280px] md:min-w-[320px] shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 group">
+        <div class="p-6 md:p-8 lg:p-10 w-[450px] md:w-[500px]">
+          <!-- Espacio para logo -->
+          <div class="w-full h-24 md:h-32 bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl mb-6 md:mb-8 flex items-center justify-center relative overflow-hidden">
+            <Image src={LogoMargarita} alt="Margarita" class="w-40 h-24 object-contain" />
+          </div>
+
+          <div class="space-y-6">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-pibe-gold rounded-full"></div>
+              <span class="text-sm font-semibold text-pibe-gold uppercase tracking-wider">Eventos Deportivos</span>
+            </div>
+
+            <h3 class="font-bold text-xl md:text-2xl text-gray-900">Margarita</h3>
+            <p class="text-gray-600 leading-relaxed text-base md:text-lg">
+              35% aumento en share of voice, líder en recordación de marca. Eventos deportivos memorables.
+            </p>
+
+            <div class="bg-pibe-gold/10 px-6 py-4 rounded-xl">
+              <div class="text-center">
+                <span class="text-pibe-gold font-bold text-xl">ROI: 320%</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Segunda serie (duplicado para loop infinito) -->
-      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-green-700" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">CODERE</text>
-            </svg>
+      <!-- Duplicado para efecto infinito -->
+      <!-- Card Codere (duplicado) -->
+      <div class="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl min-w-[280px] md:min-w-[320px] shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 group">
+        <div class="p-6 md:p-8 lg:p-10 w-[450px] md:w-[500px]">
+          <div class="w-full h-24 md:h-32 bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl mb-6 md:mb-8 flex items-center justify-center relative overflow-hidden">
+            <Image src={LogoCodiere} alt="Codere" class="w-40 h-24 object-contain" />
+          </div>
+          <div class="space-y-6">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-pibe-gold rounded-full"></div>
+              <span class="text-sm font-semibold text-pibe-gold uppercase tracking-wider">Embajador Oficial</span>
+            </div>
+            <h3 class="font-bold text-xl md:text-2xl text-gray-900">Codere</h3>
+            <p class="text-gray-600 leading-relaxed text-base md:text-lg">
+              +2.5M impresiones generadas, 85% aumento en engagement deportivo. Campaña más exitosa del sector gaming.
+            </p>
+            <div class="bg-pibe-gold/10 px-6 py-4 rounded-xl">
+              <div class="text-center">
+                <span class="text-pibe-gold font-bold text-xl">ROI: 340%</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-orange-600" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">Frutiño</text>
-            </svg>
+      <!-- Card Frutiño (duplicado) -->
+      <div class="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl min-w-[280px] md:min-w-[320px] shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 group">
+        <div class="p-6 md:p-8 lg:p-10 w-[450px] md:w-[500px]">
+          <div class="w-full h-24 md:h-32 bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl mb-6 md:mb-8 flex items-center justify-center relative overflow-hidden">
+            <Image src={LogoFrutino} alt="Frutiño" class="w-40 h-24 object-contain" />
+          </div>
+          <div class="space-y-6">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-pibe-gold rounded-full"></div>
+              <span class="text-sm font-semibold text-pibe-gold uppercase tracking-wider">Campaña Familiar</span>
+            </div>
+            <h3 class="font-bold text-xl md:text-2xl text-gray-900">Frutiño</h3>
+            <p class="text-gray-600 leading-relaxed text-base md:text-lg">
+              45% aumento en ventas regionales, alcance de 1.8M familias. Posicionamiento líder en el segmento.
+            </p>
+            <div class="bg-pibe-gold/10 px-6 py-4 rounded-xl">
+              <div class="text-center">
+                <span class="text-pibe-gold font-bold text-xl">ROI: 280%</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-black" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">Uber</text>
-            </svg>
+      <!-- Card Uber (duplicado) -->
+      <div class="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl min-w-[280px] md:min-w-[320px] shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 group">
+        <div class="p-6 md:p-8 lg:p-10 w-[450px] md:w-[500px]">
+          <div class="w-full h-24 md:h-32 bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl mb-6 md:mb-8 flex items-center justify-center relative overflow-hidden">
+            <Image src={LogoUber} alt="Uber" class="w-40 h-24 object-contain" />
+          </div>
+          <div class="space-y-6">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-pibe-gold rounded-full"></div>
+              <span class="text-sm font-semibold text-pibe-gold uppercase tracking-wider">Movilidad Deportiva</span>
+            </div>
+            <h3 class="font-bold text-xl md:text-2xl text-gray-900">Uber</h3>
+            <p class="text-gray-600 leading-relaxed text-base md:text-lg">
+              60% más descargas de app, campaña más viral del año. Conexión perfecta deporte-movilidad.
+            </p>
+            <div class="bg-pibe-gold/10 px-6 py-4 rounded-xl">
+              <div class="text-center">
+                <span class="text-pibe-gold font-bold text-xl">ROI: 425%</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-red-700" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">MARGARITA</text>
-            </svg>
+      <!-- Card Margarita (duplicado) -->
+      <div class="flex-shrink-0 bg-white/90 backdrop-blur-sm rounded-2xl md:rounded-3xl min-w-[280px] md:min-w-[320px] shadow-xl border border-gray-100 hover:shadow-2xl transition-shadow duration-300 group">
+        <div class="p-6 md:p-8 lg:p-10 w-[450px] md:w-[500px]">
+          <div class="w-full h-24 md:h-32 bg-gradient-to-r from-gray-50 to-gray-100 rounded-2xl mb-6 md:mb-8 flex items-center justify-center relative overflow-hidden">
+            <Image src={LogoMargarita} alt="Margarita" class="w-40 h-24 object-contain" />
+          </div>
+          <div class="space-y-6">
+            <div class="flex items-center gap-2">
+              <div class="w-2 h-2 bg-pibe-gold rounded-full"></div>
+              <span class="text-sm font-semibold text-pibe-gold uppercase tracking-wider">Eventos Deportivos</span>
+            </div>
+            <h3 class="font-bold text-xl md:text-2xl text-gray-900">Margarita</h3>
+            <p class="text-gray-600 leading-relaxed text-base md:text-lg">
+              35% aumento en share of voice, líder en recordación de marca. Eventos deportivos memorables.
+            </p>
+            <div class="bg-pibe-gold/10 px-6 py-4 rounded-xl">
+              <div class="text-center">
+                <span class="text-pibe-gold font-bold text-xl">ROI: 320%</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      </div>
 
-      <!-- Tercera serie (para asegurar loop perfecto) -->
-      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-green-700" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">CODERE</text>
+      <!-- Controles del carrusel infinito -->
+      <div class="flex justify-center items-center gap-4 my-8">
+        <button id="pause-play-btn" class="group relative overflow-hidden bg-white/80 backdrop-blur-sm hover:bg-pibe-gold border border-gray-200 hover:border-pibe-gold px-6 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl">
+          <span class="flex items-center gap-2 text-gray-600 group-hover:text-black transition-colors duration-300 font-medium">
+            <svg id="pause-icon" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
             </svg>
-          </div>
+            <svg id="play-icon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+            <span id="btn-text">Pausar</span>
+          </span>
+        </button>
+        <!-- <div class="text-sm text-gray-500 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full">
+          Carrusel automático - Casos de éxito
+        </div> -->
+      </div>
+    </div> 
+
+    <!-- Resultados consolidados -->
+    <div class="bg-gradient-to-r from-pibe-gold/10 via-pibe-gold/5 to-pibe-gold/10 rounded-3xl p-10 text-center border border-pibe-gold/20 backdrop-blur-sm">
+      <div class="mb-8">
+        <h3 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Resultados que hablan por sí solos</h3>
+        <p class="text-gray-600 text-lg max-w-2xl mx-auto">Métricas reales de campañas ejecutadas con el Pibe Valderrama</p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8 mb-10">
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="text-4xl md:text-5xl font-bold text-pibe-gold mb-2">+8M</div>
+          <div class="text-gray-700 font-medium">Impresiones generadas</div>
+          <div class="text-sm text-gray-500 mt-1">Alcance total acumulado</div>
+        </div>
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="text-4xl md:text-5xl font-bold text-pibe-gold mb-2">340%</div>
+          <div class="text-gray-700 font-medium">ROI promedio</div>
+          <div class="text-sm text-gray-500 mt-1">Retorno de inversión</div>
+        </div>
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="text-4xl md:text-5xl font-bold text-pibe-gold mb-2">85%</div>
+          <div class="text-gray-700 font-medium">Aumento engagement</div>
+          <div class="text-sm text-gray-500 mt-1">Interacción promedio</div>
+        </div>
+        <div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300">
+          <div class="text-4xl md:text-5xl font-bold text-pibe-gold mb-2">10+</div>
+          <div class="text-gray-700 font-medium">Marcas exitosas</div>
+          <div class="text-sm text-gray-500 mt-1">Colaboraciones activas</div>
         </div>
       </div>
 
-      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-orange-600" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">Frutiño</text>
-            </svg>
-          </div>
-        </div>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#contacto" class="inline-block bg-pibe-gold hover:bg-yellow-500 text-black font-bold px-10 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+          Obtén resultados similares
+        </a>
+        <a href="#quien-es" class="inline-block border-2 border-pibe-gold hover:bg-pibe-gold hover:text-black text-pibe-gold font-bold px-10 py-4 rounded-xl transition-all duration-300">
+          Conoce al Pibe
+        </a>
       </div>
-
-      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-black" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-2xl font-bold">Uber</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <div class="brand-item flex-shrink-0 mx-8 lg:mx-12">
-        <div class="brand-logo bg-white rounded-2xl shadow-lg p-10 lg:p-14 hover-brand">
-          <div class="logo-placeholder h-20 lg:h-24 flex items-center justify-center">
-            <svg class="h-full w-auto text-red-700" viewBox="0 0 200 60" fill="currentColor">
-              <text x="50%" y="50%" text-anchor="middle" dominant-baseline="middle" class="text-xl font-bold">MARGARITA</text>
-            </svg>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
-
-  <!-- Gradientes laterales para efecto fade -->
-  <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none z-10"></div>
-  <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none z-10"></div>
-
 </section>
 
 <style>
-  /* Configuración del carrusel */
-  .carousel-container {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
   }
 
-  .carousel-track {
-    width: max-content;
-    animation-play-state: running;
-  }
-
-  /* Estilos para las marcas */
-  .brand-item {
-    min-width: 200px;
-    max-width: 280px;
-  }
-
-  .brand-logo {
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    backdrop-filter: blur(10px);
-  }
-
-  .hover-brand:hover {
-    transform: translateY(-8px) scale(1.05);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    border-color: rgba(252, 221, 9, 0.3);
-  }
-
-  .hover-brand:hover .logo-placeholder {
-    filter: brightness(1.1) contrast(1.1);
-  }
-
-  /* Estados iniciales para animación de entrada */
-  .brand-item {
-    opacity: 0;
-    transform: translateY(30px) scale(0.9);
-  }
-
-  /* Efectos de gradiente suave */
-  .carousel-container::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    background: linear-gradient(to right, rgba(249, 250, 251, 1), transparent);
-    z-index: 10;
-    pointer-events: none;
-  }
-
-  .carousel-container::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 100px;
-    background: linear-gradient(to left, rgba(249, 250, 251, 1), transparent);
-    z-index: 10;
-    pointer-events: none;
-  }
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .brand-item {
-      min-width: 160px;
-      max-width: 200px;
-      margin: 0 1rem;
+  /* Carrusel infinito */
+  @keyframes scroll-infinite {
+    0% {
+      transform: translateX(0);
     }
-
-    .brand-logo {
-      padding: 1.5rem;
-    }
-
-    .logo-placeholder {
-      height: 3rem;
-    }
-
-    .hover-brand:hover {
-      transform: translateY(-4px) scale(1.02);
+    100% {
+      transform: translateX(-50%);
     }
   }
 
-  @media (max-width: 480px) {
-    .brand-item {
-      min-width: 140px;
-      max-width: 180px;
-      margin: 0 0.75rem;
-    }
-
-    .brand-logo {
-      padding: 1rem;
-    }
-
-    .logo-placeholder {
-      height: 2.5rem;
-    }
+  .animate-scroll {
+    animation: scroll-infinite 30s linear infinite;
+    width: calc(500px * 8 + 10px * 7); /* 8 cards + gaps */
   }
 
-  /* Mejoras de performance */
-  .carousel-track,
-  .brand-item,
-  .brand-logo {
-    will-change: transform;
-    backface-visibility: hidden;
-    perspective: 1000px;
-  }
-
-  /* Animaciones suaves de entrada */
-  .brand-item.animate-in {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  /* Pausar animación en hover del contenedor */
-  .carousel-container:hover .carousel-track {
+  .animate-scroll:hover {
     animation-play-state: paused;
   }
 
-  /* Efectos adicionales para logos */
-  .logo-placeholder {
-    transition: all 0.3s ease;
+  /* Pausa la animación cuando está pausada */
+  .animate-scroll.paused {
+    animation-play-state: paused;
   }
 
-  .logo-placeholder svg {
-    transition: all 0.3s ease;
+  /* Efectos adicionales para las cards */
+  .flex-shrink-0 {
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  .hover-brand:hover .logo-placeholder svg {
-    transform: scale(1.1);
+  .flex-shrink-0:hover {
+    transform: translateY(-8px);
+    z-index: 10;
   }
 
-  /* FORZAR CLASES DE TAILWIND SOBRE GSAP - MARCAS */
-  
-  /* Padding classes */
-  .px-4 { padding-left: 1rem !important; padding-right: 1rem !important; }
-  .py-12 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
-  .py-16 { padding-top: 4rem !important; padding-bottom: 4rem !important; }
-  .py-8 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
-  
-  .p-10 { padding: 2.5rem !important; }
-  
-  /* Margin classes */
-  .mb-8 { margin-bottom: 2rem !important; }
-  .mb-10 { margin-bottom: 2.5rem !important; }
-  .mb-12 { margin-bottom: 3rem !important; }
-  .mb-16 { margin-bottom: 4rem !important; }
-  .mx-8 { margin-left: 2rem !important; margin-right: 2rem !important; }
-
-  /* Text sizes */
-  .text-lg { font-size: 1.125rem !important; line-height: 1.75rem !important; }
-  .text-xl { font-size: 1.25rem !important; line-height: 1.75rem !important; }
-  .text-2xl { font-size: 1.5rem !important; line-height: 2rem !important; }
-  .text-3xl { font-size: 1.875rem !important; line-height: 2.25rem !important; }
-  .text-4xl { font-size: 2.25rem !important; line-height: 2.5rem !important; }
-  .text-5xl { font-size: 3rem !important; line-height: 1 !important; }
-  .text-6xl { font-size: 3.75rem !important; line-height: 1 !important; }
-  .text-7xl { font-size: 4.5rem !important; line-height: 1 !important; }
-  .text-8xl { font-size: 6rem !important; line-height: 1 !important; }
-
-  /* Border radius */
-  .rounded-2xl { border-radius: 1rem !important; }
-
-  /* Width and height */
-  .h-20 { height: 5rem !important; }
-  .h-24 { height: 6rem !important; }
-  .w-auto { width: auto !important; }
-  .h-full { height: 100% !important; }
-
-  /* Display classes */
-  .flex { display: flex !important; }
-  .items-center { align-items: center !important; }
-  .justify-center { justify-content: center !important; }
-  .flex-col { flex-direction: column !important; }
-  .flex-grow { flex-grow: 1 !important; }
-  .text-center { text-align: center !important; }
-  
-  /* Max width classes */
-  .max-w-4xl { max-width: 56rem !important; }
-  .max-w-5xl { max-width: 64rem !important; }
-  .mx-auto { margin-left: auto !important; margin-right: auto !important; }
-
-  /* Responsive Tailwind classes con !important - MARCAS */
-  @media (min-width: 768px) {
-    .md\\:px-16 { padding-left: 4rem !important; padding-right: 4rem !important; }
-    .md\\:text-xl { font-size: 1.25rem !important; line-height: 1.75rem !important; }
-    .md\\:text-2xl { font-size: 1.5rem !important; line-height: 2rem !important; }
-    .md\\:text-6xl { font-size: 3.75rem !important; line-height: 1 !important; }
-    .md\\:text-7xl { font-size: 4.5rem !important; line-height: 1 !important; }
-    .lg\\:p-14 { padding: 3.5rem !important; }
-    .lg\\:mx-12 { margin-left: 3rem !important; margin-right: 3rem !important; }
-    .lg\\:h-24 { height: 6rem !important; }
+  /* Gradiente de desvanecimiento en los bordes */
+  #marcas-carousel::before,
+  #marcas-carousel::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
   }
 
-  @media (min-width: 1024px) {
-    .lg\\:text-2xl { font-size: 1.5rem !important; line-height: 2rem !important; }
-    .lg\\:text-3xl { font-size: 1.875rem !important; line-height: 2.25rem !important; }
-    .lg\\:text-7xl { font-size: 4.5rem !important; line-height: 1 !important; }
-    .lg\\:text-8xl { font-size: 6rem !important; line-height: 1 !important; }
+  #marcas-carousel::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(249, 250, 251, 1), rgba(249, 250, 251, 0));
+  }
+
+  #marcas-carousel::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(249, 250, 251, 1), rgba(249, 250, 251, 0));
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .animate-scroll {
+      animation-duration: 20s;
+    }
+
+    .flex-shrink-0:hover {
+      transform: translateY(-4px);
+    }
   }
 </style>
 

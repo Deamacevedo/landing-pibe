@@ -1,0 +1,82 @@
+---
+// DescripcionComercial component - Sección comercial con dos columnas
+import fondoProduccion from '../assets/fondoprueba.jpg';
+import Image from 'astro/components/Image.astro';
+import Descripcion from '../assets/descripcion.jpg';
+---
+
+<section id="sobre-el" class="py-12 md:py-16 lg:py-20 bg-gradient-to-br from-slate-50 via-white to-gray-100 relative overflow-hidden">
+  <!-- Patrón de fondo decorativo -->
+  <div class="absolute inset-0 opacity-5">
+    <div class="absolute top-20 left-10 w-72 h-72 bg-pibe-gold rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-colombian-blue rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="container mx-auto px-4 md:px-6 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+      <!-- Columna de contenido (IZQUIERDA) -->
+      <div class="order-2 lg:order-1">
+        <div class="mb-10">
+          <p class="text-pibe-gold text-xs md:text-sm lg:text-base font-semibold uppercase tracking-wider mb-4 md:mb-6">Por qué elegir al Pibe Valderrama</p>
+          <h2 class="font-display text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 leading-tight mb-4 md:mb-6">
+            Carlos Valderrama
+            <span class="text-pibe-gold">'El Pibe' Valderrama</span>
+          </h2>
+          <p class="text-gray-700 text-base md:text-lg lg:text-xl leading-relaxed mb-6">
+            Leyenda del fútbol colombiano, capitán de Colombia en <strong class="text-pibe-gold">3 Mundiales</strong>, dos veces Mejor Futbolista de Sudamérica (1987, 1993), campeón con Junior (1993, 1995) y la Copa de Francia con Montpellier (1990), miembro del <strong class="text-pibe-gold">FIFA 100</strong> y un símbolo de autenticidad y carisma que trasciende generaciones.
+          </p>
+          <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+            Su estilo único, humor natural y profundo orgullo colombiano lo convierten en una figura entrañable y relevante en la cultura digital. Conecta de forma genuina con millones, generando contenido que mezcla familia, entretenimiento y alto valor emocional para las audiencias <strong class="text-pibe-gold italic">"Todo bien, todo bien"</strong>.
+          </p>
+        </div>
+
+        <!-- Estadísticas Comerciales -->
+        <div class="bg-gradient-to-r from-pibe-gold to-yellow-500 p-4 md:p-6 lg:p-8 rounded-2xl mb-6 md:mb-10 shadow-lg">
+          <div class="grid grid-cols-3 gap-3 md:gap-6 text-center">
+            <div>
+              <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-1 md:mb-2">3.5M+</div>
+              <div class="text-xs md:text-sm lg:text-base text-black/80 font-medium">Seguidores totales</div>
+            </div>
+            <div>
+              <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-1 md:mb-2">95%</div>
+              <div class="text-xs md:text-sm lg:text-base text-black/80 font-medium">Engagement rate</div>
+            </div>
+            <div>
+              <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-1 md:mb-2">10+</div>
+              <div class="text-xs md:text-sm lg:text-base text-black/80 font-medium">Marcas exitosas</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div>
+          <p class="text-gray-700 text-base md:text-lg mb-6 md:mb-8 font-medium">Únete a las marcas que ya confían en el Pibe para conectar con millones de personas</p>
+          <div class="flex flex-col sm:flex-row gap-3 md:gap-4">
+            <a href="#contacto" class="bg-pibe-gold hover:bg-yellow-500 text-black font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:scale-105 text-sm md:text-base">Solicitar información</a>
+            <a href="#marcas" class="border-2 border-pibe-gold hover:bg-pibe-gold hover:text-black text-pibe-gold font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl transition-all duration-300 text-center hover:shadow-lg text-sm md:text-base">Ver casos de éxito</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna de imagen (DERECHA) -->
+      <div class="order-1 lg:order-2">
+        <div class="relative group">
+          <div class="absolute -inset-4 bg-gradient-to-r from-pibe-gold to-yellow-500 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+          <div class="relative">
+            <Image
+              src={Descripcion}
+              alt="Pibe Valderrama - Embajador de marca profesional"
+              class="w-full h-[450px] lg:h-[650px] object-cover rounded-3xl shadow-2xl"
+            />
+            <div class="absolute top-6 right-6 bg-gradient-to-r from-pibe-gold to-yellow-500 text-black px-6 py-3 rounded-full font-bold text-sm shadow-lg animate-pulse">
+              Disponible
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-3xl"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="../scripts/descripcion-comercial.js"></script>

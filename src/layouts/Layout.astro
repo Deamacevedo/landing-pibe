@@ -1,108 +1,42 @@
 ---
-// src/layouts/Layout.astro
-import "../styles/global.css";
-
 export interface Props {
   title: string;
   description?: string;
   keywords?: string;
-  ogImage?: string;
-  canonicalURL?: string;
-  noIndex?: boolean;
 }
 
-const {
-  title,
-  description = "Sitio oficial del Pibe Valderrama, ícono del fútbol colombiano, leyenda viva del deporte y embajador de marca con autenticidad y estilo propio.",
-  keywords = "Pibe Valderrama, Carlos Valderrama, fútbol colombiano, leyenda del fútbol, selección colombia, mundial italia 90, mundial usa 94, mundial francia 98, embajador de marca, eventos deportivos, MLS, Junior de Barranquilla, capitán colombia, Santa Marta, Magdalena",
-  ogImage = "/images/pibe-og-image.jpg",
-  canonicalURL,
-  noIndex = false,
-} = Astro.props;
-
-const currentURL = canonicalURL || Astro.url.pathname;
-const siteURL = "https://pibevalderrama.com";
-const fullURL = `${siteURL}${currentURL}`;
-const fullOgImage = `${siteURL}${ogImage}`;
+const { title, description, keywords } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="es" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content={description || "Pibe Valderrama - Embajador de Marca Profesional"} />
+  <meta name="keywords" content={keywords || "Pibe Valderrama, embajador de marca, fútbol colombiano"} />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Primary Meta Tags -->
-    <title>{title}</title>
-    <meta name="title" content={title} />
-    <meta name="description" content={description} />
-    <meta name="keywords" content={keywords} />
-    <meta name="author" content="El Pibe Valderrama" />
-    <meta name="robots" content={noIndex ? "noindex, nofollow" : "index, follow, max-image-preview:large"} />
-    <meta name="language" content="Spanish" />
-    <meta name="copyright" content="Carlos Alberto Valderrama Palacio" />
-    <meta name="generator" content={Astro.generator} />
+  <meta name="generator" content={Astro.generator} />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href={fullURL} />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={fullURL} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={fullOgImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="El Pibe Valderrama - Leyenda del Fútbol Colombiano" />
-    <meta property="og:site_name" content="El Pibe Valderrama - Sitio Oficial" />
-    <meta property="og:locale" content="es_CO" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={fullURL} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={fullOgImage} />
-    <meta property="twitter:image:alt" content="El Pibe Valderrama - Leyenda del Fútbol Colombiano" />
-    <meta property="twitter:creator" content="@PibeValderrama" />
-
-    <!-- Theme Color - Colombian Yellow -->
-    <meta name="theme-color" content="#FCDD09" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  </head>
-
-  <body class="bg-white text-gray-900 overflow-x-hidden antialiased">
-    <!-- Skip to main content (accessibility) -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-yellow-400 text-blue-800 px-4 py-2 z-50">
-      Saltar al contenido principal
-    </a>
-
-    <!-- Main Content -->
-    <main id="main-content">
-      <slot />
-    </main>
-
-    <!-- Initialize basic optimizations -->
-    <script is:inline>
-      // Prevent FOUC
-      document.documentElement.style.visibility = 'visible';
-      
-      // Basic performance optimizations
-      document.addEventListener('DOMContentLoaded', () => {
-        // Add loaded class for CSS transitions
-        document.body.classList.add('loaded');
-      });
-    </script>
-  </body>
+  <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./Logopibefull.png" />
+    <link rel="apple-touch-icon" href="./Logopibefull.png" />
+    <link rel="shortcut icon" href="./Logopibefull.png" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <title>{title}</title>
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+<body>
+  <slot />
+</body>
 </html>

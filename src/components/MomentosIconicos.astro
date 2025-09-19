@@ -1,133 +1,62 @@
 ---
 import { Image } from "astro:assets";
 // Importar imágenes de momentos icónicos
-import PibeIntro from "../assets/momentos/pibe-intro.webp";
-import PibeDay from "../assets/momentos/pibe-day.jpg";
+import PibeDay from "../assets/momentos/mls.jpg";
 import Colombia5Argentina from "../assets/momentos/colombia-argentina.jpg";
-import BeckhamPide from "../assets/momentos/beckham-camiseta.jpg";
+import BeckhamPide from "../assets/momentos/pibeb.jpg";
 import GolAlemania from "../assets/momentos/gol-alemania.jpg";
 ---
 
 <section
-  id="momentos-iconicos"
-  class="relative h-screen overflow-hidden bg-gradient-to-b from-black to-gray-900"
+  id="momentos-iconicos-section"
+  class="relative py-20 bg-gradient-to-b from-gray-900 to-black"
 >
-  <!-- Horizontal timeline track container -->
-  <div class="timeline-track">
-    <!-- Panel 1: Intro -->
-    <article
-      class="timeline-panel intro-panel grid place-items-center bg-gradient-to-br from-black via-gray-900 to-colombian-blue/20 px-4 md:px-8 py-8 md:py-12"
-    >
-      <div class="absolute inset-0 bg-black/30 z-10"></div>
-      <div class="absolute inset-0 z-0">
-        <Image
-          src={PibeIntro}
-          alt="El Pibe Valderrama"
-          class="block w-full h-full object-cover opacity-80 will-transform timeline-image"
-          width={1920}
-          height={1080}
-          loading="eager"
-        />
-        <div
-          class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/50"
-        >
-        </div>
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+        Momentos Icónicos
+      </h2>
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+        Los momentos que marcaron la historia del fútbol y elevaron al Pibe a la inmortalidad
+      </p>
+      <div class="frases-iconicas mt-8 space-y-4">
+        <blockquote class="text-2xl md:text-3xl font-script text-pibe-gold italic">
+          "El que juega bien, no necesita correr."
+        </blockquote>
+        <blockquote class="text-2xl md:text-3xl font-script text-pibe-gold italic">
+          "Así es que se juega papá."
+        </blockquote>
       </div>
+    </div>
 
-      <div
-        class="relative z-20 text-center px-6 md:px-8 lg:px-12 max-w-6xl will-transform timeline-text space-y-8"
-      >
-        <!-- Título del momento en el área de contenido -->
-        <div
-          class="moment-title bg-gradient-to-br from-pibe-gold to-yellow-400 text-black px-4 py-2 rounded-xl font-bold text-lg md:text-xl shadow-lg mb-6 inline-block"
-        >
-          Momentos Icónicos
-        </div>
-        <h1 class="text-6xl md:text-8xl font-display font-bold text-white mb-8">
-          Momentos
-        </h1>
-        <h2
-          class="text-4xl md:text-6xl font-display font-bold text-pibe-gold mb-12"
-        >
-          Icónicos
-        </h2>
+    <!-- Cards container -->
+    <div class="cards-carousel-container relative">
+      <div class="cards-track flex overflow-x-auto scroll-smooth gap-6 pb-4" id="momentos-cards" style="overflow-y: hidden;">
 
-        <div class="intro-content">
-          <p
-            class="text-xl md:text-2xl text-white/90 leading-relaxed mb-8 max-w-4xl mx-auto"
-          >
-            El Pibe no necesita presentación. Pero sí merece ser recordado.
-            Estas imágenes y frases son parte de la historia del fútbol y de
-            Colombia.
-          </p>
-
-          <div class="frases-iconicas space-y-6 md:space-y-8 mt-8 md:mt-12">
-            <blockquote
-              class="text-3xl md:text-4xl font-script text-pibe-gold italic"
-            >
-              "El que juega bien, no necesita correr."
-            </blockquote>
-            <blockquote
-              class="text-3xl md:text-4xl font-script text-pibe-gold italic"
-            >
-              "Así es que se juega papá."
-            </blockquote>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <!-- Panel 2: Pibe Day (MLS) -->
-    <article
-      class="timeline-panel grid place-items-center bg-gradient-to-br from-colombian-blue/20 to-purple-900/30 px-4 md:px-8 py-8 md:py-12"
-    >
-      <div class="absolute inset-0 bg-black/60 z-0"></div>
-      <div
-        class="absolute inset-0 bg-gradient-to-br from-purple-900/40 via-black/60 to-colombian-blue/30"
-      >
-      </div>
-      <div
-        class="relative z-10 w-11/12 md:w-4/5 xl:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center min-h-[70vh]"
-      >
-        <div class="flex justify-center order-1 md:order-1 mb-8 md:mb-0">
-          <div
-            class="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-white/30 bg-white/10 backdrop-blur-sm"
-          >
+        <!-- Card 1: Pibe Day (MLS) -->
+        <div class="moment-card flex-shrink-0 w-80 md:w-96 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-700">
+          <div class="relative h-64 md:h-72 overflow-hidden">
             <Image
               src={PibeDay}
               alt="Pibe Day en la MLS"
-              class="block w-[85vw] md:w-[42vw] h-[50vh] md:h-[60vh] object-cover will-transform timeline-image"
-              width={800}
-              height={600}
+              class="w-full h-full object-cover"
+              width={400}
+              height={300}
               loading="lazy"
             />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="bg-gradient-to-br from-purple-600 to-purple-700 text-white px-3 py-1 rounded-lg font-bold text-sm shadow-lg">
+                MLS
+              </span>
+            </div>
           </div>
-        </div>
-        <div
-          class="order-2 md:order-2 px-4 md:px-6 lg:px-8 will-transform timeline-text space-y-6 md:space-y-8"
-        >
-          <!-- Título del momento en el área de contenido -->
-          <div
-            class="moment-title bg-gradient-to-br from-purple-600 to-purple-700 text-white px-4 py-2 rounded-xl font-bold text-lg md:text-xl shadow-lg mb-4 inline-block"
-          >
-            Pibe Day - MLS
-          </div>
-          <h3
-            class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-6"
-          >
-            Pibe Day
-          </h3>
-          <p class="text-gray-200 text-lg md:text-xl leading-relaxed mb-8">
-            El recordado <strong class="text-pibe-gold">Valderrama Day</strong> en
-            la MLS, cuando jugadores usaron pelucas para homenajearlo. Un homenaje
-            único al estilo inconfundible del genio colombiano.
-          </p>
-          <div
-            class="video-link-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg mb-4"
-          >
-            <h4 class="font-bold text-pibe-gold mb-2">Momento Histórico</h4>
-            <p class="text-sm text-gray-300 mb-3">
-              Un día especial en la historia de la MLS
+          <div class="p-6">
+            <h3 class="text-2xl font-display font-bold text-white mb-4">
+              Pibe Day
+            </h3>
+            <p class="text-gray-300 text-base leading-relaxed mb-4">
+              El recordado <strong class="text-pibe-gold">Valderrama Day</strong> en la MLS, cuando jugadores usaron pelucas para homenajearlo. Un homenaje único al estilo inconfundible del genio colombiano.
             </p>
             <a
               href="https://x.com/NoContext90sMls/status/1355565075030040577"
@@ -140,68 +69,33 @@ import GolAlemania from "../assets/momentos/gol-alemania.jpg";
               Ver video
             </a>
           </div>
-          <blockquote
-            class="text-lg font-script text-pibe-gold italic border-l-4 border-purple-600 pl-3"
-          >
-            "Un homenaje único al estilo inconfundible"
-          </blockquote>
         </div>
-      </div>
-    </article>
 
-    <!-- Panel 3: Colombia 5-0 Argentina -->
-    <article
-      class="timeline-panel grid place-items-center bg-gradient-to-br from-colombian-yellow/30 to-colombian-red/30 px-4 md:px-8 py-8 md:py-12"
-    >
-      <div class="absolute inset-0 bg-black/50 z-0"></div>
-      <div
-        class="absolute inset-0 bg-gradient-to-br from-colombian-yellow/20 via-black/70 to-colombian-red/25"
-      >
-      </div>
-      <div
-        class="relative z-10 w-11/12 md:w-4/5 xl:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center min-h-[70vh]"
-      >
-        <div
-          class="order-2 md:order-1 px-4 md:px-6 lg:px-8 will-transform timeline-text space-y-4 md:space-y-6"
-        >
-          <!-- Título del momento en el área de contenido -->
-          <div
-            class="moment-title bg-gradient-to-br from-colombian-yellow to-colombian-red text-white px-4 py-2 rounded-xl font-bold text-lg md:text-xl shadow-lg mb-4 inline-block"
-          >
-            5-0 vs Argentina
-          </div>
-          <h3
-            class="text-3xl md:text-4xl font-display font-bold text-white mb-4"
-          >
-            Colombia 5-0 Argentina
-          </h3>
-          <p class="text-gray-200 text-lg leading-relaxed mb-4">
-            En el <strong class="text-pibe-gold"
-              >Monumental de Buenos Aires</strong
-            >, Colombia goleó 5-0 a Argentina. Valderrama fue el conductor de
-            una orquesta perfecta. Esa victoria clasificó a Colombia al <strong
-              class="text-pibe-gold">Mundial 94</strong
-            > y quedó en la historia del fútbol mundial.
-          </p>
-          <div class="match-stats grid grid-cols-2 gap-3 md:gap-4 mb-4 md:mb-6">
-            <div
-              class="stat-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg border-l-4 border-colombian-yellow"
-            >
-              <div class="text-2xl font-bold text-colombian-yellow">5-0</div>
-              <div class="text-sm text-gray-300">Resultado final</div>
-            </div>
-            <div
-              class="stat-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg border-l-4 border-colombian-red"
-            >
-              <div class="text-2xl font-bold text-colombian-red">
-                Mundial 94
-              </div>
-              <div class="text-sm text-gray-300">Clasificación</div>
+        <!-- Card 2: Colombia 5-0 Argentina -->
+        <div class="moment-card flex-shrink-0 w-80 md:w-96 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-700">
+          <div class="relative h-64 md:h-72 overflow-hidden">
+            <Image
+              src={Colombia5Argentina}
+              alt="Colombia 5-0 Argentina 1993"
+              class="w-full h-full object-cover"
+              width={400}
+              height={300}
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="bg-gradient-to-br from-colombian-yellow to-colombian-red text-white px-3 py-1 rounded-lg font-bold text-sm shadow-lg">
+                5-0 vs Argentina
+              </span>
             </div>
           </div>
-          <div
-            class="video-link-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg mb-4"
-          >
+          <div class="p-6">
+            <h3 class="text-2xl font-display font-bold text-white mb-4">
+              Colombia 5-0 Argentina
+            </h3>
+            <p class="text-gray-300 text-base leading-relaxed mb-4">
+              En el <strong class="text-pibe-gold">Monumental de Buenos Aires</strong>, Colombia goleó 5-0 a Argentina. Valderrama fue el conductor de una orquesta perfecta. Esa victoria clasificó a Colombia al <strong class="text-pibe-gold">Mundial 94</strong>.
+            </p>
             <a
               href="https://www.youtube.com/watch?v=m4X7QIPM9hQ"
               target="_blank"
@@ -213,86 +107,32 @@ import GolAlemania from "../assets/momentos/gol-alemania.jpg";
               Ver goleada histórica
             </a>
           </div>
-          <blockquote
-            class="text-lg font-script text-pibe-gold italic border-l-4 border-colombian-yellow pl-3"
-          >
-            "Una orquesta perfecta dirigida por el Pibe"
-          </blockquote>
         </div>
-        <div class="flex justify-center order-1 md:order-2">
-          <div
-            class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20"
-          >
-            <Image
-              src={Colombia5Argentina}
-              alt="Colombia 5-0 Argentina 1993"
-              class="block w-[85vw] md:w-[42vw] h-[50vh] md:h-[60vh] object-cover will-transform timeline-image"
-              width={800}
-              height={600}
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </article>
 
-    <!-- Panel 4: Beckham pide la camiseta -->
-    <article
-      class="timeline-panel grid place-items-center bg-gradient-to-br from-green-900/30 to-blue-900/30 px-4 md:px-8 py-8 md:py-12"
-    >
-      <div class="absolute inset-0 bg-black/55 z-0"></div>
-      <div
-        class="absolute inset-0 bg-gradient-to-br from-green-900/30 via-black/60 to-blue-900/35"
-      >
-      </div>
-      <div
-        class="relative z-10 w-11/12 md:w-4/5 xl:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center min-h-[70vh]"
-      >
-        <div class="flex justify-center order-1 md:order-1">
-          <div
-            class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20"
-          >
+        <!-- Card 3: Beckham pide la camiseta -->
+        <div class="moment-card flex-shrink-0 w-80 md:w-96 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-700">
+          <div class="relative h-64 md:h-72 overflow-hidden">
             <Image
               src={BeckhamPide}
               alt="Beckham pide camiseta a Valderrama"
-              class="block w-[85vw] md:w-[42vw] h-[50vh] md:h-[60vh] object-cover will-transform timeline-image"
-              width={800}
-              height={600}
+              class="w-full h-full object-cover"
+              width={400}
+              height={300}
               loading="lazy"
             />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="bg-gradient-to-br from-green-600 to-blue-600 text-white px-3 py-1 rounded-lg font-bold text-sm shadow-lg">
+                Francia 98
+              </span>
+            </div>
           </div>
-        </div>
-        <div
-          class="order-2 md:order-2 px-4 md:px-6 lg:px-8 will-transform timeline-text space-y-4 md:space-y-6"
-        >
-          <!-- Título del momento en el área de contenido -->
-          <div
-            class="moment-title bg-gradient-to-br from-green-600 to-blue-600 text-white px-4 py-2 rounded-xl font-bold text-lg md:text-xl shadow-lg mb-4 inline-block"
-          >
-            Beckham & El Pibe
-          </div>
-          <h3
-            class="text-3xl md:text-4xl font-display font-bold text-white mb-4"
-          >
-            Beckham pide la camiseta
-          </h3>
-          <p class="text-gray-200 text-lg leading-relaxed mb-4">
-            Tras el partido entre <strong class="text-pibe-gold"
-              >Colombia e Inglaterra</strong
-            > en Francia 98, David Beckham le pidió la camiseta a Valderrama. Un
-            gesto de respeto y admiración del futuro galáctico hacia la leyenda colombiana.
-          </p>
-          <div
-            class="respect-moment bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg mb-4"
-          >
-            <h4 class="font-bold text-pibe-gold mb-2 flex items-center">
-              <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-              Respeto Mutuo
-            </h4>
-            <p class="text-sm text-gray-300 mb-3">
-              El galáctico reconoce al genio colombiano
+          <div class="p-6">
+            <h3 class="text-2xl font-display font-bold text-white mb-4">
+              Beckham pide la camiseta
+            </h3>
+            <p class="text-gray-300 text-base leading-relaxed mb-4">
+              Tras el partido entre <strong class="text-pibe-gold">Colombia e Inglaterra</strong> en Francia 98, David Beckham le pidió la camiseta a Valderrama. Un gesto de respeto y admiración del futuro galáctico hacia la leyenda colombiana.
             </p>
             <a
               href="https://www.tiktok.com/@deportesrcn/video/7384983294833609990"
@@ -305,69 +145,32 @@ import GolAlemania from "../assets/momentos/gol-alemania.jpg";
               Ver momento histórico
             </a>
           </div>
-          <blockquote
-            class="text-lg font-script text-pibe-gold italic border-l-4 border-green-600 pl-3"
-          >
-            "Un gesto de respeto hacia la leyenda"
-          </blockquote>
         </div>
-      </div>
-    </article>
 
-    <!-- Panel 5: Gol contra Alemania (Italia 90) -->
-    <article
-      class="timeline-panel grid place-items-center bg-gradient-to-br from-red-900/30 to-yellow-600/30 px-4 md:px-8 py-8 md:py-12"
-    >
-      <div class="absolute inset-0 bg-black/50 z-0"></div>
-      <div
-        class="absolute inset-0 bg-gradient-to-br from-red-900/35 via-black/65 to-yellow-600/30"
-      >
-      </div>
-      <div
-        class="relative z-10 w-11/12 md:w-4/5 xl:w-3/4 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center min-h-[70vh]"
-      >
-        <div
-          class="order-2 md:order-1 px-4 md:px-6 lg:px-8 will-transform timeline-text space-y-4 md:space-y-6"
-        >
-          <!-- Título del momento en el área de contenido -->
-          <div
-            class="moment-title bg-gradient-to-br from-red-600 to-yellow-500 text-white px-4 py-2 rounded-xl font-bold text-lg md:text-xl shadow-lg mb-4 inline-block"
-          >
-            Italia 90
-          </div>
-          <h3
-            class="text-3xl md:text-4xl font-display font-bold text-white mb-4"
-          >
-            La asistencia histórica
-          </h3>
-          <p class="text-gray-200 text-lg leading-relaxed mb-4">
-            En el <strong class="text-pibe-gold">minuto 88</strong>, Valderrama
-            asistió a Freddy Rincón para el histórico empate <strong
-              class="text-pibe-gold">1-1 contra Alemania</strong
-            >, clasificando a Colombia a octavos de final por primera vez en su
-            historia.
-          </p>
-          <div
-            class="historic-stats grid grid-cols-2 gap-3 md:gap-4 mb-4 md:mb-6"
-          >
-            <div
-              class="stat-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg border-l-4 border-red-600 text-center"
-            >
-              <div class="text-3xl font-bold text-pibe-gold">1-1</div>
-              <div class="text-sm text-gray-300">Resultado final</div>
-            </div>
-            <div
-              class="stat-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg border-l-4 border-yellow-600 text-center"
-            >
-              <div class="text-3xl font-bold text-pibe-gold">1er</div>
-              <div class="text-sm text-gray-300">Octavos en Mundial</div>
+        <!-- Card 4: Asistencia histórica vs Alemania -->
+        <div class="moment-card flex-shrink-0 w-80 md:w-96 bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl shadow-2xl overflow-hidden border border-gray-700">
+          <div class="relative h-64 md:h-72 overflow-hidden">
+            <Image
+              src={GolAlemania}
+              alt="Asistencia a Rincón vs Alemania"
+              class="w-full h-full object-cover"
+              width={400}
+              height={300}
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+            <div class="absolute top-4 left-4">
+              <span class="bg-gradient-to-br from-red-600 to-yellow-500 text-white px-3 py-1 rounded-lg font-bold text-sm shadow-lg">
+                Italia 90
+              </span>
             </div>
           </div>
-          <div
-            class="video-link-card bg-white/10 backdrop-blur-sm p-4 rounded-xl shadow-lg mb-4"
-          >
-            <p class="text-sm text-gray-300 mb-3">
-              Minuto 88 - La magia del Pibe
+          <div class="p-6">
+            <h3 class="text-2xl font-display font-bold text-white mb-4">
+              La asistencia histórica
+            </h3>
+            <p class="text-gray-300 text-base leading-relaxed mb-4">
+              En el <strong class="text-pibe-gold">minuto 88</strong>, Valderrama asistió a Freddy Rincón para el histórico empate <strong class="text-pibe-gold">1-1 contra Alemania</strong>, clasificando a Colombia a octavos de final por primera vez en su historia.
             </p>
             <a
               href="https://www.youtube.com/watch?v=m4X7QIPM9hQ"
@@ -380,860 +183,140 @@ import GolAlemania from "../assets/momentos/gol-alemania.jpg";
               Ver la asistencia mágica
             </a>
           </div>
-          <blockquote
-            class="text-lg font-script text-pibe-gold italic border-l-4 border-red-600 pl-3"
-          >
-            "El pase que hizo historia en Italia 90"
-          </blockquote>
         </div>
-        <div class="flex justify-center order-1 md:order-2">
-          <div
-            class="relative rounded-2xl overflow-hidden shadow-2xl border border-white/20"
-          >
-            <Image
-              src={GolAlemania}
-              alt="Asistencia a Rincón vs Alemania"
-              class="block w-[85vw] md:w-[42vw] h-[50vh] md:h-[60vh] object-cover will-transform timeline-image"
-              width={800}
-              height={600}
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </article>
 
-    <!-- Panel Final: Closing -->
-    <article
-      class="timeline-panel closing-panel grid place-items-center bg-gradient-to-br from-black/80 via-colombian-blue/30 to-pibe-gold/30 px-4 md:px-8 py-8 md:py-12"
-    >
-      <div class="absolute inset-0 bg-black/40 z-0"></div>
-      <div
-        class="absolute inset-0 bg-gradient-to-br from-black/70 via-colombian-blue/20 to-pibe-gold/25"
-      >
-      </div>
-      <div
-        class="relative z-10 text-center px-6 md:px-8 lg:px-12 max-w-4xl will-transform timeline-text"
-      >
-        <!-- Título del momento en el área de contenido -->
-        <div
-          class="moment-title bg-gradient-to-br from-pibe-gold to-yellow-400 text-black px-4 py-2 rounded-xl font-bold text-lg md:text-xl shadow-lg mb-6 inline-block"
-        >
-          Legado Eterno
-        </div>
-        <h2 class="text-5xl md:text-7xl font-display font-bold text-white mb-8">
-          Eterno <span class="text-pibe-gold">Pibe</span>
-        </h2>
-
-        <div class="closing-content">
-          <p class="text-xl md:text-2xl text-white/90 leading-relaxed mb-8">
-            Estos momentos son solo una pequeña muestra de la magia que Carlos
-            Valderrama regaló al mundo del fútbol. Su legado trasciende los
-            títulos y las estadísticas.
-          </p>
-
-          <div
-            class="legacy-card bg-white/10 backdrop-blur-sm p-6 rounded-xl shadow-lg mb-8"
-          >
-            <h4 class="font-bold text-pibe-gold mb-3 text-lg">
-              Su Legado Eterno
-            </h4>
-            <div class="grid grid-cols-2 gap-4 text-center mb-4">
-              <div>
-                <div class="text-2xl font-bold text-white">5</div>
-                <div class="text-xs text-gray-300">Momentos icónicos</div>
-              </div>
-              <div>
-                <div class="text-2xl font-bold text-white">∞</div>
-                <div class="text-xs text-gray-300">Inspiración eterna</div>
-              </div>
+        <!-- Card 5: Closing - Legado eterno -->
+        <div class="moment-card flex-shrink-0 w-80 md:w-96 bg-gradient-to-br from-pibe-gold/20 to-black rounded-2xl shadow-2xl overflow-hidden border border-pibe-gold/30">
+          <div class="relative h-64 md:h-72 bg-gradient-to-br from-pibe-gold/10 to-black flex items-center justify-center">
+            <div class="text-center px-6">
+              <div class="text-6xl mb-4">🏆</div>
+              <h3 class="text-3xl font-display font-bold text-pibe-gold mb-2">
+                Legado Eterno
+              </h3>
             </div>
           </div>
-
-          <blockquote
-            class="text-3xl md:text-4xl font-script text-pibe-gold italic"
-          >
-            "El fútbol es un arte, y el Pibe fue su Picasso."
-          </blockquote>
-        </div>
-      </div>
-    </article>
-  </div>
-
-  <!-- Horizontal Progress Bar -->
-  <div
-    class="timeline-progress-bar fixed top-0 left-0 w-full z-50 opacity-0 transition-opacity duration-500"
-  >
-    <!-- Background track -->
-    <div class="progress-background h-2 w-full relative overflow-hidden">
-      <!-- Flag colors background (50% yellow, 25% blue, 25% red) -->
-      <div class="flag-divisions absolute inset-0 flex">
-        <div class="bg-colombian-yellow/20" style="width: 50%;"></div>
-        <div class="bg-colombian-blue/20" style="width: 25%;"></div>
-        <div class="bg-colombian-red/20" style="width: 25%;"></div>
-      </div>
-
-      <!-- Active progress -->
-      <div class="progress-active h-full relative overflow-hidden">
-        <div
-          class="progress-fill-container absolute top-0 left-0 h-full flex transition-all duration-400 ease-out"
-          style="width: 0%;"
-        >
-          <!-- Colors from left to right with their proportions -->
-          <div
-            class="progress-fill-yellow h-full bg-colombian-yellow"
-            style="width: 50%;"
-          >
-          </div>
-          <div
-            class="progress-fill-blue h-full bg-colombian-blue"
-            style="width: 25%;"
-          >
-          </div>
-          <div
-            class="progress-fill-red h-full bg-colombian-red"
-            style="width: 25%;"
-          >
+          <div class="p-6 text-center">
+            <blockquote class="text-lg text-pibe-gold italic mb-4 font-script">
+              "El fútbol es un arte, y el Pibe fue su Picasso."
+            </blockquote>
+            <p class="text-gray-300 text-base leading-relaxed">
+              Estos momentos son solo una pequeña muestra de la magia que Carlos Valderrama regaló al mundo del fútbol. Su legado trasciende los títulos y las estadísticas.
+            </p>
           </div>
         </div>
-      </div>
-    </div>
 
-    <!-- Panel indicators -->
-    <div class="progress-labels absolute top-3 left-0 w-full px-4">
-      <div class="flex justify-between text-xs font-bold text-gray-700">
-        <span class="timeline-label bg-white/90 px-2 py-1 rounded shadow-sm"
-          >Intro</span
-        >
-        <span class="timeline-label bg-white/90 px-2 py-1 rounded shadow-sm"
-          >Pibe Day</span
-        >
-        <span class="timeline-label bg-white/90 px-2 py-1 rounded shadow-sm"
-          >5-0</span
-        >
-        <span class="timeline-label bg-white/90 px-2 py-1 rounded shadow-sm"
-          >Beckham</span
-        >
-        <span class="timeline-label bg-white/90 px-2 py-1 rounded shadow-sm"
-          >Italia 90</span
-        >
-        <span class="timeline-label bg-white/90 px-2 py-1 rounded shadow-sm"
-          >Eterno</span
-        >
       </div>
+
+      <!-- Navigation arrows -->
+      <button id="momentos-prev" class="nav-button nav-button-left">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button id="momentos-next" class="nav-button nav-button-right">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
     </div>
   </div>
 </section>
 
 <style>
-  /* Configuración del timeline horizontal */
-  html,
-  body {
-    overflow-x: hidden;
-  }
-  .will-transform {
-    will-change: transform, opacity;
-  }
-
-  #momentos-iconicos .timeline-track {
-    width: 100vw;
-    display: flex;
-    height: 100vh;
-  }
-
-  #momentos-iconicos .timeline-panel {
-    width: 100%;
-    height: 100vh;
-    flex: 0 0 100%;
+  /* Configuración para cards deslizables de momentos */
+  .cards-carousel-container {
     position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
   }
 
-  /* Estados iniciales para elementos del timeline */
-  .timeline-image {
-    opacity: 0;
-    transform: translateY(20px) scale(0.98);
-    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    filter: brightness(0.9);
+  .cards-track {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #F7E017 transparent;
   }
 
-  /* Panel intro específico */
-  .intro-panel .timeline-image {
-    opacity: 0;
-    transform: translateY(20px) scale(0.98);
-    filter: brightness(1) contrast(1.1);
+  .cards-track::-webkit-scrollbar {
+    height: 6px;
   }
 
-  .timeline-text {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  .cards-track::-webkit-scrollbar-track {
+    background: transparent;
   }
 
-  .moment-title {
-    opacity: 0;
-    transform: translateY(-20px) scale(0.9);
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  .cards-track::-webkit-scrollbar-thumb {
+    background: #F7E017;
+    border-radius: 3px;
   }
 
-  /* Moment title animations */
-  .moment-title {
-    animation: titleFloat 3s ease-in-out infinite;
-  }
-
-  @keyframes titleFloat {
-    0%,
-    100% {
-      transform: translateY(0px) scale(1);
-    }
-    50% {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    }
-  }
-
-  /* Progress bar styles para horizontal */
-  .timeline-progress-bar {
-    backdrop-filter: blur(10px);
-    background: linear-gradient(
-      to bottom,
-      rgba(255, 255, 255, 0.1),
-      transparent
-    );
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .progress-background {
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .flag-divisions {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-  }
-
-  .progress-fill-yellow,
-  .progress-fill-blue,
-  .progress-fill-red {
-    transition: width 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  }
-
-  .timeline-label {
-    font-size: 10px;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(0, 0, 0, 0.1);
+  .moment-card {
     transition: all 0.3s ease;
   }
 
-  .timeline-label:hover {
-    transform: scale(1.05);
-    background: white;
+  .moment-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 50px -12px rgba(247, 224, 23, 0.25);
   }
 
-  /* Animación de aparición */
-  .timeline-progress-bar.show {
-    opacity: 1;
-  }
-
-  /* Efectos de colores más vibrantes */
-  .progress-fill-yellow {
-    background: linear-gradient(90deg, #fcdd09, #ffe55c);
-  }
-
-  .progress-fill-blue {
-    background: linear-gradient(90deg, #003087, #1e4f8c);
-  }
-
-  .progress-fill-red {
-    background: linear-gradient(90deg, #c8102e, #e53e3e);
-  }
-
-  .progress-labels span {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 2px 6px;
-    border-radius: 4px;
-    backdrop-filter: blur(5px);
-    font-size: 10px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    white-space: nowrap;
-  }
-
-  /* Card styles mejorados */
-  .video-link-card,
-  .respect-moment,
-  .legacy-card,
-  .historic-stats,
-  .match-stats {
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .stat-card {
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    transition: transform 0.3s ease;
-  }
-
-  .stat-card:hover {
-    transform: translateY(-2px);
-  }
-
-  /* Efectos de hover mejorados */
-  .video-link-card a:hover,
-  .respect-moment a:hover {
-    transform: translateY(-1px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Responsive adjustments mejoradas */
-  @media (max-width: 768px) {
-    #momentos-iconicos .timeline-panel {
-      padding: 2rem 1rem !important;
-      min-height: 100vh;
-    }
-
-    .w-11\/12 {
-      width: 100% !important;
-    }
-
-    .timeline-image {
-      width: 90vw !important;
-      height: 40vh !important;
-      max-width: 400px !important;
-      object-fit: cover !important;
-    }
-
-    .timeline-text {
-      padding: 1rem !important;
-      margin-top: 1rem;
-    }
-
-    .grid-cols-1 {
-      grid-template-columns: 1fr !important;
-    }
-
-    .md\:grid-cols-2 {
-      grid-template-columns: 1fr !important;
-    }
-
-    h1 {
-      font-size: 3rem !important;
-      line-height: 1 !important;
-      margin-bottom: 1rem !important;
-    }
-
-    h2 {
-      font-size: 2.25rem !important;
-      line-height: 2.5rem !important;
-      margin-bottom: 1.5rem !important;
-    }
-
-    h3 {
-      font-size: 1.875rem !important;
-      line-height: 2.25rem !important;
-      margin-bottom: 1rem !important;
-    }
-
-    p {
-      font-size: 1rem !important;
-      line-height: 1.5rem !important;
-      margin-bottom: 1rem !important;
-    }
-
-    blockquote {
-      font-size: 1.25rem !important;
-      line-height: 1.75rem !important;
-    }
-
-    .moment-title {
-      font-size: 1rem !important;
-      padding: 0.5rem 1rem !important;
-    }
-  }
-
-  @media (max-width: 480px) {
-    #momentos-iconicos .timeline-panel {
-      padding: 1.5rem 0.5rem !important;
-    }
-
-    .timeline-image {
-      width: 95vw !important;
-      height: 35vh !important;
-      max-width: 350px !important;
-    }
-
-    h1 {
-      font-size: 2.5rem !important;
-      line-height: 1 !important;
-    }
-
-    h2 {
-      font-size: 2rem !important;
-      line-height: 2.25rem !important;
-    }
-
-    h3 {
-      font-size: 1.5rem !important;
-      line-height: 2rem !important;
-    }
-
-    .moment-title {
-      font-size: 0.875rem !important;
-      padding: 0.375rem 0.75rem !important;
-    }
-
-    .timeline-text {
-      padding: 0.5rem !important;
-    }
-  }
-
-  .match-stats,
-  .historic-stats {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-  }
-
-  .progress-labels {
-    font-size: 8px;
-    margin-top: 0.25rem;
-  }
-
-  .timeline-label {
-    padding: 1px 4px !important;
-    font-size: 8px !important;
-  }
-
-  .min-h-\[70vh\] {
-    min-height: 80vh;
-  }
-
-  .space-y-4 > * + * {
-    margin-top: 1.5rem;
-  }
-
-  .timeline-progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  /* Responsive Tailwind classes con !important - MomentosIconicos */
-  @media (min-width: 768px) {
-    .md\\:px-4 {
-      padding-left: 1rem !important;
-      padding-right: 1rem !important;
-    }
-    .md\\:px-6 {
-      padding-left: 1.5rem !important;
-      padding-right: 1.5rem !important;
-    }
-    .md\\:px-8 {
-      padding-left: 2rem !important;
-      padding-right: 2rem !important;
-    }
-    .md\\:px-12 {
-      padding-left: 3rem !important;
-      padding-right: 3rem !important;
-    }
-
-    .md\\:py-8 {
-      padding-top: 2rem !important;
-      padding-bottom: 2rem !important;
-    }
-    .md\\:py-12 {
-      padding-top: 3rem !important;
-      padding-bottom: 3rem !important;
-    }
-
-    .md\\:text-sm {
-      font-size: 0.875rem !important;
-      line-height: 1.25rem !important;
-    }
-    .md\\:text-base {
-      font-size: 1rem !important;
-      line-height: 1.5rem !important;
-    }
-    .md\\:text-lg {
-      font-size: 1.125rem !important;
-      line-height: 1.75rem !important;
-    }
-    .md\\:text-xl {
-      font-size: 1.25rem !important;
-      line-height: 1.75rem !important;
-    }
-    .md\\:text-2xl {
-      font-size: 1.5rem !important;
-      line-height: 2rem !important;
-    }
-    .md\\:text-3xl {
-      font-size: 1.875rem !important;
-      line-height: 2.25rem !important;
-    }
-    .md\\:text-4xl {
-      font-size: 2.25rem !important;
-      line-height: 2.5rem !important;
-    }
-    .md\\:text-5xl {
-      font-size: 3rem !important;
-      line-height: 1 !important;
-    }
-
-    .md\\:space-y-6 > * + * {
-      margin-top: 1.5rem !important;
-    }
-    .md\\:space-y-8 > * + * {
-      margin-top: 2rem !important;
-    }
-
-    .md\\:gap-8 {
-      gap: 2rem !important;
-    }
-    .md\\:gap-12 {
-      gap: 3rem !important;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .lg\\:px-8 {
-      padding-left: 2rem !important;
-      padding-right: 2rem !important;
-    }
-    .lg\\:px-12 {
-      padding-left: 3rem !important;
-      padding-right: 3rem !important;
-    }
-    .lg\\:text-5xl {
-      font-size: 3rem !important;
-      line-height: 1 !important;
-    }
-    .lg\\:gap-16 {
-      gap: 4rem !important;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .gap-6 {
-      gap: 3rem;
-    }
-
-    .lg\:gap-12 {
-      gap: 4rem;
-    }
-  }
-
-  /* Mejoras de performance */
-  .timeline-panel * {
-    backface-visibility: hidden;
-    perspective: 1000px;
-  }
-
-  /* Smooth transitions */
-  .timeline-panel {
-    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .timeline-panel.active {
-    filter: brightness(1.1);
-  }
-
-  .timeline-panel:not(.active) {
-    filter: brightness(0.8) contrast(0.9);
-  }
-
-  /* Elementos animados mejorados */
-  .stat-card,
-  .video-link-card,
-  .respect-moment,
-  .legacy-card {
-    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .stat-card:hover {
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  }
-
-  /* Efectos de parallax suave en imágenes */
-  .timeline-panel:nth-child(even) .timeline-image {
-    transform-origin: right center;
-  }
-
-  .timeline-panel:nth-child(odd) .timeline-image {
-    transform-origin: left center;
-  }
-
-  /* Mejoras de performance adicionales */
-  .timeline-panel,
-  .timeline-image,
-  .timeline-text,
-  .year-badge {
-    will-change: transform, opacity;
-  }
-
-  /* FORZAR CLASES DE TAILWIND SOBRE GSAP - MOMENTOS ICONICOS */
-
-  /* Padding classes */
-  .px-1 {
-    padding-left: 0.25rem !important;
-    padding-right: 0.25rem !important;
-  }
-  .px-2 {
-    padding-left: 0.5rem !important;
-    padding-right: 0.5rem !important;
-  }
-  .px-3 {
-    padding-left: 0.75rem !important;
-    padding-right: 0.75rem !important;
-  }
-  .px-4 {
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
-  }
-  .px-5 {
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
-  }
-  .px-6 {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-  }
-  .px-8 {
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-  }
-  .px-10 {
-    padding-left: 2.5rem !important;
-    padding-right: 2.5rem !important;
-  }
-  .px-12 {
-    padding-left: 3rem !important;
-    padding-right: 3rem !important;
-  }
-
-  .py-1 {
-    padding-top: 0.25rem !important;
-    padding-bottom: 0.25rem !important;
-  }
-  .py-2 {
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
-  }
-  .py-3 {
-    padding-top: 0.75rem !important;
-    padding-bottom: 0.75rem !important;
-  }
-  .py-4 {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-  }
-  .py-5 {
-    padding-top: 1.25rem !important;
-    padding-bottom: 1.25rem !important;
-  }
-  .py-6 {
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
-  }
-  .py-8 {
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-  }
-
-  .p-1 {
-    padding: 0.25rem !important;
-  }
-  .p-2 {
-    padding: 0.5rem !important;
-  }
-  .p-3 {
-    padding: 0.75rem !important;
-  }
-  .p-4 {
-    padding: 1rem !important;
-  }
-  .p-6 {
-    padding: 1.5rem !important;
-  }
-  .p-8 {
-    padding: 2rem !important;
-  }
-
-  /* Margin classes */
-  .mb-0 {
-    margin-bottom: 0 !important;
-  }
-  .mb-1 {
-    margin-bottom: 0.25rem !important;
-  }
-  .mb-2 {
-    margin-bottom: 0.5rem !important;
-  }
-  .mb-3 {
-    margin-bottom: 0.75rem !important;
-  }
-  .mb-4 {
-    margin-bottom: 1rem !important;
-  }
-  .mb-6 {
-    margin-bottom: 1.5rem !important;
-  }
-  .mb-8 {
-    margin-bottom: 2rem !important;
-  }
-
-  .mt-4 {
-    margin-top: 1rem !important;
-  }
-  .mt-6 {
-    margin-top: 1.5rem !important;
-  }
-  .mt-8 {
-    margin-top: 2rem !important;
-  }
-
-  .mr-2 {
-    margin-right: 0.5rem !important;
-  }
-  .mr-3 {
-    margin-right: 0.75rem !important;
-  }
-
-  /* Text sizes */
-  .text-xs {
-    font-size: 0.75rem !important;
-    line-height: 1rem !important;
-  }
-  .text-sm {
-    font-size: 0.875rem !important;
-    line-height: 1.25rem !important;
-  }
-  .text-base {
-    font-size: 1rem !important;
-    line-height: 1.5rem !important;
-  }
-  .text-lg {
-    font-size: 1.125rem !important;
-    line-height: 1.75rem !important;
-  }
-  .text-xl {
-    font-size: 1.25rem !important;
-    line-height: 1.75rem !important;
-  }
-  .text-2xl {
-    font-size: 1.5rem !important;
-    line-height: 2rem !important;
-  }
-  .text-3xl {
-    font-size: 1.875rem !important;
-    line-height: 2.25rem !important;
-  }
-  .text-4xl {
-    font-size: 2.25rem !important;
-    line-height: 2.5rem !important;
-  }
-
-  /* Border radius */
-  .rounded {
-    border-radius: 0.25rem !important;
-  }
-  .rounded-lg {
-    border-radius: 0.5rem !important;
-  }
-  .rounded-xl {
-    border-radius: 0.75rem !important;
-  }
-  .rounded-2xl {
-    border-radius: 1rem !important;
-  }
-  .rounded-full {
-    border-radius: 9999px !important;
-  }
-
-  /* Space-y classes */
-  .space-y-2 > * + * {
-    margin-top: 0.5rem !important;
-  }
-  .space-y-3 > * + * {
-    margin-top: 0.75rem !important;
-  }
-  .space-y-4 > * + * {
-    margin-top: 1rem !important;
-  }
-  .space-y-6 > * + * {
-    margin-top: 1.5rem !important;
-  }
-  .space-y-8 > * + * {
-    margin-top: 2rem !important;
-  }
-
-  /* Width and height */
-  .w-5 {
-    width: 1.25rem !important;
-  }
-  .w-6 {
-    width: 1.5rem !important;
-  }
-  .w-10 {
-    width: 2.5rem !important;
-  }
-  .h-5 {
-    height: 1.25rem !important;
-  }
-  .h-6 {
-    height: 1.5rem !important;
-  }
-  .h-10 {
-    height: 2.5rem !important;
-  }
-
-  /* Display classes */
-  .inline-block {
-    display: inline-block !important;
-  }
-  .block {
-    display: block !important;
-  }
-  .flex {
-    display: flex !important;
-  }
-  .inline-flex {
-    display: inline-flex !important;
-  }
-
-  /* Estados de hover para cards interactivos */
-  .video-link-card:hover,
-  .respect-moment:hover {
-    transform: translateY(-2px) scale(1.01);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Animación de entrada para blockquotes */
-  blockquote {
-    position: relative;
-    overflow: hidden;
-  }
-
-  blockquote::before {
-    content: "";
+  .nav-button {
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      rgba(255, 255, 255, 0.1),
-      transparent
-    );
-    transition: left 0.8s ease;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(247, 224, 23, 0.9);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1E3A8A;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
   }
 
-  blockquote:hover::before {
-    left: 100%;
+  .nav-button:hover {
+    background: rgba(247, 224, 23, 1);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  .nav-button-left {
+    left: -24px;
+  }
+
+  .nav-button-right {
+    right: -24px;
+  }
+
+  .nav-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .nav-button:disabled:hover {
+    transform: translateY(-50%) scale(1);
+    background: rgba(247, 224, 23, 0.9);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-button {
+      width: 40px;
+      height: 40px;
+    }
+
+    .nav-button-left {
+      left: 8px;
+    }
+
+    .nav-button-right {
+      right: 8px;
+    }
+
+    .moment-card {
+      width: 280px !important;
+    }
   }
 </style>
 
-<script src="../scripts/momentosIconicos-optimized.js"></script>
+<script src="../scripts/momentos-iconicos.js"></script>

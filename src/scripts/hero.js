@@ -1,240 +1,156 @@
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// Hero Section Script - Efectos de parallax y animaciones
 
-gsap.registerPlugin(ScrollTrigger);
+document.addEventListener('DOMContentLoaded', function() {
+  const hero = document.querySelector('#inicio');
+  const heroTitle = hero?.querySelector('h1');
+  const heroSubtitle = hero?.querySelector('p');
+  const heroQuote = hero?.querySelector('blockquote');
+  const heroButtons = hero?.querySelector('.flex');
+  
+  if (!hero) return;
 
-document.addEventListener('DOMContentLoaded', () => {
-
-    // Hero entrance timeline
-    const heroTl = gsap.timeline({ delay: 0.5 });
-
-    // Animate background image
-    // FIX: validamos existencia de .hero-bg img antes de animar para evitar warning de GSAP
-    const heroBgImg = document.querySelector('.hero-bg img');
-    if (heroBgImg) {
-        heroTl.fromTo('.hero-bg img',
-            {
-                scale: 1.2,
-                rotation: 2
-            },
-            {
-                scale: 1,
-                rotation: 0,
-                duration: 2,
-                ease: "power2.out"
-            }
-        );
+  // Animación de entrada gradual
+  function animateHeroElements() {
+    // Configurar elementos para animación
+    if (heroSubtitle) {
+      heroSubtitle.style.opacity = '0';
+      heroSubtitle.style.transform = 'translateY(30px)';
+    }
+    
+    if (heroTitle) {
+      heroTitle.style.opacity = '0';
+      heroTitle.style.transform = 'translateY(50px)';
+    }
+    
+    if (heroQuote) {
+      heroQuote.style.opacity = '0';
+      heroQuote.style.transform = 'translateY(30px)';
+    }
+    
+    if (heroButtons) {
+      heroButtons.style.opacity = '0';
+      heroButtons.style.transform = 'translateY(40px)';
     }
 
-    // Animate pre-title
-    // FIX: validamos existencia de .hero-pretitle p antes de animar para evitar warning de GSAP
-    const heroPretitleP = document.querySelector('.hero-pretitle p');
-    if (heroPretitleP) {
-        heroTl.fromTo('.hero-pretitle p',
-            {
-                y: 100,
-                opacity: 0
-            },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: "power3.out"
-            }, "-=1.5"
-        );
-    }
+    // Animar elementos con retraso
+    setTimeout(() => {
+      if (heroSubtitle) {
+        heroSubtitle.style.transition = 'all 0.8s ease-out';
+        heroSubtitle.style.opacity = '1';
+        heroSubtitle.style.transform = 'translateY(0)';
+      }
+    }, 200);
+    
+    setTimeout(() => {
+      if (heroTitle) {
+        heroTitle.style.transition = 'all 1s ease-out';
+        heroTitle.style.opacity = '1';
+        heroTitle.style.transform = 'translateY(0)';
+      }
+    }, 400);
+    
+    setTimeout(() => {
+      if (heroQuote) {
+        heroQuote.style.transition = 'all 0.8s ease-out';
+        heroQuote.style.opacity = '1';
+        heroQuote.style.transform = 'translateY(0)';
+      }
+    }, 800);
+    
+    setTimeout(() => {
+      if (heroButtons) {
+        heroButtons.style.transition = 'all 0.8s ease-out';
+        heroButtons.style.opacity = '1';
+        heroButtons.style.transform = 'translateY(0)';
+      }
+    }, 1200);
+  }
 
-    // Animate main title
-    // FIX: validamos existencia de .hero-title h1 span antes de animar para evitar warning de GSAP
-    const heroTitleSpans = document.querySelectorAll('.hero-title h1 span');
-    if (heroTitleSpans.length > 0) {
-        heroTl.fromTo('.hero-title h1 span',
-            {
-                y: 150,
-                opacity: 0,
-                rotationX: 90
-            },
-            {
-                y: 0,
-                opacity: 1,
-                rotationX: 0,
-                duration: 1.2,
-                stagger: 0.2,
-                ease: "power3.out"
-            }, "-=0.8"
-        );
+  // Efecto parallax ligero
+  function handleParallax() {
+    const scrolled = window.pageYOffset;
+    const heroHeight = hero.offsetHeight;
+    
+    // Solo aplicar parallax si estamos en la vista del hero
+    if (scrolled < heroHeight) {
+      const parallaxSpeed = 0.3;
+      hero.style.transform = `translateY(${scrolled * parallaxSpeed}px)`;
     }
+  }
 
-    // Animate quote
-    // FIX: validamos existencia de .hero-quote blockquote antes de animar para evitar warning de GSAP
-    const heroQuoteBlockquote = document.querySelector('.hero-quote blockquote');
-    if (heroQuoteBlockquote) {
-        heroTl.fromTo('.hero-quote blockquote',
-            {
-                y: 50,
-                opacity: 0
-            },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 1,
-                ease: "power2.out"
-            }, "-=0.5"
-        );
-    }
-
-    // Animate CTA button
-    // FIX: validamos existencia de .cta-button antes de animar para evitar warning de GSAP
-    const ctaButtons = document.querySelectorAll('.cta-button');
-    if (ctaButtons.length > 0) {
-        heroTl.fromTo('.cta-button',
-            {
-                y: 30,
-                opacity: 0,
-                scale: 0.9
-            },
-            {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 0.8,
-                ease: "back.out(1.7)"
-            }, "-=0.3"
-        );
-    }
-
-    // Animate scroll indicator
-    // FIX: validamos existencia de .scroll-indicator antes de animar para evitar warning de GSAP
-    const scrollIndicatorEl = document.querySelector('.scroll-indicator');
-    if (scrollIndicatorEl) {
-        heroTl.fromTo('.scroll-indicator',
-            {
-                y: 30,
-                opacity: 0
-            },
-            {
-                y: 0,
-                opacity: 1,
-                duration: 0.8,
-                ease: "power2.out"
-            }, "-=0.5"
-        );
-    }
-
-    // Parallax effect for background
-    gsap.to('.hero-bg', {
-        yPercent: 0,
-        ease: "none",
-        scrollTrigger: {
-            trigger: "#hero",
-            start: "top bottom",
-            end: "bottom top",
-            scrub: true
+  // Efecto de typing para el título
+  function typeWriter(element, text, delay = 50) {
+    if (!element) return;
+    
+    element.textContent = '';
+    let i = 0;
+    const isHTML = text.includes('<');
+    
+    function type() {
+      if (i < text.length) {
+        if (isHTML) {
+          element.innerHTML = text.substring(0, i + 1);
+        } else {
+          element.textContent = text.substring(0, i + 1);
         }
-    });
+        i++;
+        setTimeout(type, delay);
+      }
+    }
+    
+    setTimeout(type, 1000);
+  }
 
-    // Floating elements animations
-    gsap.to('.floating-shape', {
-        y: -20,
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: "power2.inOut",
-        stagger: 1
-    });
-
-    gsap.to('.floating-icon', {
-        rotation: 10,
-        y: -15,
-        duration: 4,
-        repeat: -1,
-        yoyo: true,
-        ease: "power2.inOut",
-        stagger: 1.5
-    });
-
-    // Hero content scroll animations
-    ScrollTrigger.create({
-        trigger: "#hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: 1,
-        onUpdate: (self) => {
-            const progress = self.progress;
-
-            // Fade out hero content
-            gsap.to('.hero-content', {
-                opacity: 1 - progress * 1.5,
-                y: -100 * progress,
-                duration: 0.3,
-                ease: "none"
-            });
-
-            // Scale and fade background
-            gsap.to('.hero-bg img', {
-                scale: 1 + progress * 0.1,
-                duration: 0.3,
-                ease: "none"
-            });
-        }
-    });
-
-    // Smooth scroll for CTA button
-    const ctaButton = document.querySelector('.cta-button');
+  // Tracking de clicks en botones
+  function trackButtonClicks() {
+    const ctaButton = hero.querySelector('a[href="#contacto"]');
+    const whatsappButton = hero.querySelector('a[href*="wa.me"]');
+    
     if (ctaButton) {
-        ctaButton.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = document.querySelector('#quien-es');
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+      ctaButton.addEventListener('click', function() {
+        // Analytics tracking (puede integrarse con Google Analytics)
+        console.log('CTA Button clicked from Hero');
+      });
     }
-
-    // Magnetic effect for CTA button
-    const magneticBtn = document.querySelector('.cta-button');
-    if (magneticBtn) {
-        magneticBtn.addEventListener('mousemove', (e) => {
-            const rect = magneticBtn.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-
-            gsap.to(magneticBtn, {
-                x: x * 0.3,
-                y: y * 0.3,
-                duration: 0.3,
-                ease: "power2.out"
-            });
-        });
-
-        magneticBtn.addEventListener('mouseleave', () => {
-            gsap.to(magneticBtn, {
-                x: 0,
-                y: 0,
-                duration: 0.5,
-                ease: "elastic.out(1, 0.3)"
-            });
-        });
+    
+    if (whatsappButton) {
+      whatsappButton.addEventListener('click', function() {
+        console.log('WhatsApp Button clicked from Hero');
+      });
     }
+  }
 
-    // Add scroll indicator click functionality
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    if (scrollIndicator) {
-        scrollIndicator.addEventListener('click', () => {
-            const nextSection = document.querySelector('#quien-es');
-            if (nextSection) {
-                nextSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-
-        // Add cursor pointer
-        scrollIndicator.style.cursor = 'pointer';
+  // Efecto de brillo en el título
+  function addShineEffect() {
+    if (heroTitle) {
+      heroTitle.addEventListener('mouseenter', function() {
+        this.style.textShadow = '0 0 20px rgba(252, 221, 9, 0.5)';
+        this.style.transition = 'text-shadow 0.3s ease';
+      });
+      
+      heroTitle.addEventListener('mouseleave', function() {
+        this.style.textShadow = 'none';
+      });
     }
+  }
 
+  // Inicializar funciones
+  animateHeroElements();
+  trackButtonClicks();
+  addShineEffect();
+  
+  // Opcional: efecto de typing en el título (descomentado si se quiere usar)
+  // const titleText = heroTitle?.textContent || '';
+  // typeWriter(heroTitle, titleText, 100);
+
+  // Scroll listener para parallax (descomentado si se quiere efecto parallax)
+  // window.addEventListener('scroll', handleParallax);
+  
+  // Reducir motion para usuarios con preferencias de accesibilidad
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  
+  if (prefersReducedMotion.matches) {
+    // Deshabilitar animaciones para usuarios que prefieren menos movimiento
+    hero.style.transform = 'none';
+  }
 });

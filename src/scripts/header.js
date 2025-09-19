@@ -1,197 +1,169 @@
-import { gsap } from 'gsap';
+// Header Navigation Script - Navegación suave y efectos del header
 
-  document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const menuOverlay = document.getElementById('menu-overlay');
-    // FIX: convertimos NodeList a Array para evitar warning en GSAP
-    const menuItems = Array.from(document.querySelectorAll('.menu-item'));
-    const socialLinks = document.getElementById('social-links');
-    // FIX: convertimos NodeList a Array para evitar warning en GSAP
-    const navLinks = Array.from(document.querySelectorAll('.nav-link'));
-    
-    let menuOpen = false;
-
-    // Menu toggle functionality
-    menuToggle.addEventListener('click', () => {
-      menuOpen = !menuOpen;
+document.addEventListener('DOMContentLoaded', function() {
+  // Navegación suave para todos los enlaces internos
+  const navLinks = document.querySelectorAll('a[href^="#"]');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
       
-      if (menuOpen) {
-        openMenu();
-      } else {
-        closeMenu();
-      }
-    });
-
-    function openMenu() {
-      // Update button state
-      menuToggle.classList.add('menu-open');
-      menuToggle.setAttribute('aria-expanded', 'true');
+      const targetId = this.getAttribute('href');
+      const targetSection = document.querySelector(targetId);
       
-      // Show overlay
-      gsap.set(menuOverlay, { display: 'block' });
-      gsap.to(menuOverlay, {
-        x: 0,
-        duration: 0.5,
-        ease: "power3.out"
-      });
-
-      // Animate menu items
-      gsap.fromTo(menuItems, 
-        { 
-          y: 50, 
-          opacity: 0 
-        },
-        { 
-          y: 0, 
-          opacity: 1, 
-          duration: 0.6,
-          stagger: 0.1,
-          delay: 0.3,
-          ease: "back.out(1.7)"
-        }
-      );
-
-      // Animate social links
-      gsap.fromTo(socialLinks, 
-        { 
-          y: 30, 
-          opacity: 0 
-        },
-        { 
-          y: 0, 
-          opacity: 1, 
-          duration: 0.6,
-          delay: 0.8,
-          ease: "power2.out"
-        }
-      );
-
-      // Animate button with more elegant rotation
-      gsap.to(menuToggle, {
-        rotation: 90,
-        scale: 1.05,
-        duration: 0.5,
-        ease: "power2.out"
-      });
-
-      // Disable body scroll
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeMenu() {
-      // Update button state
-      menuToggle.classList.remove('menu-open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      
-      // Animate out menu items
-      gsap.to(menuItems, {
-        y: -50,
-        opacity: 0,
-        duration: 0.3,
-        stagger: 0.05,
-        ease: "power2.in"
-      });
-
-      // Animate out social links
-      gsap.to(socialLinks, {
-        y: 30,
-        opacity: 0,
-        duration: 0.3,
-        ease: "power2.in"
-      });
-
-      // Hide overlay
-      gsap.to(menuOverlay, {
-        x: '100%',
-        duration: 0.5,
-        delay: 0.2,
-        ease: "power3.in",
-        onComplete: () => {
-          gsap.set(menuOverlay, { display: 'none' });
-        }
-      });
-
-      // Animate button back smoothly
-      gsap.to(menuToggle, {
-        rotation: 0,
-        scale: 1,
-        duration: 0.5,
-        ease: "power2.out"
-      });
-
-      // Re-enable body scroll
-      document.body.style.overflow = '';
-    }
-
-    // Close menu when clicking on navigation links
-    navLinks.forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
+      if (targetSection) {
+        // Calcular offset para el header fijo
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const targetPosition = targetSection.offsetTop - headerHeight - 20;
         
-        const targetId = link.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
         
-        console.log('Navigating to:', targetId, 'Element found:', !!targetElement);
-        if (targetElement) {
-          console.log('Element position:', targetElement.getBoundingClientRect());
-          console.log('Current scroll position:', window.pageYOffset);
-        }
-        
-        if (targetElement) {
-          // Close menu first
-          closeMenu();
-          menuOpen = false;
-          
-          // Alternative approach - use URL hash navigation for better compatibility
-          setTimeout(() => {
-            // Set the hash first
-            window.location.hash = targetId;
-            
-            // Then scroll to ensure it's visible
-            setTimeout(() => {
-              targetElement.scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'start',
-                inline: 'nearest'
-              });
-            }, 100);
-            
-          }, 900); // Wait for menu to close completely
-        } else {
-          console.error('Target element not found:', targetId);
-        }
-      });
-    });
-
-    // Close menu when pressing Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && menuOpen) {
-        closeMenu();
+        // Actualizar estado activo del menú
+        updateActiveNavItem(targetId);
       }
-    });
-
-    // Initial button animation
-    gsap.fromTo(menuToggle, 
-      { 
-        scale: 0, 
-        rotation: -180 
-      },
-      { 
-        scale: 1, 
-        rotation: 0, 
-        duration: 1,
-        ease: "elastic.out(1, 0.5)",
-        delay: 0.5
-      }
-    );
-
-    // Floating animation for decorative elements
-    gsap.to('.animate-pulse', {
-      scale: 1.1,
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: "power2.inOut",
-      stagger: 0.5
     });
   });
+
+  // Cambiar transparencia del header al hacer scroll
+  let lastScrollTop = 0;
+  window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    const logo = header.querySelector('.logo h1');
+    const navLinks = header.querySelectorAll('nav ul li a');
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > 50) {
+      header.classList.add('scrolled');
+      header.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+      header.style.backdropFilter = 'blur(12px)';
+      header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+
+      // Cambiar colores del texto cuando está scrolled
+      logo.style.color = 'white';
+      navLinks.forEach(link => {
+        link.style.color = 'white';
+      });
+    } else {
+      header.classList.remove('scrolled');
+      header.style.backgroundColor = 'transparent';
+      header.style.backdropFilter = 'none';
+      header.style.boxShadow = 'none';
+
+      // Mantener colores blancos originales
+      logo.style.color = 'white';
+      navLinks.forEach(link => {
+        link.style.color = 'white';
+      });
+    }
+
+    // Actualizar elemento activo basado en scroll
+    updateActiveNavOnScroll();
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  });
+
+  // Función para actualizar navegación activa
+  function updateActiveNavItem(activeId) {
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === activeId) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  // Función para actualizar navegación activa en scroll
+  function updateActiveNavOnScroll() {
+    const sections = document.querySelectorAll('section[id]');
+    const headerHeight = document.querySelector('header').offsetHeight;
+    
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      const sectionId = '#' + section.id;
+      const navLink = document.querySelector(`a[href="${sectionId}"]`);
+      
+      if (rect.top <= headerHeight + 50 && rect.bottom >= headerHeight + 50) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        if (navLink) {
+          navLink.classList.add('active');
+        }
+      }
+    });
+  }
+
+  // Menu móvil
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileMenuClose = document.querySelector('.mobile-menu-close');
+  const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link, .mobile-menu-cta');
+  let savedScrollPosition = 0;
+
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('active');
+    mobileMenuButton.classList.remove('active');
+    document.body.classList.remove('mobile-menu-open');
+
+    // Limpiar el estilo top del body
+    document.body.style.top = '';
+
+    // Restaurar posición de scroll
+    window.scrollTo(0, savedScrollPosition);
+  }
+
+  function openMobileMenu() {
+    // Guardar posición actual de scroll
+    savedScrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+    mobileMenu.classList.add('active');
+    mobileMenuButton.classList.add('active');
+    document.body.classList.add('mobile-menu-open');
+
+    // Fijar la posición del body en la posición actual
+    document.body.style.top = `-${savedScrollPosition}px`;
+  }
+
+  if (mobileMenuButton && mobileMenu) {
+    // Toggle mobile menu
+    mobileMenuButton.addEventListener('click', function() {
+      if (mobileMenu.classList.contains('active')) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+
+    // Close button
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener('click', closeMobileMenu);
+    }
+
+    // Close mobile menu when clicking on links
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+
+    // Close mobile menu when clicking outside
+    mobileMenu.addEventListener('click', function(e) {
+      if (e.target === mobileMenu) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close mobile menu on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close mobile menu on window resize (if switching to desktop)
+    window.addEventListener('resize', function() {
+      if (window.innerWidth >= 768 && mobileMenu.classList.contains('active')) {
+        closeMobileMenu();
+      }
+    });
+  }
+});

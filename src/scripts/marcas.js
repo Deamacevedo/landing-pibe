@@ -1,263 +1,143 @@
-// ===== CARRUSEL INFINITO DE MARCAS CON GSAP =====
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import scrollOptimizer from './scroll-optimizer.js';
+// Marcas Script - Carrusel infinito profesional
 
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('🚀 CARRUSEL DE MARCAS INICIALIZADO');
-
-  // ===== ELEMENTOS =====
+document.addEventListener('DOMContentLoaded', function() {
   const section = document.querySelector('#marcas');
-  const carousel = document.querySelector('#carousel-track');
-  // FIX: convertimos NodeList a Array para evitar warning en GSAP
-  const brandItems = Array.from(document.querySelectorAll('.brand-item'));
+  const carousel = document.querySelector('#marcas-carousel');
+  const brandCards = carousel?.querySelectorAll('.flex-shrink-0');
+  const pausePlayBtn = document.querySelector('#pause-play-btn');
+  const pauseIcon = document.querySelector('#pause-icon');
+  const playIcon = document.querySelector('#play-icon');
+  const btnText = document.querySelector('#btn-text');
 
-  if (!section || !carousel || brandItems.length === 0) {
-    console.log('❌ No se encontraron elementos del carrusel');
-    return;
+  if (!section || !carousel || !brandCards.length) return;
+
+  let isPaused = false;
+
+  // Control de pausa/reproducción
+  function togglePlayPause() {
+    isPaused = !isPaused;
+
+    if (isPaused) {
+      carousel.classList.add('paused');
+      pauseIcon.classList.add('hidden');
+      playIcon.classList.remove('hidden');
+      btnText.textContent = 'Reproducir';
+    } else {
+      carousel.classList.remove('paused');
+      pauseIcon.classList.remove('hidden');
+      playIcon.classList.add('hidden');
+      btnText.textContent = 'Pausar';
+    }
   }
 
-  console.log(`📊 ${brandItems.length} elementos de marca encontrados`);
+  // Configurar eventos del botón
+  function setupControls() {
+    pausePlayBtn?.addEventListener('click', togglePlayPause);
 
-  // ===== CONFIGURACIÓN DEL CARRUSEL =====
-  let carouselAnimation;
-  const totalItems = brandItems.length;
-  const itemsPerSet = 4; // 4 marcas originales
-  const itemWidth = 280 + 64; // 280px + margin (32px * 2)
+    // Pausar al hacer hover sobre cualquier card
+    brandCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        if (!isPaused) {
+          carousel.classList.add('paused');
+        }
+      });
 
-  // ===== INICIALIZACIÓN DE ELEMENTOS =====
-  function initializeBrandItems() {
-    brandItems.forEach((item, index) => {
-      // Estado inicial oculto
-      gsap.set(item, {
-        opacity: 0,
-        y: 30,
-        scale: 0.9
+      card.addEventListener('mouseleave', () => {
+        if (!isPaused) {
+          carousel.classList.remove('paused');
+        }
       });
     });
-
-    console.log('✅ Elementos de marca inicializados');
   }
 
-  // ===== ANIMACIÓN DE ENTRADA DE ELEMENTOS =====
-  function animateItemsIn() {
-    brandItems.forEach((item, index) => {
-      scrollOptimizer.optimizedTo(item, {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.8,
-        delay: index * 0.1,
-        ease: "power2.out"
-      });
+  // Efectos visuales mejorados
+  function addVisualEffects() {
+    brandCards.forEach((card, index) => {
+      // Animación de entrada escalonada
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
 
-      // Agregar clase para CSS
       setTimeout(() => {
-        item.classList.add('animate-in');
-      }, index * 100);
-    });
-  }
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }, index * 150);
 
-  // ===== CARRUSEL INFINITO PRINCIPAL =====
-  function createInfiniteCarousel() {
-    // Calcular la distancia total para un ciclo completo (4 elementos)
-    const totalDistance = itemWidth * itemsPerSet;
-    
-    // Crear la animación infinita
-    carouselAnimation = gsap.to(carousel, {
-      x: -totalDistance,
-      duration: 20, // 20 segundos para un ciclo completo
-      ease: "none",
-      repeat: -1,
-      modifiers: {
-        x: (x) => {
-          // Resetear posición cuando se complete un ciclo
-          const numValue = parseFloat(x);
-          return `${numValue % totalDistance}px`;
-        }
-      }
-    });
-
-    console.log('🔄 Carrusel infinito creado');
-  }
-
-  // ===== EFECTOS DE HOVER MEJORADOS =====
-  function setupHoverEffects() {
-    brandItems.forEach((item) => {
-      const logo = item.querySelector('.brand-logo');
-      const placeholder = item.querySelector('.logo-placeholder');
-      
-      if (!logo || !placeholder) return;
-
-      // Hover in
-      item.addEventListener('mouseenter', () => {
-        scrollOptimizer.optimizedTo(logo, {
-          y: -8,
-          scale: 1.05,
-          duration: 0.4,
-          ease: "power2.out"
-        });
-
-        scrollOptimizer.optimizedTo(placeholder, {
-          scale: 1.1,
-          duration: 0.3,
-          ease: "power2.out"
-        });
-
-        // Ralentizar carrusel en hover
-        if (carouselAnimation) {
-          scrollOptimizer.optimizedTo(carouselAnimation, {
-            timeScale: 0.3,
-            duration: 0.3,
-            ease: "power2.out"
-          });
-        }
+      // Efectos de hover adicionales
+      card.addEventListener('mouseenter', function() {
+        this.style.boxShadow = '0 25px 50px rgba(0, 0, 0, 0.15)';
       });
 
-      // Hover out
-      item.addEventListener('mouseleave', () => {
-        scrollOptimizer.optimizedTo(logo, {
-          y: 0,
-          scale: 1,
-          duration: 0.4,
-          ease: "power2.out"
-        });
-
-        scrollOptimizer.optimizedTo(placeholder, {
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.out"
-        });
-
-        // Restaurar velocidad del carrusel
-        if (carouselAnimation) {
-          scrollOptimizer.optimizedTo(carouselAnimation, {
-            timeScale: 1,
-            duration: 0.3,
-            ease: "power2.out"
-          });
-        }
+      card.addEventListener('mouseleave', function() {
+        this.style.boxShadow = '';
       });
     });
-
-    console.log('✨ Efectos de hover configurados');
   }
 
-  // ===== SCROLL TRIGGER PARA ANIMACIÓN DE ENTRADA =====
-  function setupScrollTrigger() {
-    ScrollTrigger.create({
-      trigger: section,
-      start: "top 80%",
-      onEnter: () => {
-        animateItemsIn();
-        // Pequeño delay antes de iniciar el carrusel
+  // Observador de intersección para animaciones
+  function setupScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Iniciar animaciones cuando la sección es visible
+          setTimeout(() => {
+            addVisualEffects();
+          }, 300);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    observer.observe(section);
+  }
+
+  // Tracking básico
+  function setupTracking() {
+    brandCards.forEach((card, index) => {
+      card.addEventListener('click', () => {
+        const brandName = card.querySelector('h3')?.textContent || `Brand ${index + 1}`;
+        console.log(`Brand card clicked: ${brandName}`);
+
+        // Efecto de click
+        card.style.transform = 'scale(0.95)';
         setTimeout(() => {
-          createInfiniteCarousel();
-        }, 800);
-      },
-      once: true
+          card.style.transform = '';
+        }, 150);
+      });
     });
 
-    console.log('📜 ScrollTrigger configurado');
-  }
-
-  // ===== MANEJO DE RESIZE RESPONSIVO =====
-  function handleResize() {
-    const updateCarousel = () => {
-      if (carouselAnimation) {
-        carouselAnimation.kill();
-      }
-      
-      // Recalcular dimensiones basado en viewport
-      const newItemWidth = window.innerWidth < 768 ? 200 + 32 : 280 + 64;
-      const newTotalDistance = newItemWidth * itemsPerSet;
-      
-      // Recrear animación con nuevas dimensiones
-      carouselAnimation = gsap.to(carousel, {
-        x: -newTotalDistance,
-        duration: 20,
-        ease: "none",
-        repeat: -1,
-        modifiers: {
-          x: (x) => {
-            const numValue = parseFloat(x);
-            return `${numValue % newTotalDistance}px`;
-          }
-        }
-      });
-    };
-
-    // Debounce resize events
-    let resizeTimeout;
-    window.addEventListener('resize', () => {
-      clearTimeout(resizeTimeout);
-      resizeTimeout = setTimeout(updateCarousel, 250);
+    // Tracking del botón de pausa/play
+    pausePlayBtn?.addEventListener('click', () => {
+      console.log(`Carousel ${isPaused ? 'resumed' : 'paused'}`);
     });
-
-    console.log('📱 Manejo de resize configurado');
   }
 
-  // ===== CONTROLES DE PAUSA/PLAY =====
-  function setupPlayPauseControls() {
-    // Pausar en hover del contenedor completo
-    const carouselContainer = document.querySelector('.carousel-container');
-    
-    if (carouselContainer) {
-      carouselContainer.addEventListener('mouseenter', () => {
-        if (carouselAnimation) {
-          carouselAnimation.pause();
-        }
-      });
+  // Performance y accesibilidad
+  function setupAccessibility() {
+    // Reducir animaciones para usuarios con preferencias de accesibilidad
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-      carouselContainer.addEventListener('mouseleave', () => {
-        if (carouselAnimation) {
-          carouselAnimation.resume();
-        }
+    if (prefersReducedMotion.matches) {
+      carousel.style.animation = 'none';
+      brandCards.forEach(card => {
+        card.style.transition = 'none';
       });
     }
 
-    // Pausar cuando la pestaña no está visible
-    document.addEventListener('visibilitychange', () => {
-      if (carouselAnimation) {
-        if (document.hidden) {
-          carouselAnimation.pause();
-        } else {
-          carouselAnimation.resume();
-        }
+    // Soporte para teclado
+    pausePlayBtn?.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        togglePlayPause();
       }
     });
-
-    console.log('⏯️ Controles de pausa/play configurados');
   }
 
-  // ===== INICIALIZACIÓN PRINCIPAL =====
-  function init() {
-    // Registrar ScrollTrigger
-    gsap.registerPlugin(ScrollTrigger);
-    
-    // Inicializar elementos
-    initializeBrandItems();
-    
-    // Configurar efectos y controles
-    setupHoverEffects();
-    setupScrollTrigger();
-    setupPlayPauseControls();
-    handleResize();
+  // Inicializar todas las funciones
+  setupControls();
+  setupScrollAnimations();
+  setupTracking();
+  setupAccessibility();
 
-    console.log('✅ Carrusel de marcas completamente inicializado');
-  }
-
-  // ===== CLEANUP AL SALIR =====
-  function cleanup() {
-    if (carouselAnimation) {
-      carouselAnimation.kill();
-    }
-    ScrollTrigger.getAll().forEach(st => st.kill());
-  }
-
-  // Event listener para cleanup
-  window.addEventListener('beforeunload', cleanup);
-
-  // Inicializar todo
-  init();
+  console.log('Carrusel infinito de marcas inicializado correctamente');
 });
