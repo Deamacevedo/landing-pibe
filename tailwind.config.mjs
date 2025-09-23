@@ -10,9 +10,9 @@ export default {
         'pibe-gold': '#FCDD09',
       },
       fontFamily: {
-        'display': ['Oswald', 'system-ui', 'sans-serif'],
-        'script': ['Dancing Script', 'cursive'],
-        'sans': ['Inter', 'system-ui', 'sans-serif'],
+        'display': ['Open Sans Variable', 'system-ui', 'sans-serif'],
+        'script': ['Open Sans Variable', 'system-ui', 'sans-serif'],
+        'sans': ['Open Sans Variable', 'system-ui', 'sans-serif'],
       },
       container: {
         center: true,
