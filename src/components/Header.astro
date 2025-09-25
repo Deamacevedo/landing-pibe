@@ -2,27 +2,68 @@
 // Header component - Navegación principal
 ---
 
-<header class="fixed top-0 left-0 right-0 bg-transparent z-50 transition-all duration-300" id="main-header">
+<header
+  class="fixed top-0 left-0 right-0 bg-transparent z-50 transition-all duration-300"
+  id="main-header"
+>
   <div class="container mx-auto px-5">
     <nav class="flex items-center justify-between py-4">
       <div class="logo">
-<h1 class="font-display text-xl md:text-2xl font-bold text-white drop-shadow-lg">EL PIBE VALDERRAMA</h1>
+        <h1 class="font-display text-xl md:text-2xl font-bold drop-shadow-lg">
+          <a
+            href="/"
+            class="text-white hover:text-pibe-gold transition-colors duration-200"
+            aria-label="Ir al inicio">EL PIBE VALDERRAMA</a
+          >
+        </h1>
       </div>
       <!-- Desktop Menu -->
       <ul class="hidden md:flex items-center space-x-8">
-        <li><a href="/" class="text-white drop-shadow-md hover:text-pibe-gold transition-colors duration-300 relative active:text-pibe-gold">Inicio</a></li>
-        <li><a href="/#sobre-el" class="text-white drop-shadow-md hover:text-pibe-gold transition-colors duration-300 relative">Sobre Él</a></li>
-        <li><a href="/#contacto" class="text-white drop-shadow-md hover:text-pibe-gold transition-colors duration-300 relative">Contacto</a></li>
-        <li><a href="/#marcas" class="text-white drop-shadow-md hover:text-pibe-gold transition-colors duration-300 relative">Marcas</a></li>
-        <li><a href="/#redes" class="text-white drop-shadow-md hover:text-pibe-gold transition-colors duration-300 relative">Redes</a></li>
-        <li><a href="/historia" class="text-white drop-shadow-md hover:text-pibe-gold transition-colors duration-300 relative">Historia</a></li>
+        <li>
+          <a
+            href="/"
+            class="text-white drop-shadow-md hover:text-pibe-gold transition-colors duration-300 relative active:text-pibe-gold"
+            >Inicio</a>
+        </li>
+        <li>
+          <a
+            href="/#Biografia"
+            class="text-white drop-shadow-md hover:text-pibe-gold transition-colors duration-300 relative"
+            >Biografía</a>
+        </li>
+        <li>
+          <a
+            href="/#contacto"
+            class="text-white drop-shadow-md hover:text-pibe-gold transition-colors duration-300 relative"
+            >Contacto</a>
+        </li>
+        <li>
+          <a
+            href="/#marcas"
+            class="text-white drop-shadow-md hover:text-pibe-gold transition-colors duration-300 relative"
+            >Marcas</a>
+        </li>
+        <li>
+          <a
+            href="/#redes"
+            class="text-white drop-shadow-md hover:text-pibe-gold transition-colors duration-300 relative"
+            >Redes</a>
+        </li>
+        <!-- <li><a href="/historia" class="text-white drop-shadow-md hover:text-pibe-gold transition-colors duration-300 relative">Historia</a></li> -->
       </ul>
 
       <!-- Desktop CTA Button -->
-      <a href="/#contacto" class="hidden md:block bg-pibe-gold hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105">Contratar Ahora</a>
+      <a
+        href="/#contacto"
+        class="hidden md:block bg-pibe-gold hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-full transition-all duration-300 transform hover:scale-105"
+        >Contratar Ahora</a
+      >
 
       <!-- Mobile Menu Button -->
-      <button class="md:hidden mobile-menu-button p-2 rounded-lg bg-black/20 backdrop-blur-sm border border-white/20" aria-label="Abrir menú">
+      <button
+        class="md:hidden mobile-menu-button p-2 rounded-lg bg-black/20 backdrop-blur-sm border border-white/20"
+        aria-label="Abrir menú"
+      >
         <div class="hamburger">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -33,24 +74,64 @@
   </div>
 
   <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu fixed inset-0 bg-black z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden overflow-hidden">
+  <div
+    class="mobile-menu fixed inset-0 bg-black z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden overflow-hidden"
+  >
     <!-- Close Button -->
-    <button class="mobile-menu-close absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300" aria-label="Cerrar menú">
-      <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    <button
+      class="mobile-menu-close absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300"
+      aria-label="Cerrar menú"
+    >
+      <svg
+        class="w-6 h-6 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
 
-    <div class="flex flex-col h-full justify-center items-center space-y-8 text-center px-6">
-      <a href="/" class="mobile-menu-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300">Inicio</a>
-      <a href="/#sobre-el" class="mobile-menu-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300">Sobre Él</a>
-      <a href="/#contacto" class="mobile-menu-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300">Contacto</a>
-      <a href="/#marcas" class="mobile-menu-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300">Marcas</a>
-      <a href="/#redes" class="mobile-menu-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300">Redes</a>
-      <a href="/historia" class="mobile-menu-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300">Historia</a>
+    <div
+      class="flex flex-col h-full justify-center items-center space-y-8 text-center px-6"
+    >
+      <a
+        href="/"
+        class="mobile-menu-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300"
+        >Inicio</a
+      >
+      <a
+        href="/#Biografia"
+        class="mobile-menu-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300"
+        >Biografía</a
+      >
+      <a
+        href="/#contacto"
+        class="mobile-menu-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300"
+        >Contacto</a
+      >
+      <a
+        href="/#marcas"
+        class="mobile-menu-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300"
+        >Marcas</a
+      >
+      <a
+        href="/#redes"
+        class="mobile-menu-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300"
+        >Redes</a
+      >
+      <!-- <a href="/historia" class="mobile-menu-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300">Historia</a> -->
 
       <!-- Mobile CTA Button -->
-      <a href="/#contacto" class="mobile-menu-cta bg-pibe-gold hover:bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 mt-8">Contratar Ahora</a>
+      <a
+        href="/#contacto"
+        class="mobile-menu-cta bg-pibe-gold hover:bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 mt-8"
+        >Contratar Ahora</a
+      >
     </div>
   </div>
 </header>
@@ -80,24 +161,24 @@
 
   /* Estilo para el enlace activo */
   header nav ul li a.active {
-    color: var(--pibe-gold, #F7E017) !important;
+    color: var(--pibe-gold, #f7e017) !important;
     font-weight: 600;
   }
 
   header nav ul li a.active::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: -5px;
     left: 0;
     right: 0;
     height: 2px;
-    background-color: var(--pibe-gold, #F7E017);
+    background-color: var(--pibe-gold, #f7e017);
     border-radius: 1px;
   }
 
   /* Efecto hover mejorado */
   header nav ul li a:hover {
-    color: var(--pibe-gold, #F7E017) !important;
+    color: var(--pibe-gold, #f7e017) !important;
   }
 
   /* Botón CTA con mejor contraste - solo el botón, no el link del menú */
@@ -152,7 +233,11 @@
 
   /* Mobile Menu Overlay */
   .mobile-menu {
-    background: linear-gradient(135deg, rgba(0,0,0,0.98), rgba(0,0,0,0.95));
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.98),
+      rgba(0, 0, 0, 0.95)
+    );
     backdrop-filter: blur(20px);
   }
 
@@ -171,13 +256,27 @@
     transform: translateY(0);
   }
 
-  .mobile-menu.active .mobile-menu-link:nth-child(1) { transition-delay: 0.1s; }
-  .mobile-menu.active .mobile-menu-link:nth-child(2) { transition-delay: 0.15s; }
-  .mobile-menu.active .mobile-menu-link:nth-child(3) { transition-delay: 0.2s; }
-  .mobile-menu.active .mobile-menu-link:nth-child(4) { transition-delay: 0.25s; }
-  .mobile-menu.active .mobile-menu-link:nth-child(5) { transition-delay: 0.3s; }
-  .mobile-menu.active .mobile-menu-link:nth-child(6) { transition-delay: 0.35s; }
-  .mobile-menu.active .mobile-menu-cta { transition-delay: 0.4s; }
+  .mobile-menu.active .mobile-menu-link:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  .mobile-menu.active .mobile-menu-link:nth-child(2) {
+    transition-delay: 0.15s;
+  }
+  .mobile-menu.active .mobile-menu-link:nth-child(3) {
+    transition-delay: 0.2s;
+  }
+  .mobile-menu.active .mobile-menu-link:nth-child(4) {
+    transition-delay: 0.25s;
+  }
+  .mobile-menu.active .mobile-menu-link:nth-child(5) {
+    transition-delay: 0.3s;
+  }
+  .mobile-menu.active .mobile-menu-link:nth-child(6) {
+    transition-delay: 0.35s;
+  }
+  .mobile-menu.active .mobile-menu-cta {
+    transition-delay: 0.4s;
+  }
 
   .mobile-menu-cta {
     opacity: 0;

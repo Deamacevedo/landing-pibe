@@ -1,20 +1,20 @@
 // Contacto Script - Funcionalidad mejorada para copiar email y tracking
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const section = document.querySelector('#contacto');
   const copyEmailBtn = document.getElementById('copy-email');
   const whatsappBtn = section?.querySelector('a[href*="wa.me"]');
   const emailText = 'negocios@pibevalderrama.com';
-  
+
   if (!section) return;
 
   // Función mejorada para copiar email
   function setupEmailCopy() {
     if (!copyEmailBtn) return;
-    
-    copyEmailBtn.addEventListener('click', async function(e) {
+
+    copyEmailBtn.addEventListener('click', async function (e) {
       e.preventDefault();
-      
+
       try {
         // Intentar usar la API moderna de Clipboard
         if (navigator.clipboard && window.isSecureContext) {
@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', function() {
           copyToClipboardFallback(emailText);
           showSuccessMessage('📧 Email copiado al portapapeles');
         }
-        
+
         // Animación de feedback
         animateButton(this);
-        
+
         // Tracking del evento
         trackEmailCopy();
-        
+
       } catch (err) {
         console.error('Error al copiar email:', err);
         showErrorMessage('❌ Error al copiar. Intenta manualmente.');
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(textArea);
     textArea.focus();
     textArea.select();
-    
+
     try {
       document.execCommand('copy');
       textArea.remove();
@@ -63,12 +63,12 @@ document.addEventListener('DOMContentLoaded', function() {
   function showSuccessMessage(message) {
     const toast = createToast(message, 'success');
     document.body.appendChild(toast);
-    
+
     setTimeout(() => {
       toast.style.opacity = '1';
       toast.style.transform = 'translateY(0)';
     }, 100);
-    
+
     setTimeout(() => {
       toast.style.opacity = '0';
       toast.style.transform = 'translateY(-20px)';
@@ -80,12 +80,12 @@ document.addEventListener('DOMContentLoaded', function() {
   function showErrorMessage(message) {
     const toast = createToast(message, 'error');
     document.body.appendChild(toast);
-    
+
     setTimeout(() => {
       toast.style.opacity = '1';
       toast.style.transform = 'translateY(0)';
     }, 100);
-    
+
     setTimeout(() => {
       toast.style.opacity = '0';
       toast.style.transform = 'translateY(-20px)';
@@ -119,16 +119,16 @@ document.addEventListener('DOMContentLoaded', function() {
   function animateButton(button) {
     const originalText = button.textContent;
     const originalBg = button.style.backgroundColor;
-    
+
     // Cambiar texto y color temporalmente
     button.textContent = '✓ ¡Copiado!';
     button.style.backgroundColor = '#10b981';
     button.style.transform = 'scale(0.95)';
-    
+
     setTimeout(() => {
       button.style.transform = 'scale(1)';
     }, 150);
-    
+
     setTimeout(() => {
       button.textContent = originalText;
       button.style.backgroundColor = originalBg;
@@ -138,11 +138,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Tracking de WhatsApp clicks
   function setupWhatsAppTracking() {
     if (!whatsappBtn) return;
-    
-    whatsappBtn.addEventListener('click', function() {
+
+    whatsappBtn.addEventListener('click', function () {
       // Analytics tracking
       console.log('WhatsApp button clicked from Contact section');
-      
+
       // Opcional: enviar evento a Google Analytics
       if (typeof gtag !== 'undefined') {
         gtag('event', 'click', {
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Tracking de copia de email
   function trackEmailCopy() {
     console.log('Email copied from Contact section');
-    
+
     // Opcional: enviar evento a Google Analytics
     if (typeof gtag !== 'undefined') {
       gtag('event', 'click', {
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Animaciones de entrada para la sección
   function setupSectionAnimations() {
     const cards = section?.querySelectorAll('.bg-white\\/10');
-    
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
@@ -195,8 +195,8 @@ document.addEventListener('DOMContentLoaded', function() {
   function setupFormValidation() {
     const form = section?.querySelector('form');
     if (!form) return;
-    
-    form.addEventListener('submit', function(e) {
+
+    form.addEventListener('submit', function (e) {
       // Aquí se puede agregar validación de formulario
       console.log('Form submitted');
     });
@@ -207,6 +207,45 @@ document.addEventListener('DOMContentLoaded', function() {
   setupWhatsAppTracking();
   setupSectionAnimations();
   setupFormValidation();
+
+  // Manejo robusto del enlace "Enviar propuesta" para evitar abrir pestañas en blanco
+  function setupSendProposalLink() {
+    // Select both the original in-page link (id=send-proposal) and any footer anchor marked with data-send-proposal
+    const inPage = document.getElementById('send-proposal');
+    const footers = Array.from(document.querySelectorAll('a[data-send-proposal]'));
+
+    const elements = [];
+    if (inPage) elements.push(inPage);
+    if (footers.length) elements.push(...footers);
+    if (!elements.length) return;
+
+    elements.forEach(el => {
+      el.addEventListener('click', function (e) {
+        // Evitar comportamiento por defecto que en algunos navegadores abre pestaña vacía
+        e.preventDefault();
+
+        const href = this.getAttribute('href');
+        if (!href) return;
+
+        // Primero intentamos abrir mediante location.href (abre el cliente de correo)
+        try {
+          // Asignar location.href es suficiente para invocar el handler mailto
+          // y no dispara los bloqueadores de popups como window.open.
+          window.location.href = href;
+        } catch (err) {
+          // Fallback: crear anchor temporal y hacer click
+          const a = document.createElement('a');
+          a.href = href;
+          a.style.display = 'none';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+        }
+      });
+    });
+  }
+
+  setupSendProposalLink();
 
   // Detectar si el usuario llega directamente a la sección de contacto
   if (window.location.hash === '#contacto') {

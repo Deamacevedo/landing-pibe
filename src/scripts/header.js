@@ -1,26 +1,26 @@
 // Header Navigation Script - Navegación suave y efectos del header
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Navegación suave para todos los enlaces internos
   const navLinks = document.querySelectorAll('a[href^="#"]');
-  
+
   navLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
       e.preventDefault();
-      
+
       const targetId = this.getAttribute('href');
       const targetSection = document.querySelector(targetId);
-      
+
       if (targetSection) {
         // Calcular offset para el header fijo
         const headerHeight = document.querySelector('header').offsetHeight;
         const targetPosition = targetSection.offsetTop - headerHeight - 20;
-        
+
         window.scrollTo({
           top: targetPosition,
           behavior: 'smooth'
         });
-        
+
         // Actualizar estado activo del menú
         updateActiveNavItem(targetId);
       }
@@ -29,7 +29,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Cambiar transparencia del header al hacer scroll
   let lastScrollTop = 0;
-  window.addEventListener('scroll', function() {
+  // Si estamos en la página de 'historia', forzar header scrolled al cargar
+  const pathname = window.location.pathname || '/';
+  const isHistoria = pathname.replace(/\/$/, '') === '/historia' || pathname.startsWith('/historia');
+  if (isHistoria) {
+    const header = document.querySelector('header');
+    if (header) {
+      header.classList.add('scrolled');
+      header.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+      header.style.backdropFilter = 'blur(12px)';
+      header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+      const logo = header.querySelector('.logo h1');
+      const navLinks = header.querySelectorAll('nav ul li a');
+      if (logo) logo.style.color = 'white';
+      navLinks.forEach(link => link.style.color = 'white');
+    }
+  }
+  window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
     const logo = header.querySelector('.logo h1');
     const navLinks = header.querySelectorAll('nav ul li a');
@@ -47,16 +63,27 @@ document.addEventListener('DOMContentLoaded', function() {
         link.style.color = 'white';
       });
     } else {
-      header.classList.remove('scrolled');
-      header.style.backgroundColor = 'transparent';
-      header.style.backdropFilter = 'none';
-      header.style.boxShadow = 'none';
+      // If we're on the Historia page, keep the header in scrolled (dark) state always
+      if (isHistoria) {
+        // Leave the scrolled styles applied
+        header.classList.add('scrolled');
+        header.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        header.style.backdropFilter = 'blur(12px)';
+        header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+        logo.style.color = 'white';
+        navLinks.forEach(link => link.style.color = 'white');
+      } else {
+        header.classList.remove('scrolled');
+        header.style.backgroundColor = 'transparent';
+        header.style.backdropFilter = 'none';
+        header.style.boxShadow = 'none';
 
-      // Mantener colores blancos originales
-      logo.style.color = 'white';
-      navLinks.forEach(link => {
-        link.style.color = 'white';
-      });
+        // Mantener colores blancos originales
+        logo.style.color = 'white';
+        navLinks.forEach(link => {
+          link.style.color = 'white';
+        });
+      }
     }
 
     // Actualizar elemento activo basado en scroll
@@ -79,12 +106,12 @@ document.addEventListener('DOMContentLoaded', function() {
   function updateActiveNavOnScroll() {
     const sections = document.querySelectorAll('section[id]');
     const headerHeight = document.querySelector('header').offsetHeight;
-    
+
     sections.forEach(section => {
       const rect = section.getBoundingClientRect();
       const sectionId = '#' + section.id;
       const navLink = document.querySelector(`a[href="${sectionId}"]`);
-      
+
       if (rect.top <= headerHeight + 50 && rect.bottom >= headerHeight + 50) {
         navLinks.forEach(link => link.classList.remove('active'));
         if (navLink) {
@@ -127,7 +154,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   if (mobileMenuButton && mobileMenu) {
     // Toggle mobile menu
-    mobileMenuButton.addEventListener('click', function() {
+    mobileMenuButton.addEventListener('click', function () {
       if (mobileMenu.classList.contains('active')) {
         closeMobileMenu();
       } else {
@@ -146,21 +173,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Close mobile menu when clicking outside
-    mobileMenu.addEventListener('click', function(e) {
+    mobileMenu.addEventListener('click', function (e) {
       if (e.target === mobileMenu) {
         closeMobileMenu();
       }
     });
 
     // Close mobile menu on escape key
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
         closeMobileMenu();
       }
     });
 
     // Close mobile menu on window resize (if switching to desktop)
-    window.addEventListener('resize', function() {
+    window.addEventListener('resize', function () {
       if (window.innerWidth >= 768 && mobileMenu.classList.contains('active')) {
         closeMobileMenu();
       }

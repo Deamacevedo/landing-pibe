@@ -1,6 +1,6 @@
 // Redes Sociales Script - Social Media Wall con embeds reales
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   const section = document.querySelector('#redes');
   const embedCards = section?.querySelectorAll('.bg-white\\/10.backdrop-blur-sm');
   const statisticsCards = section?.querySelectorAll('.bg-white\\/5');
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!embedCards || !embedCards.length) return;
 
     embedCards.forEach(card => {
-      card.addEventListener('mouseenter', function() {
+      card.addEventListener('mouseenter', function () {
         // Efecto de elevación suave
         this.style.transform = 'translateY(-8px) scale(1.02)';
         this.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.boxShadow = '0 25px 50px -12px rgba(255, 215, 0, 0.3)';
       });
 
-      card.addEventListener('mouseleave', function() {
+      card.addEventListener('mouseleave', function () {
         this.style.transform = 'translateY(0) scale(1)';
         this.style.filter = 'brightness(1)';
         this.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1)';
@@ -112,13 +112,13 @@ document.addEventListener('DOMContentLoaded', function() {
   // Efectos de brillo en estadísticas
   function addStatisticsEffects() {
     statisticsCards.forEach(card => {
-      card.addEventListener('mouseenter', function() {
+      card.addEventListener('mouseenter', function () {
         this.style.background = 'rgba(255, 255, 255, 0.15)';
         this.style.transform = 'scale(1.05)';
         this.style.transition = 'all 0.3s ease';
       });
 
-      card.addEventListener('mouseleave', function() {
+      card.addEventListener('mouseleave', function () {
         this.style.background = 'rgba(255, 255, 255, 0.05)';
         this.style.transform = 'scale(1)';
       });
@@ -128,11 +128,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Tracking de clics en redes sociales
   function setupSocialTracking() {
     socialLinks.forEach(link => {
-      link.addEventListener('click', function() {
+      link.addEventListener('click', function () {
         const platform = this.href.includes('facebook') ? 'Facebook' :
-                        this.href.includes('instagram') ? 'Instagram' :
-                        this.href.includes('tiktok') ? 'TikTok' :
-                        this.href.includes('youtube') ? 'YouTube' : 'Unknown';
+          this.href.includes('instagram') ? 'Instagram' :
+            this.href.includes('tiktok') ? 'TikTok' :
+              this.href.includes('youtube') ? 'YouTube' : 'Unknown';
 
         console.log(`Social media click: ${platform} - ${this.href}`);
 
@@ -154,17 +154,67 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Función para mejorar la carga de embeds reales
   function enhanceRealEmbeds() {
-    // Mejorar el loading de Instagram
+    // Mejorar el loading de Instagram con reintentos
     const instagramEmbed = section.querySelector('.instagram-media');
-    if (instagramEmbed) {
-      instagramEmbed.style.transition = 'opacity 0.5s ease-in-out';
-      instagramEmbed.style.opacity = '0.8';
+    const instagramFallback = document.getElementById('instagram-fallback');
+    const instagramRetryBtn = document.getElementById('instagram-retry');
 
-      // Aplicar estilos cuando cargue
-      setTimeout(() => {
-        instagramEmbed.style.opacity = '1';
-      }, 1000);
+    async function tryLoadInstagram(retries = 3, delay = 800) {
+      if (!instagramEmbed) return true;
+
+      // Ocultar fallback
+      if (instagramFallback) {
+        instagramFallback.classList.remove('opacity-100');
+        instagramFallback.classList.add('opacity-0', 'pointer-events-none');
+      }
+
+      try {
+        // Si el script de Instagram ya expone instgrm, procesar embeds
+        if (window.instgrm && typeof window.instgrm.Embeds !== 'undefined' && typeof window.instgrm.Embeds.process === 'function') {
+          window.instgrm.Embeds.process();
+          instagramEmbed.style.transition = 'opacity 0.5s ease-in-out';
+          instagramEmbed.style.opacity = '1';
+          return true;
+        }
+
+        // Si no está disponible, esperar y reintentar
+        if (retries > 0) {
+          await new Promise(res => setTimeout(res, delay));
+          return tryLoadInstagram(retries - 1, Math.min(delay * 1.8, 3000));
+        }
+
+        // Agotados los reintentos: mostrar fallback
+        if (instagramFallback) {
+          instagramFallback.classList.remove('opacity-0', 'pointer-events-none');
+          instagramFallback.classList.add('opacity-100');
+        }
+
+        return false;
+      } catch (err) {
+        console.warn('Instagram embed load error', err);
+        if (retries > 0) {
+          await new Promise(res => setTimeout(res, delay));
+          return tryLoadInstagram(retries - 1, Math.min(delay * 1.8, 3000));
+        }
+
+        if (instagramFallback) {
+          instagramFallback.classList.remove('opacity-0', 'pointer-events-none');
+          instagramFallback.classList.add('opacity-100');
+        }
+        return false;
+      }
     }
+
+    // Vincular botón de reintento
+    if (instagramRetryBtn) {
+      instagramRetryBtn.addEventListener('click', function () {
+        // Intentar recargar y re-procesar el embed
+        tryLoadInstagram();
+      });
+    }
+
+    // Lanzar intento inicial
+    tryLoadInstagram();
 
     // Mejorar el loading de TikTok
     const tiktokEmbed = section.querySelector('.tiktok-embed');
