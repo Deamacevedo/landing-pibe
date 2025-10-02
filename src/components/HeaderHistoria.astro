@@ -1,0 +1,215 @@
+---
+// HeaderHistoria component - Navegación principal para página Historia
+---
+
+<header
+  class="fixed top-0 left-0 right-0 bg-black/80 backdrop-blur-md z-50 shadow-lg"
+  id="header-historia"
+>
+  <div class="container mx-auto px-5">
+    <nav class="flex items-center justify-between py-4">
+      <div class="logo">
+        <h1 class="font-display text-xl md:text-2xl font-bold">
+          <a
+            href="/"
+            class="text-white hover:text-pibe-gold transition-colors duration-200"
+            aria-label="Ir al inicio">EL PIBE VALDERRAMA</a
+          >
+        </h1>
+      </div>
+
+      <!-- Desktop Menu -->
+      <ul class="hidden md:flex items-center space-x-8">
+        <li>
+          <a
+            href="/"
+            class="text-white hover:text-pibe-gold transition-colors duration-300 cursor-pointer"
+            >Inicio</a>
+        </li>
+        <li>
+          <a
+            href="/#Biografia"
+            class="text-white hover:text-pibe-gold transition-colors duration-300 cursor-pointer"
+            >Biografía</a>
+        </li>
+        <li>
+          <a
+            href="/#contacto"
+            class="text-white hover:text-pibe-gold transition-colors duration-300 cursor-pointer"
+            >Contacto</a>
+        </li>
+        <li>
+          <a
+            href="/#marcas"
+            class="text-white hover:text-pibe-gold transition-colors duration-300 cursor-pointer"
+            >Marcas</a>
+        </li>
+        <li>
+          <a
+            href="/#redes"
+            class="text-white hover:text-pibe-gold transition-colors duration-300 cursor-pointer"
+            >Redes</a>
+        </li>
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="md:hidden p-2 rounded-lg bg-black/20 backdrop-blur-sm border border-white/20 cursor-pointer"
+        aria-label="Abrir menú"
+      >
+        <div class="hamburger">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </div>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 bg-black/95 backdrop-blur-lg z-[60] hidden"
+  >
+    <!-- Close Button -->
+    <button
+      id="mobile-menu-close"
+      class="absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 z-10 cursor-pointer"
+      aria-label="Cerrar menú"
+    >
+      <svg
+        class="w-6 h-6 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Menu Items -->
+    <div
+      class="flex flex-col h-full w-full justify-center items-center space-y-8 text-center px-6"
+    >
+      <a
+        href="/"
+        class="mobile-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300 cursor-pointer"
+        >Inicio</a
+      >
+      <a
+        href="/#Biografia"
+        class="mobile-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300 cursor-pointer"
+        >Biografía</a
+      >
+      <a
+        href="/#contacto"
+        class="mobile-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300 cursor-pointer"
+        >Contacto</a
+      >
+      <a
+        href="/#marcas"
+        class="mobile-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300 cursor-pointer"
+        >Marcas</a
+      >
+      <a
+        href="/#redes"
+        class="mobile-link text-white text-2xl font-semibold hover:text-pibe-gold transition-colors duration-300 cursor-pointer"
+        >Redes</a
+      >
+    </div>
+  </div>
+</header>
+
+<style>
+  /* Hamburger Animation */
+  .hamburger {
+    width: 24px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .hamburger-line {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  #mobile-menu-btn.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  #mobile-menu-btn.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  #mobile-menu-btn.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Mobile Menu */
+  #mobile-menu.show {
+    display: flex !important;
+  }
+
+  /* Prevent scroll when mobile menu is open */
+  body.menu-open {
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    width: 100%;
+  }
+</style>
+
+<script>
+  // Mobile Menu Toggle - Simple and Direct
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const mobileLinks = document.querySelectorAll('.mobile-link');
+
+  function openMenu() {
+    mobileMenu?.classList.add('show');
+    mobileMenuBtn?.classList.add('active');
+    document.body.classList.add('menu-open');
+  }
+
+  function closeMenu() {
+    mobileMenu?.classList.remove('show');
+    mobileMenuBtn?.classList.remove('active');
+    document.body.classList.remove('menu-open');
+  }
+
+  // Open menu
+  mobileMenuBtn?.addEventListener('click', openMenu);
+
+  // Close menu
+  mobileMenuClose?.addEventListener('click', closeMenu);
+
+  // Close when clicking on a link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Close when clicking outside
+  mobileMenu?.addEventListener('click', (e) => {
+    if (e.target === mobileMenu) {
+      closeMenu();
+    }
+  });
+
+  // Close on escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu?.classList.contains('show')) {
+      closeMenu();
+    }
+  });
+</script>

@@ -217,13 +217,15 @@ import logoFooter from "../assets/logoFooter.png";
               <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
               ></path>
             </svg>
-            <a
-              href="mailto:negocios@pibevalderrama.com?subject=Consulta%20Comercial%20-%20Pibe%20Valderrama&body=Hola,%0A%0AEstoy%20interesado%20en%20establecer%20una%20colaboración%20comercial%20con%20el%20Pibe%20Valderrama.%0A%0APor%20favor,%20envíenme%20más%20información%20sobre:%0A-%20Tarifas%20y%20paquetes%0A-%20Disponibilidad%0A-%20Tipos%20de%20colaboración%0A%0AGracias."
-              data-send-proposal="footer"
-              class="text-white text-sm hover:text-pibe-gold transition-colors cursor-pointer"
+            <button
+              id="footer-email-btn"
+              data-email="negocios@pibevalderrama.com"
+              data-subject="Consulta Comercial - Pibe Valderrama"
+              data-body="Hola,&#10;&#10;Estoy interesado en establecer una colaboración comercial con el Pibe Valderrama.&#10;&#10;Por favor, envíenme más información sobre:&#10;- Tarifas y paquetes&#10;- Disponibilidad&#10;- Tipos de colaboración&#10;&#10;Gracias."
+              class="text-white text-sm hover:text-pibe-gold transition-colors cursor-pointer bg-transparent border-none p-0"
             >
               negocios@pibevalderrama.com
-            </a>
+            </button>
           </div>
 
           <!-- WhatsApp -->
@@ -273,3 +275,33 @@ import logoFooter from "../assets/logoFooter.png";
     </div>
   </div>
 </footer>
+
+<script>
+  // Handle mailto for Mac compatibility in Footer
+  document.addEventListener('DOMContentLoaded', () => {
+    const footerEmailButton = document.getElementById('footer-email-btn');
+
+    if (footerEmailButton) {
+      footerEmailButton.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const email = footerEmailButton.getAttribute('data-email');
+        const subject = footerEmailButton.getAttribute('data-subject');
+        const body = footerEmailButton.getAttribute('data-body');
+
+        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        try {
+          window.location.href = mailtoLink;
+        } catch (error) {
+          const tempLink = document.createElement('a');
+          tempLink.href = mailtoLink;
+          tempLink.style.display = 'none';
+          document.body.appendChild(tempLink);
+          tempLink.click();
+          document.body.removeChild(tempLink);
+        }
+      });
+    }
+  });
+</script>

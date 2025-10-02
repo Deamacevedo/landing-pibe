@@ -9,15 +9,47 @@
         ¡Cuando tu marca se une a El Pibe Valderrama, no necesita presentación!
       </h3>
 
-      <div class="flex flex-col sm:flex-row gap-4 justify-center cursor-pointer">
-        <a
-          href="mailto:negocios@pibevalderrama.com?subject=Solicitud%20de%20Propuesta%20Comercial%20-%20Pibe%20Valderrama&body=Hola,%0A%0AEstoy%20interesado%20en%20solicitar%20una%20propuesta%20comercial%20para%20trabajar%20con%20el%20Pibe%20Valderrama.%0A%0APor%20favor,%20envíenme%20información%20sobre:%0A-%20Tarifas%20y%20paquetes%20disponibles%0A-%20Tipos%20de%20colaboración%0A-%20Disponibilidad%20de%20fechas%0A-%20Alcance%20y%20métricas%20de%20audiencia%0A%0AMi%20empresa/marca:%20[Completar]%0AMi%20teléfono:%20[Completar]%0A%0AGracias%20por%20su%20tiempo."
-          target="_blank"
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button
+          id="cta-email-btn"
+          data-email="negocios@pibevalderrama.com"
+          data-subject="Solicitud de Propuesta Comercial - Pibe Valderrama"
+          data-body="Hola,&#10;&#10;Estoy interesado en solicitar una propuesta comercial para trabajar con el Pibe Valderrama.&#10;&#10;Por favor, envíenme información sobre:&#10;- Tarifas y paquetes disponibles&#10;- Tipos de colaboración&#10;- Disponibilidad de fechas&#10;- Alcance y métricas de audiencia&#10;&#10;Mi empresa/marca: [Completar]&#10;Mi teléfono: [Completar]&#10;&#10;Gracias por su tiempo."
           class="inline-block bg-black hover:bg-gray-800 text-white font-bold px-10 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 cursor-pointer"
         >
           Solicitar propuesta comercial
-        </a>
+        </button>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  // Handle mailto for Mac compatibility
+  document.addEventListener('DOMContentLoaded', () => {
+    const ctaButton = document.getElementById('cta-email-btn');
+
+    if (ctaButton) {
+      ctaButton.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        const email = ctaButton.getAttribute('data-email');
+        const subject = ctaButton.getAttribute('data-subject');
+        const body = ctaButton.getAttribute('data-body');
+
+        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        try {
+          window.location.href = mailtoLink;
+        } catch (error) {
+          const tempLink = document.createElement('a');
+          tempLink.href = mailtoLink;
+          tempLink.style.display = 'none';
+          document.body.appendChild(tempLink);
+          tempLink.click();
+          document.body.removeChild(tempLink);
+        }
+      });
+    }
+  });
+</script>
