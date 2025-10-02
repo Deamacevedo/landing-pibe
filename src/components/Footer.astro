@@ -5,7 +5,7 @@ import logoFooter from "../assets/logoFooter.png";
 ---
 
 <footer
-  class="bg-gradient-to-br from-gray-800 via-black to-gray-900 text-white relative overflow-hidden border-t-4 border-pibe-gold shadow-2xl"
+  class="bg-gradient-to-br from-gray-800 via-black to-gray-900 text-white relative overflow-hidden shadow-2xl"
 >
   <!-- Elementos decorativos de fondo -->
   <div class="absolute inset-0 opacity-5">
@@ -20,39 +20,57 @@ import logoFooter from "../assets/logoFooter.png";
   </div>
 
   <div class="container mx-auto px-4 py-6 md:py-8 relative z-10">
-    <div class="grid md:grid-cols-3 gap-6">
-      <!-- Sección del Logo y Descripción -->
-      <div>
-        <div class="mb-4">
-          <!-- Logo del Pibe -->
-          <div class="flex items-center mb-3">
-            <Image
-              src={logoFooter}
-              alt="Pibe Valderrama Logo"
-              class="w-12 h-12 md:w-14 md:h-14 object-contain mr-3"
-              width={56}
-              height={56}
-              loading="lazy"
-            />
-            <div>
-              <h3
-                class="font-display text-lg md:text-xl font-bold text-pibe-gold"
-              >
-                EL PIBE VALDERRAMA
-              </h3>
-            </div>
-          </div>
-          <!-- <p class="text-gray-200 text-sm leading-relaxed max-w-xs">
-            Embajador de marca con millones de seguidores. Conectando marcas con audiencias auténticas.
-          </p> -->
+    <!-- Logo centrado arriba -->
+    <!-- <div class="flex justify-center mb-8">
+      <div class="flex items-center">
+        <Image
+          src={logoFooter}
+          alt="Pibe Valderrama Logo"
+          class="w-12 h-12 md:w-14 md:h-14 object-contain mr-3"
+          width={56}
+          height={56}
+          loading="lazy"
+        />
+        <div>
+          <h3 class="font-display text-lg md:text-xl font-bold text-pibe-gold">
+            EL PIBE VALDERRAMA
+          </h3>
         </div>
+      </div>
+    </div> -->
 
-        <!-- Redes sociales -->
-        <div class="flex space-x-3">
+    <!-- 3 columnas distribuidas: inicio, centro y fin -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+      <!-- Enlaces rápidos - Al inicio -->
+      <div class="md:justify-self-start">
+        <h4 class="font-bold text-lg text-pibe-gold mb-4">Enlaces</h4>
+        <div class="flex flex-col gap-y-2">
+          <a
+            href="#contacto"
+            class="text-gray-300 hover:text-pibe-gold transition-colors duration-300 text-sm cursor-pointer"
+            >Contacto</a
+          >
+          <a
+            href="#marcas"
+            class="text-gray-300 hover:text-pibe-gold transition-colors duration-300 text-sm cursor-pointer"
+            >Marcas</a
+          >
+          <a
+            href="/historia"
+            class="text-gray-300 hover:text-pibe-gold transition-colors duration-300 text-sm cursor-pointer"
+            >Historia</a
+          >
+        </div>
+      </div>
+
+      <!-- Redes sociales - Al centro -->
+      <div class="md:justify-self-center">
+        <h4 class="font-bold text-lg text-pibe-gold mb-4">Redes Sociales</h4>
+        <div class="flex flex-wrap gap-3">
           <a
             href="https://www.instagram.com/pibevalderramap/"
             target="_blank"
-            class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
+            class="w-8 h-8 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer"
           >
             <svg
               class="w-4 h-4"
@@ -70,7 +88,7 @@ import logoFooter from "../assets/logoFooter.png";
           <a
             href="https://www.tiktok.com/@pibevalderramap"
             target="_blank"
-            class="w-8 h-8 bg-black rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
+            class="w-8 h-8 bg-black rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer"
           >
             <svg
               class="w-4 h-4"
@@ -95,7 +113,7 @@ import logoFooter from "../assets/logoFooter.png";
           <a
             href="https://x.com/pibevalderramap"
             target="_blank"
-            class="w-8 h-8 bg-sky-600 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
+            class="w-8 h-8 bg-sky-600 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer"
           >
             <svg
               class="w-4 h-4"
@@ -112,7 +130,7 @@ import logoFooter from "../assets/logoFooter.png";
           <a
             href="https://www.threads.com/@pibevalderramap"
             target="_blank"
-            class="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
+            class="w-8 h-8 bg-gray-700 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer"
           >
             <svg
               class="w-4 h-4"
@@ -130,7 +148,7 @@ import logoFooter from "../assets/logoFooter.png";
           <a
             href="https://www.facebook.com/pibevalderramatv"
             target="_blank"
-            class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
+            class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer"
           >
             <svg
               class="w-4 h-4"
@@ -164,7 +182,7 @@ import logoFooter from "../assets/logoFooter.png";
           <a
             href="https://www.youtube.com/@pibevalderramap"
             target="_blank"
-            class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300"
+            class="w-8 h-8 bg-red-600 rounded-lg flex items-center justify-center hover:scale-110 transition-all duration-300 cursor-pointer"
           >
             <svg
               class="w-4 h-4"
@@ -182,46 +200,14 @@ import logoFooter from "../assets/logoFooter.png";
         </div>
       </div>
 
-      <!-- Enlaces rápidos -->
-      <div>
-        <h4 class="font-bold text-lg text-pibe-gold mb-4">Enlaces</h4>
-        <div class="grid grid-cols-2 gap-x-4 gap-y-2">
-          <a
-            href="#sobre-el"
-            class="text-gray-300 hover:text-pibe-gold transition-colors duration-300 text-sm"
-            >Sobre Él</a
-          >
-          <a
-            href="#contacto"
-            class="text-gray-300 hover:text-pibe-gold transition-colors duration-300 text-sm"
-            >Contacto</a
-          >
-          <a
-            href="#marcas"
-            class="text-gray-300 hover:text-pibe-gold transition-colors duration-300 text-sm"
-            >Marcas</a
-          >
-          <a
-            href="#redes"
-            class="text-gray-300 hover:text-pibe-gold transition-colors duration-300 text-sm"
-            >Redes</a
-          >
-          <a
-            href="/historia"
-            class="text-gray-300 hover:text-pibe-gold transition-colors duration-300 text-sm"
-            >Historia</a
-          >
-        </div>
-      </div>
-
-      <!-- Contacto comercial -->
-      <div>
+      <!-- Contacto comercial - Al final -->
+      <div class="md:justify-self-end">
         <h4 class="font-bold text-lg text-pibe-gold mb-4">Negocios</h4>
         <div class="space-y-3">
           <!-- Email -->
           <div class="flex items-center space-x-3">
             <svg
-              class="w-5 h-5 text-pibe-gold"
+              class="w-5 h-5 text-white"
               fill="currentColor"
               viewBox="0 0 20 20"
             >
@@ -234,7 +220,7 @@ import logoFooter from "../assets/logoFooter.png";
             <a
               href="mailto:negocios@pibevalderrama.com?subject=Consulta%20Comercial%20-%20Pibe%20Valderrama&body=Hola,%0A%0AEstoy%20interesado%20en%20establecer%20una%20colaboración%20comercial%20con%20el%20Pibe%20Valderrama.%0A%0APor%20favor,%20envíenme%20más%20información%20sobre:%0A-%20Tarifas%20y%20paquetes%0A-%20Disponibilidad%0A-%20Tipos%20de%20colaboración%0A%0AGracias."
               data-send-proposal="footer"
-              class="text-pibe-gold text-base hover:text-yellow-300 transition-colors"
+              class="text-white text-sm hover:text-pibe-gold transition-colors cursor-pointer"
             >
               negocios@pibevalderrama.com
             </a>
@@ -243,7 +229,7 @@ import logoFooter from "../assets/logoFooter.png";
           <!-- WhatsApp -->
           <div class="flex items-center space-x-3">
             <svg
-              class="w-5 h-5 text-green-500"
+              class="w-5 h-5 text-white"
               fill="currentColor"
               viewBox="0 0 24 24"
             >
@@ -254,7 +240,7 @@ import logoFooter from "../assets/logoFooter.png";
             <a
               href="https://wa.me/573154290215?text=Hola,%20quiero%20información%20sobre%20colaboraciones%20comerciales%20con%20el%20Pibe%20Valderrama"
               target="_blank"
-              class="text-green-400 text-base hover:text-green-300 transition-colors"
+              class="text-white text-sm hover:text-pibe-gold transition-colors cursor-pointer"
             >
               +57 315 429 0215
             </a>
