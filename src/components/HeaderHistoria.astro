@@ -70,7 +70,8 @@
   <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class="fixed inset-0 bg-black/95 backdrop-blur-lg z-[60] hidden"
+    class="fixed top-0 left-0 w-full h-full bg-black/95 backdrop-blur-lg z-[60] hidden overflow-y-auto"
+    style="height: 100vh; height: 100dvh;"
   >
     <!-- Close Button -->
     <button
@@ -94,7 +95,7 @@
 
     <!-- Menu Items -->
     <div
-      class="flex flex-col h-full w-full justify-center items-center space-y-8 text-center px-6"
+      class="flex flex-col min-h-full w-full justify-center items-center space-y-8 text-center px-6 py-20"
     >
       <a
         href="/"
@@ -156,60 +157,106 @@
   }
 
   /* Mobile Menu */
+  #mobile-menu {
+    display: none;
+  }
+
   #mobile-menu.show {
-    display: flex !important;
+    display: block !important;
   }
 
   /* Prevent scroll when mobile menu is open */
   body.menu-open {
     overflow: hidden;
-    height: 100vh;
     position: fixed;
     width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
   }
 </style>
 
-<script>
-  // Mobile Menu Toggle - Simple and Direct
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const mobileMenuClose = document.getElementById('mobile-menu-close');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Toggle - Simple and Direct
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
 
-  function openMenu() {
-    mobileMenu?.classList.add('show');
-    mobileMenuBtn?.classList.add('active');
-    document.body.classList.add('menu-open');
-  }
+    let scrollPosition = 0;
 
-  function closeMenu() {
-    mobileMenu?.classList.remove('show');
-    mobileMenuBtn?.classList.remove('active');
-    document.body.classList.remove('menu-open');
-  }
+    function openMenu() {
+      // Guardar posición de scroll actual
+      scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
 
-  // Open menu
-  mobileMenuBtn?.addEventListener('click', openMenu);
+      if (mobileMenu) {
+        mobileMenu.classList.add('show');
+      }
+      if (mobileMenuBtn) {
+        mobileMenuBtn.classList.add('active');
+      }
 
-  // Close menu
-  mobileMenuClose?.addEventListener('click', closeMenu);
-
-  // Close when clicking on a link
-  mobileLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  // Close when clicking outside
-  mobileMenu?.addEventListener('click', (e) => {
-    if (e.target === mobileMenu) {
-      closeMenu();
+      // Bloquear scroll del body
+      document.body.classList.add('menu-open');
+      document.body.style.top = '-' + scrollPosition + 'px';
     }
-  });
 
-  // Close on escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileMenu?.classList.contains('show')) {
-      closeMenu();
+    function closeMenu() {
+      if (mobileMenu) {
+        mobileMenu.classList.remove('show');
+      }
+      if (mobileMenuBtn) {
+        mobileMenuBtn.classList.remove('active');
+      }
+
+      // Restaurar scroll del body
+      document.body.classList.remove('menu-open');
+      document.body.style.top = '';
+
+      // Restaurar posición de scroll
+      window.scrollTo(0, scrollPosition);
     }
+
+    // Open menu
+    if (mobileMenuBtn) {
+      mobileMenuBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        openMenu();
+      });
+    }
+
+    // Close menu
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeMenu();
+      });
+    }
+
+    // Close when clicking on a link
+    if (mobileLinks && mobileLinks.length > 0) {
+      mobileLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          closeMenu();
+        });
+      });
+    }
+
+    // Close when clicking outside (on the overlay)
+    if (mobileMenu) {
+      mobileMenu.addEventListener('click', function(e) {
+        if (e.target === mobileMenu) {
+          closeMenu();
+        }
+      });
+    }
+
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('show')) {
+        closeMenu();
+      }
+    });
   });
 </script>
