@@ -208,44 +208,8 @@ document.addEventListener('DOMContentLoaded', function () {
   setupSectionAnimations();
   setupFormValidation();
 
-  // Manejo robusto del enlace "Enviar propuesta" para evitar abrir pestañas en blanco
-  function setupSendProposalLink() {
-    // Select both the original in-page link (id=send-proposal) and any footer anchor marked with data-send-proposal
-    const inPage = document.getElementById('send-proposal');
-    const footers = Array.from(document.querySelectorAll('a[data-send-proposal]'));
-
-    const elements = [];
-    if (inPage) elements.push(inPage);
-    if (footers.length) elements.push(...footers);
-    if (!elements.length) return;
-
-    elements.forEach(el => {
-      el.addEventListener('click', function (e) {
-        // Evitar comportamiento por defecto que en algunos navegadores abre pestaña vacía
-        e.preventDefault();
-
-        const href = this.getAttribute('href');
-        if (!href) return;
-
-        // Primero intentamos abrir mediante location.href (abre el cliente de correo)
-        try {
-          // Asignar location.href es suficiente para invocar el handler mailto
-          // y no dispara los bloqueadores de popups como window.open.
-          window.location.href = href;
-        } catch (err) {
-          // Fallback: crear anchor temporal y hacer click
-          const a = document.createElement('a');
-          a.href = href;
-          a.style.display = 'none';
-          document.body.appendChild(a);
-          a.click();
-          document.body.removeChild(a);
-        }
-      });
-    });
-  }
-
-  setupSendProposalLink();
+  // Ya no es necesario este código - los enlaces mailto se manejan directamente en los componentes
+  // sin usar target="_blank" que causaba pestañas vacías
 
   // Detectar si el usuario llega directamente a la sección de contacto
   if (window.location.hash === '#contacto') {

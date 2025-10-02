@@ -41,20 +41,25 @@
 
           var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 
-          // Crear un enlace temporal (funciona mejor en Mac)
-          var tempLink = document.createElement('a');
-          tempLink.href = mailtoLink;
-          tempLink.target = '_blank';
-          tempLink.rel = 'noopener noreferrer';
-
-          document.body.appendChild(tempLink);
-
-          setTimeout(function() {
-            tempLink.click();
-            setTimeout(function() {
-              document.body.removeChild(tempLink);
-            }, 100);
-          }, 0);
+          // Método más confiable para Mac: usar window.location directamente
+          try {
+            window.location.href = mailtoLink;
+          } catch (err) {
+            // Fallback: intentar con window.open sin target
+            try {
+              window.open(mailtoLink, '_self');
+            } catch (err2) {
+              // Último fallback: crear enlace invisible
+              var tempLink = document.createElement('a');
+              tempLink.href = mailtoLink;
+              tempLink.style.display = 'none';
+              document.body.appendChild(tempLink);
+              tempLink.click();
+              setTimeout(function() {
+                document.body.removeChild(tempLink);
+              }, 100);
+            }
+          }
         });
       }
     }
