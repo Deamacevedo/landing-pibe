@@ -24,32 +24,45 @@
   </div>
 </section>
 
-<script>
+<script is:inline>
   // Handle mailto for Mac compatibility
-  document.addEventListener('DOMContentLoaded', () => {
-    const ctaButton = document.getElementById('cta-email-btn');
+  (function() {
+    function initCTAButton() {
+      var ctaButton = document.getElementById('cta-email-btn');
 
-    if (ctaButton) {
-      ctaButton.addEventListener('click', (e) => {
-        e.preventDefault();
+      if (ctaButton) {
+        ctaButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
 
-        const email = ctaButton.getAttribute('data-email');
-        const subject = ctaButton.getAttribute('data-subject');
-        const body = ctaButton.getAttribute('data-body');
+          var email = ctaButton.getAttribute('data-email');
+          var subject = ctaButton.getAttribute('data-subject');
+          var body = ctaButton.getAttribute('data-body');
 
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 
-        try {
-          window.location.href = mailtoLink;
-        } catch (error) {
-          const tempLink = document.createElement('a');
+          // Crear un enlace temporal (funciona mejor en Mac)
+          var tempLink = document.createElement('a');
           tempLink.href = mailtoLink;
-          tempLink.style.display = 'none';
+          tempLink.target = '_blank';
+          tempLink.rel = 'noopener noreferrer';
+
           document.body.appendChild(tempLink);
-          tempLink.click();
-          document.body.removeChild(tempLink);
-        }
-      });
+
+          setTimeout(function() {
+            tempLink.click();
+            setTimeout(function() {
+              document.body.removeChild(tempLink);
+            }, 100);
+          }, 0);
+        });
+      }
     }
-  });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCTAButton);
+    } else {
+      initCTAButton();
+    }
+  })();
 </script>

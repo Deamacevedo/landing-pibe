@@ -276,32 +276,45 @@ import logoFooter from "../assets/logoFooter.png";
   </div>
 </footer>
 
-<script>
+<script is:inline>
   // Handle mailto for Mac compatibility in Footer
-  document.addEventListener('DOMContentLoaded', () => {
-    const footerEmailButton = document.getElementById('footer-email-btn');
+  (function() {
+    function initFooterEmailButton() {
+      var footerEmailButton = document.getElementById('footer-email-btn');
 
-    if (footerEmailButton) {
-      footerEmailButton.addEventListener('click', (e) => {
-        e.preventDefault();
+      if (footerEmailButton) {
+        footerEmailButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
 
-        const email = footerEmailButton.getAttribute('data-email');
-        const subject = footerEmailButton.getAttribute('data-subject');
-        const body = footerEmailButton.getAttribute('data-body');
+          var email = footerEmailButton.getAttribute('data-email');
+          var subject = footerEmailButton.getAttribute('data-subject');
+          var body = footerEmailButton.getAttribute('data-body');
 
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 
-        try {
-          window.location.href = mailtoLink;
-        } catch (error) {
-          const tempLink = document.createElement('a');
+          // Crear un enlace temporal (funciona mejor en Mac)
+          var tempLink = document.createElement('a');
           tempLink.href = mailtoLink;
-          tempLink.style.display = 'none';
+          tempLink.target = '_blank';
+          tempLink.rel = 'noopener noreferrer';
+
           document.body.appendChild(tempLink);
-          tempLink.click();
-          document.body.removeChild(tempLink);
-        }
-      });
+
+          setTimeout(function() {
+            tempLink.click();
+            setTimeout(function() {
+              document.body.removeChild(tempLink);
+            }, 100);
+          }, 0);
+        });
+      }
     }
-  });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFooterEmailButton);
+    } else {
+      initFooterEmailButton();
+    }
+  })();
 </script>

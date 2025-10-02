@@ -126,37 +126,51 @@
   </div>
 </section>
 
-<script>
-  // Handle mailto links for better Mac compatibility
-  document.addEventListener('DOMContentLoaded', () => {
-    const emailButton = document.getElementById('send-proposal');
+<script is:inline>
+  // Handle mailto links for Mac compatibility
+  (function() {
+    function initEmailButton() {
+      var emailButton = document.getElementById('send-proposal');
 
-    if (emailButton) {
-      emailButton.addEventListener('click', (e) => {
-        e.preventDefault();
+      if (emailButton) {
+        emailButton.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
 
-        const email = emailButton.getAttribute('data-email');
-        const subject = emailButton.getAttribute('data-subject');
-        const body = emailButton.getAttribute('data-body');
+          var email = emailButton.getAttribute('data-email');
+          var subject = emailButton.getAttribute('data-subject');
+          var body = emailButton.getAttribute('data-body');
 
-        // Crear el enlace mailto
-        const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+          // Crear el enlace mailto
+          var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
 
-        // Método 1: Usar window.location (más compatible con Mac)
-        try {
-          window.location.href = mailtoLink;
-        } catch (error) {
-          // Método 2: Crear un enlace temporal y hacer click
-          const tempLink = document.createElement('a');
+          // Crear un enlace temporal (funciona mejor en Mac)
+          var tempLink = document.createElement('a');
           tempLink.href = mailtoLink;
-          tempLink.style.display = 'none';
+          tempLink.target = '_blank';
+          tempLink.rel = 'noopener noreferrer';
+
+          // Forzar el click
           document.body.appendChild(tempLink);
-          tempLink.click();
-          document.body.removeChild(tempLink);
-        }
-      });
+
+          // Usar setTimeout para asegurar que el navegador procese el elemento
+          setTimeout(function() {
+            tempLink.click();
+            setTimeout(function() {
+              document.body.removeChild(tempLink);
+            }, 100);
+          }, 0);
+        });
+      }
     }
-  });
+
+    // Ejecutar cuando el DOM esté listo
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initEmailButton);
+    } else {
+      initEmailButton();
+    }
+  })();
 </script>
 
 <script src="../scripts/contacto.js"></script>
